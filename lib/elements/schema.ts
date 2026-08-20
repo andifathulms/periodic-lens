@@ -72,7 +72,11 @@ export const productionSchema = z.object({
 
 export const productionStateSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('produced'), production: productionSchema }),
-  z.object({ type: z.literal('not-produced') }),
+  z.object({
+    type: z.literal('not-produced'),
+    edition: z.number().int().min(1900).max(2100),
+    source: sourceSchema,
+  }),
   z.object({ type: z.literal('unknown') }),
 ])
 

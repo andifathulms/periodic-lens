@@ -231,14 +231,30 @@ export function textValue(lens: LensId, element: Element): PropertyValue<number 
         : { type: 'unknown' }
     }
     case 'production':
-      return element.production.type === 'produced'
-        ? {
+      // Invariant 9 in the text channel too: "not produced" is an answer,
+      // "not known" is the absence of one, and they must not be spoken alike.
+      switch (element.production.type) {
+        case 'produced':
+          return {
             type: 'known',
             value: element.production.production.share,
             unit: 'share of world mine production',
             source: element.production.production.source,
           }
-        : { type: 'unknown' }
+        case 'not-produced':
+          return {
+            type: 'known',
+            value: 'not produced',
+            unit: '',
+            source: element.production.source,
+          }
+        case 'unknown':
+          return { type: 'unknown' }
+        default: {
+          const never: never = element.production
+          return never
+        }
+      }
     case 'continuous':
       return CONTINUOUS_READERS[lens as Continuous](element)
     default:

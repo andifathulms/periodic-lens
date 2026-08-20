@@ -29,6 +29,9 @@ import type { Element, PropertyValue, ProductionState, Source } from '../lib/ele
 
 const root = join(__dirname, '..')
 
+/** The edition every figure in this build is read from. Invariant 10. */
+const USGS_EDITION = 2024
+
 function rows(path: string): string[][] {
   return readFileSync(join(root, path), 'utf8')
     .split('\n')
@@ -69,7 +72,7 @@ function productionFor(z: number): ProductionState {
   if (entry) return { type: 'produced', production: entry }
   // Invariant 9: tracked-but-absent is "not produced". Untracked is unknown —
   // USGS reports nothing about it, which is not the same as reporting nothing.
-  if (tracked.has(z)) return { type: 'not-produced' }
+  if (tracked.has(z)) return { type: 'not-produced', edition: USGS_EDITION, source: SOURCES.usgs }
   return { type: 'unknown' }
 }
 
@@ -96,7 +99,7 @@ const elements: Element[] = rows('data/elements/properties.tsv').map((r) => {
     period: periodOf(z),
     configuration: { notation, subshells, anomalous, source: SOURCES.nistLevels },
     origin: String(r[6]) as Element['origin'],
-    discovery: value(r[7], '', SOURCES.discovery),
+    discovery: value(r[7], 'year', SOURCES.discovery),
     electronegativity: value(r[8], 'Pauling', SOURCES.crc),
     atomicRadius: value(r[9], 'pm', SOURCES.slater),
     ionisationEnergy: value(r[10], 'kJ/mol', SOURCES.nistIonisation),
@@ -114,7 +117,7 @@ const table = tableSchema.parse({
     'data/production/tracked.tsv',
   ],
   licences: LICENCES.map((l) => ({ ...l })),
-  usgsEdition: 2024,
+  usgsEdition: USGS_EDITION,
   elements,
 })
 

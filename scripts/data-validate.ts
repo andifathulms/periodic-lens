@@ -69,6 +69,12 @@ for (const element of table.elements) {
 
 // Invariant 10 — never an undated production number, and never one without a stage.
 for (const element of table.elements) {
+  if (element.production.type === 'not-produced') {
+    check(
+      element.production.edition === table.usgsEdition,
+      `${element.symbol}: a reported absence must name its edition`,
+    )
+  }
   if (element.production.type !== 'produced') continue
   const p = element.production.production
   check(p.edition === table.usgsEdition, `${element.symbol}: production edition mismatch`)

@@ -90,7 +90,16 @@ export type Production = {
  */
 export type ProductionState =
   | { readonly type: 'produced'; readonly production: Production }
-  | { readonly type: 'not-produced' }
+  | {
+      /**
+       * A reported absence, not a missing value. It carries the edition it was
+       * read from for the same reason a figure does — "USGS 2024 reports no
+       * Indonesian output" is a dated claim.
+       */
+      readonly type: 'not-produced'
+      readonly edition: number
+      readonly source: Source
+    }
   | { readonly type: 'unknown' }
 
 export type Element = {

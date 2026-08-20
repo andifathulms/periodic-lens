@@ -71,7 +71,7 @@
       "discovery": {
         "type": "known",
         "value": 1766,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -163,7 +163,7 @@
       "discovery": {
         "type": "known",
         "value": 1868,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -254,7 +254,7 @@
       "discovery": {
         "type": "known",
         "value": 1817,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -306,7 +306,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -351,7 +356,7 @@
       "discovery": {
         "type": "known",
         "value": 1798,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -403,7 +408,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -453,7 +463,7 @@
       "discovery": {
         "type": "known",
         "value": 1808,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -505,7 +515,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -651,7 +666,7 @@
       "discovery": {
         "type": "known",
         "value": 1772,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -753,7 +768,7 @@
       "discovery": {
         "type": "known",
         "value": 1774,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -855,7 +870,7 @@
       "discovery": {
         "type": "known",
         "value": 1886,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -957,7 +972,7 @@
       "discovery": {
         "type": "known",
         "value": 1898,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1058,7 +1073,7 @@
       "discovery": {
         "type": "known",
         "value": 1807,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1110,7 +1125,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -1165,7 +1185,7 @@
       "discovery": {
         "type": "known",
         "value": 1755,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1217,7 +1237,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -1277,7 +1302,7 @@
       "discovery": {
         "type": "known",
         "value": 1825,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1400,7 +1425,7 @@
       "discovery": {
         "type": "known",
         "value": 1824,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1452,7 +1477,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -1512,7 +1542,7 @@
       "discovery": {
         "type": "known",
         "value": 1669,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1670,7 +1700,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -1730,7 +1765,7 @@
       "discovery": {
         "type": "known",
         "value": 1774,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1842,7 +1877,7 @@
       "discovery": {
         "type": "known",
         "value": 1894,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -1953,7 +1988,7 @@
       "discovery": {
         "type": "known",
         "value": 1807,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2005,7 +2040,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2070,7 +2110,7 @@
       "discovery": {
         "type": "known",
         "value": 1808,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2122,7 +2162,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2192,7 +2237,7 @@
       "discovery": {
         "type": "known",
         "value": 1879,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2244,7 +2289,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2314,7 +2364,7 @@
       "discovery": {
         "type": "known",
         "value": 1791,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2366,7 +2416,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2436,7 +2491,7 @@
       "discovery": {
         "type": "known",
         "value": 1801,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2488,7 +2543,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2558,7 +2618,7 @@
       "discovery": {
         "type": "known",
         "value": 1794,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2610,7 +2670,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2680,7 +2745,7 @@
       "discovery": {
         "type": "known",
         "value": 1774,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -2732,7 +2797,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2848,7 +2918,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -2918,7 +2993,7 @@
       "discovery": {
         "type": "known",
         "value": 1735,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3051,7 +3126,7 @@
       "discovery": {
         "type": "known",
         "value": 1751,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3311,7 +3386,7 @@
       "discovery": {
         "type": "known",
         "value": 1746,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3363,7 +3438,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -3438,7 +3518,7 @@
       "discovery": {
         "type": "known",
         "value": 1875,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3490,7 +3570,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -3565,7 +3650,7 @@
       "discovery": {
         "type": "known",
         "value": 1886,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3617,7 +3702,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -3692,7 +3782,7 @@
       "discovery": {
         "type": "known",
         "value": 1250,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3744,7 +3834,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -3819,7 +3914,7 @@
       "discovery": {
         "type": "known",
         "value": 1817,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -3871,7 +3966,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -3946,7 +4046,7 @@
       "discovery": {
         "type": "known",
         "value": 1826,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4073,7 +4173,7 @@
       "discovery": {
         "type": "known",
         "value": 1898,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4205,7 +4305,7 @@
       "discovery": {
         "type": "known",
         "value": 1861,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4337,7 +4437,7 @@
       "discovery": {
         "type": "known",
         "value": 1790,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4389,7 +4489,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -4474,7 +4579,7 @@
       "discovery": {
         "type": "known",
         "value": 1794,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4526,7 +4631,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -4611,7 +4721,7 @@
       "discovery": {
         "type": "known",
         "value": 1789,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4663,7 +4773,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -4748,7 +4863,7 @@
       "discovery": {
         "type": "known",
         "value": 1801,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4800,7 +4915,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -4885,7 +5005,7 @@
       "discovery": {
         "type": "known",
         "value": 1781,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -4937,7 +5057,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -5022,7 +5147,7 @@
       "discovery": {
         "type": "known",
         "value": 1937,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -5159,7 +5284,7 @@
       "discovery": {
         "type": "known",
         "value": 1844,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -5211,7 +5336,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -5296,7 +5426,7 @@
       "discovery": {
         "type": "known",
         "value": 1803,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -5348,7 +5478,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -5428,7 +5563,7 @@
       "discovery": {
         "type": "known",
         "value": 1802,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -5480,7 +5615,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -5707,7 +5847,7 @@
       "discovery": {
         "type": "known",
         "value": 1817,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -5759,7 +5899,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -5849,7 +5994,7 @@
       "discovery": {
         "type": "known",
         "value": 1863,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -5901,7 +6046,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -6184,7 +6334,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -6274,7 +6429,7 @@
       "discovery": {
         "type": "known",
         "value": 1782,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -6326,7 +6481,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -6416,7 +6576,7 @@
       "discovery": {
         "type": "known",
         "value": 1811,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -6558,7 +6718,7 @@
       "discovery": {
         "type": "known",
         "value": 1898,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -6705,7 +6865,7 @@
       "discovery": {
         "type": "known",
         "value": 1860,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -6757,7 +6917,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -6852,7 +7017,7 @@
       "discovery": {
         "type": "known",
         "value": 1808,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -6904,7 +7069,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -7004,7 +7174,7 @@
       "discovery": {
         "type": "known",
         "value": 1839,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7056,7 +7226,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -7161,7 +7336,7 @@
       "discovery": {
         "type": "known",
         "value": 1803,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7213,7 +7388,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -7313,7 +7493,7 @@
       "discovery": {
         "type": "known",
         "value": 1885,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7365,7 +7545,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -7465,7 +7650,7 @@
       "discovery": {
         "type": "known",
         "value": 1885,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7517,7 +7702,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -7617,7 +7807,7 @@
       "discovery": {
         "type": "known",
         "value": 1945,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7769,7 +7959,7 @@
       "discovery": {
         "type": "known",
         "value": 1879,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7821,7 +8011,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -7921,7 +8116,7 @@
       "discovery": {
         "type": "known",
         "value": 1901,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -7973,7 +8168,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8078,7 +8278,7 @@
       "discovery": {
         "type": "known",
         "value": 1880,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -8130,7 +8330,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8230,7 +8435,7 @@
       "discovery": {
         "type": "known",
         "value": 1843,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -8282,7 +8487,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8382,7 +8592,7 @@
       "discovery": {
         "type": "known",
         "value": 1886,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -8434,7 +8644,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8534,7 +8749,7 @@
       "discovery": {
         "type": "known",
         "value": 1878,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -8586,7 +8801,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8686,7 +8906,7 @@
       "discovery": {
         "type": "known",
         "value": 1843,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -8738,7 +8958,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8838,7 +9063,7 @@
       "discovery": {
         "type": "known",
         "value": 1879,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -8890,7 +9115,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -8990,7 +9220,7 @@
       "discovery": {
         "type": "known",
         "value": 1878,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9042,7 +9272,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -9147,7 +9382,7 @@
       "discovery": {
         "type": "known",
         "value": 1907,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9199,7 +9434,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -9304,7 +9544,7 @@
       "discovery": {
         "type": "known",
         "value": 1923,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9356,7 +9596,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -9461,7 +9706,7 @@
       "discovery": {
         "type": "known",
         "value": 1802,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9513,7 +9758,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -9618,7 +9868,7 @@
       "discovery": {
         "type": "known",
         "value": 1783,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9670,7 +9920,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -9775,7 +10030,7 @@
       "discovery": {
         "type": "known",
         "value": 1925,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9827,7 +10082,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -9932,7 +10192,7 @@
       "discovery": {
         "type": "known",
         "value": 1803,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -9984,7 +10244,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -10089,7 +10354,7 @@
       "discovery": {
         "type": "known",
         "value": 1803,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -10141,7 +10406,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -10246,7 +10516,7 @@
       "discovery": {
         "type": "known",
         "value": 1735,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -10298,7 +10568,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -10611,7 +10886,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -10721,7 +11001,7 @@
       "discovery": {
         "type": "known",
         "value": 1861,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -10773,7 +11053,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -10929,7 +11214,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -11039,7 +11329,7 @@
       "discovery": {
         "type": "known",
         "value": 1400,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -11091,7 +11381,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -11201,7 +11496,7 @@
       "discovery": {
         "type": "known",
         "value": 1898,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -11363,7 +11658,7 @@
       "discovery": {
         "type": "known",
         "value": 1940,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -11513,7 +11808,7 @@
       "discovery": {
         "type": "known",
         "value": 1900,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -11680,7 +11975,7 @@
       "discovery": {
         "type": "known",
         "value": 1939,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -11835,7 +12130,7 @@
       "discovery": {
         "type": "known",
         "value": 1898,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -12007,7 +12302,7 @@
       "discovery": {
         "type": "known",
         "value": 1899,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -12179,7 +12474,7 @@
       "discovery": {
         "type": "known",
         "value": 1829,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -12231,7 +12526,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -12356,7 +12656,7 @@
       "discovery": {
         "type": "known",
         "value": 1913,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -12533,7 +12833,7 @@
       "discovery": {
         "type": "known",
         "value": 1789,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -12585,7 +12885,12 @@
         }
       },
       "production": {
-        "type": "not-produced"
+        "type": "not-produced",
+        "edition": 2024,
+        "source": {
+          "ref": "usgs-mcs-2024",
+          "cite": "U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain."
+        }
       }
     },
     {
@@ -12710,7 +13015,7 @@
       "discovery": {
         "type": "known",
         "value": 1940,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -12882,7 +13187,7 @@
       "discovery": {
         "type": "known",
         "value": 1940,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -13054,7 +13359,7 @@
       "discovery": {
         "type": "known",
         "value": 1944,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -13231,7 +13536,7 @@
       "discovery": {
         "type": "known",
         "value": 1944,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -13397,7 +13702,7 @@
       "discovery": {
         "type": "known",
         "value": 1949,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -13563,7 +13868,7 @@
       "discovery": {
         "type": "known",
         "value": 1950,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -13729,7 +14034,7 @@
       "discovery": {
         "type": "known",
         "value": 1952,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -13895,7 +14200,7 @@
       "discovery": {
         "type": "known",
         "value": 1952,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14049,7 +14354,7 @@
       "discovery": {
         "type": "known",
         "value": 1955,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14203,7 +14508,7 @@
       "discovery": {
         "type": "known",
         "value": 1966,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14362,7 +14667,7 @@
       "discovery": {
         "type": "known",
         "value": 1961,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14521,7 +14826,7 @@
       "discovery": {
         "type": "known",
         "value": 1964,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14668,7 +14973,7 @@
       "discovery": {
         "type": "known",
         "value": 1970,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14815,7 +15120,7 @@
       "discovery": {
         "type": "known",
         "value": 1974,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -14962,7 +15267,7 @@
       "discovery": {
         "type": "known",
         "value": 1981,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -15109,7 +15414,7 @@
       "discovery": {
         "type": "known",
         "value": 1984,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -15256,7 +15561,7 @@
       "discovery": {
         "type": "known",
         "value": 1982,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -15403,7 +15708,7 @@
       "discovery": {
         "type": "known",
         "value": 1994,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -15550,7 +15855,7 @@
       "discovery": {
         "type": "known",
         "value": 1994,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -15697,7 +16002,7 @@
       "discovery": {
         "type": "known",
         "value": 1996,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -15849,7 +16154,7 @@
       "discovery": {
         "type": "known",
         "value": 2004,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -16001,7 +16306,7 @@
       "discovery": {
         "type": "known",
         "value": 1999,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -16153,7 +16458,7 @@
       "discovery": {
         "type": "known",
         "value": 2003,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -16305,7 +16610,7 @@
       "discovery": {
         "type": "known",
         "value": 2000,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -16457,7 +16762,7 @@
       "discovery": {
         "type": "known",
         "value": 2010,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
@@ -16609,7 +16914,7 @@
       "discovery": {
         "type": "known",
         "value": 2002,
-        "unit": "",
+        "unit": "year",
         "source": {
           "ref": "iupac-discovery",
           "cite": "IUPAC element discovery records; Emsley, J., Nature’s Building Blocks, revised ed. (2011)."
