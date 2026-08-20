@@ -15,6 +15,7 @@ import {
   format,
   positionRationale,
   predict,
+  reachesHalfOrFullSubshell,
   predictedNotation,
   sameConfiguration,
 } from '@/lib/elements/aufbau'
@@ -133,5 +134,35 @@ describe('position rationale — the shape argument, per cell', () => {
   it('flags helium, and only helium, as positioned by convention', () => {
     const flagged = ELEMENTS.filter((e) => positionRationale(e.z).conventional)
     expect(flagged.map((e) => e.z)).toEqual([2])
+  })
+})
+
+/**
+ * The half-filled/filled pattern, and its limits. The build page states a hit
+ * rate; this is what stops that number drifting away from the data.
+ */
+describe('the half-filled and filled pattern', () => {
+  const fits = AUFBAU_EXCEPTIONS.filter((z) =>
+    reachesHalfOrFullSubshell(z, elementAt(z).configuration.subshells),
+  )
+
+  it('accounts for exactly eight of the twenty exceptions', () => {
+    expect(fits.map((z) => elementAt(z).symbol)).toEqual([
+      'Cr', 'Cu', 'Mo', 'Pd', 'Ag', 'Gd', 'Au', 'Cm',
+    ])
+  })
+
+  it('leaves twelve it does not explain, and does not pretend otherwise', () => {
+    expect(AUFBAU_EXCEPTIONS.length - fits.length).toBe(12)
+  })
+
+  it('never fires for an element that follows the rule', () => {
+    for (const element of ELEMENTS) {
+      if (AUFBAU_EXCEPTIONS.includes(element.z)) continue
+      expect(
+        reachesHalfOrFullSubshell(element.z, element.configuration.subshells),
+        element.symbol,
+      ).toBe(false)
+    }
   })
 })

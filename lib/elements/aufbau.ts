@@ -200,6 +200,37 @@ export function predictedNotation(z: number): string {
   return format(predict(z))
 }
 
+/**
+ * Whether an exception's published configuration lands a d or f subshell
+ * exactly half-filled or exactly filled, somewhere the rule did not put it.
+ *
+ * This is the pattern textbooks reach for — chromium takes an electron early
+ * to make 3d5, copper to make 3d10 — and it is worth showing, because reading
+ * twenty disagreements with nothing to look for teaches nothing.
+ *
+ * It is also NOT a full explanation, and the honest way to present it is with
+ * its own hit rate attached: it accounts for eight of the twenty. The other
+ * twelve are not explained by it, and this module does not attempt to say
+ * what does explain them. The test asserts the split so the claim on the page
+ * cannot drift away from the data.
+ *
+ * The test is exact: some d or f subshell whose published occupancy is half
+ * its capacity or all of it, AND which the rule placed somewhere else.
+ */
+export function reachesHalfOrFullSubshell(
+  z: number,
+  published: readonly Subshell[],
+): boolean {
+  const predicted = inShellOrder(predict(z))
+  return inShellOrder(published).some((shell) => {
+    if (shell.l !== 'd' && shell.l !== 'f') return false
+    const capacity = CAPACITY[shell.l]
+    const landed = shell.electrons === capacity / 2 || shell.electrons === capacity
+    const was = predicted.find((p) => p.n === shell.n && p.l === shell.l)?.electrons ?? 0
+    return landed && was !== shell.electrons
+  })
+}
+
 /** Parse a published notation string into subshells, expanding the core. */
 export function parseNotation(notation: string): Subshell[] {
   const coreMatch = notation.match(/^\[([A-Z][a-z]?)\]\s*/)

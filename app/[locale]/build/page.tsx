@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { OrbitalBuild } from '@/components/build/orbital-build'
 import { WorkedExample } from '@/components/build/worked-example'
-import { AUFBAU_EXCEPTIONS, predictedNotation } from '@/lib/elements/aufbau'
+import {
+  AUFBAU_EXCEPTIONS,
+  predictedNotation,
+  reachesHalfOrFullSubshell,
+} from '@/lib/elements/aufbau'
 import { elementAt } from '@/lib/elements/data'
 import { DEFAULT_LOCALE, isLocale, pageTitle, t } from '@/lib/i18n'
 
@@ -65,8 +69,11 @@ export default function BuildPage({ params }: { params: { locale: string } }) {
                 <th scope="col" className="py-8 pr-16 font-semibold">
                   {t(locale, 'build.predicted')}
                 </th>
-                <th scope="col" className="py-8 font-semibold">
+                <th scope="col" className="py-8 pr-16 font-semibold">
                   {t(locale, 'build.published')}
+                </th>
+                <th scope="col" className="py-8 font-semibold">
+                  {t(locale, 'build.pattern')}
                 </th>
               </tr>
             </thead>
@@ -81,13 +88,30 @@ export default function BuildPage({ params }: { params: { locale: string } }) {
                     <td className="py-4 pr-16 font-mono tabular text-muted line-through">
                       {predictedNotation(z)}
                     </td>
-                    <td className="py-4 font-mono tabular">{element.configuration.notation}</td>
+                    <td className="py-4 pr-16 font-mono tabular">
+                      {element.configuration.notation}
+                    </td>
+                    <td className="py-4 text-micro">
+                      {reachesHalfOrFullSubshell(z, element.configuration.subshells)
+                        ? t(locale, 'build.patternYes')
+                        : t(locale, 'build.patternNo')}
+                    </td>
                   </tr>
                 )
               })}
             </tbody>
           </table>
         </div>
+        {/*
+         * The pattern, with its hit rate attached. Reading twenty
+         * disagreements with nothing to look for teaches nothing — but naming
+         * the half-filled story without saying how far it reaches would
+         * replace one unexplained rule with a confidently wrong one. It covers
+         * eight. The count and the per-row marks come from the same function,
+         * and a test pins the split.
+         */}
+        <p className="mt-12 max-w-[70ch] text-body">{t(locale, 'build.patternNote')}</p>
+        <p className="mt-8 max-w-[70ch] text-body">{t(locale, 'build.patternLimit')}</p>
         <p className="font-mono text-micro text-muted mt-12">
           {elementAt(24).configuration.source.cite}
         </p>

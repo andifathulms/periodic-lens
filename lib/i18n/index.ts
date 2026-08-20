@@ -88,6 +88,13 @@ const en: Dictionary = {
     'Position by convention, not by configuration: helium is s-block and sits with the noble gases.',
   'panel.positionFromRule':
     'Position follows the filling order, not the published configuration — which is why this differs from the notation above, and why the exception stays in its block.',
+  'build.pattern': 'Half-filled or filled?',
+  'build.patternYes': 'yes',
+  'build.patternNo': 'no',
+  'build.patternNote':
+    'What to look for: in eight of these, the borrowed electron lands a d or f subshell exactly half-filled or exactly full. Chromium takes one early to make 3d5, copper to make 3d10, silver 4d10, gadolinium 4f7. Those configurations are more stable than the rule\u2019s arithmetic predicts.',
+  'build.patternLimit':
+    'The other twelve are not explained by that pattern, and this page does not offer an explanation for them. Niobium, ruthenium, rhodium, platinum and the early actinides land nowhere special. A pattern that covers eight of twenty is a useful thing to notice and a poor thing to call a reason \u2014 the published values stand on measurement, not on any story told about them.',
   'build.published': 'Published',
   'build.predicted': 'Rule predicts',
   'layout.standard': 'Standard',
@@ -228,6 +235,13 @@ const id: Dictionary = {
     'Posisi menurut konvensi, bukan menurut konfigurasi: helium berada di blok s dan ditempatkan bersama gas mulia.',
   'panel.positionFromRule':
     'Posisi mengikuti urutan pengisian, bukan konfigurasi terbitan — karena itu nilai ini berbeda dari notasi di atas, dan pengecualian tetap berada di bloknya.',
+  'build.pattern': 'Setengah atau penuh?',
+  'build.patternYes': 'ya',
+  'build.patternNo': 'tidak',
+  'build.patternNote':
+    'Yang perlu diperhatikan: pada delapan di antaranya, elektron yang berpindah membuat subkulit d atau f tepat terisi setengah atau tepat penuh. Kromium mengambil satu lebih awal untuk membentuk 3d5, tembaga 3d10, perak 4d10, gadolinium 4f7. Konfigurasi itu lebih stabil daripada yang diprediksi aritmetika aturannya.',
+  'build.patternLimit':
+    'Dua belas sisanya tidak dijelaskan oleh pola itu, dan halaman ini tidak menawarkan penjelasan untuknya. Niobium, rutenium, rodium, platina dan aktinida awal tidak mendarat di tempat istimewa mana pun. Pola yang mencakup delapan dari dua puluh layak diperhatikan tetapi buruk bila disebut alasan \u2014 nilai terbitan berdiri di atas pengukuran, bukan di atas cerita apa pun tentangnya.',
   'build.published': 'Terbitan',
   'build.predicted': 'Prediksi aturan',
   'layout.standard': 'Standar',
