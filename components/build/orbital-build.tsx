@@ -252,6 +252,21 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
         · {placed} {t(locale, 'build.placed')}
         {step ? ` · ${term(locale, step.l)}` : ''}
       </p>
+      {/*
+       * The readout assumed its own vocabulary. A newcomer does not know that
+       * the 3 in "3d" is a shell number, that d is a subshell type, or that
+       * (4/10) is seats taken out of seats available — and those three facts
+       * are the whole readout.
+       */}
+      {step ? (
+        <p className="max-w-[70ch] text-micro text-muted">
+          {t(locale, 'build.readoutGloss')
+            .replace('{n}', String(step.n))
+            .replace('{l}', step.l)
+            .replace('{within}', String(step.within))
+            .replace('{capacity}', String(step.capacity))}
+        </p>
+      ) : null}
 
       {reduced ? <p className="text-micro text-muted">{t(locale, 'build.reduced')}</p> : null}
     </div>

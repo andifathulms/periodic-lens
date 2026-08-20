@@ -151,6 +151,8 @@ const en: Dictionary = {
   'build.keyException': 'published configuration disagrees with the rule',
   'build.keyFollows': 'rule and published configuration agree',
   'build.filling': 'Filling',
+  'build.readoutGloss':
+    'Reading that: shell {n}, subshell type {l}, holding {within} of the {capacity} electrons that a {l} subshell can take.',
   'build.placed': 'electrons placed',
   'build.reduced': 'Reduced motion: advance one subshell at a time.',
   'ancient.note':
@@ -282,6 +284,8 @@ const id: Dictionary = {
   'build.keyException': 'konfigurasi terbitan tidak sesuai aturan',
   'build.keyFollows': 'aturan dan konfigurasi terbitan sesuai',
   'build.filling': 'Mengisi',
+  'build.readoutGloss':
+    'Cara membacanya: kulit {n}, jenis subkulit {l}, berisi {within} dari {capacity} elektron yang dapat ditampung subkulit {l}.',
   'build.placed': 'elektron ditempatkan',
   'build.reduced': 'Gerak dikurangi: maju satu subkulit setiap langkah.',
   'ancient.note':
