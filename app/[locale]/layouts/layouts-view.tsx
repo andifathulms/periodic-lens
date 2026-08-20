@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { TableGrid } from '@/components/grid/table-grid'
+import { LensLegend } from '@/components/legend/lens-legend'
 import { LayoutSwitcher } from '@/components/switcher/controls'
 import type { LayoutId } from '@/lib/elements/layout'
 import type { Locale } from '@/lib/i18n'
@@ -20,6 +21,9 @@ export function LayoutsView({ locale }: { locale: Locale }) {
   return (
     <div className="flex flex-col gap-24">
       <LayoutSwitcher layout={layout} onChange={setLayout} locale={locale} />
+      {/* DESIGN.md §8 — the legend is not optional, and this page colours 118
+          cells. The lens is fixed to block here, so the legend names block. */}
+      <LensLegend lens="block" locale={locale} />
       <TableGrid
         lens="block"
         layout={layout}

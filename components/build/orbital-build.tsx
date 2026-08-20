@@ -9,6 +9,7 @@ import {
   stepAt,
 } from '@/lib/elements/build'
 import { ELEMENTS } from '@/lib/elements/data'
+import { LensLegend } from '@/components/legend/lens-legend'
 import { tokenFor } from '@/lib/elements/lens'
 import { extent, position } from '@/lib/elements/layout'
 import { type Locale, t, term } from '@/lib/i18n'
@@ -196,7 +197,12 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
         </label>
       </div>
 
-      {/* DESIGN.md §8 — a colour with no key is not shippable. */}
+      {/*
+       * DESIGN.md §8 — a colour with no key is not shippable, and this page
+       * had none at all. While the toggle is off the cells are block
+       * coloured, so the block legend is the key; while it is on they are
+       * answering a different question and carry their own.
+       */}
       {exceptions ? (
         <ul className="flex flex-wrap items-center gap-x-24 gap-y-8 text-micro">
           <li className="flex items-center gap-8">
@@ -216,7 +222,9 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
             {t(locale, 'build.keyFollows')}
           </li>
         </ul>
-      ) : null}
+      ) : (
+        <LensLegend lens="block" locale={locale} />
+      )}
 
       <label className="flex flex-col gap-4">
         <span className="sr-only">{t(locale, 'build.filling')}</span>
