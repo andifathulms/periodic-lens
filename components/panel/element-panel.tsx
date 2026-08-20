@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { blockOf, positionRationale, predictedNotation } from '@/lib/elements/aufbau'
 import { elementAt } from '@/lib/elements/data'
 import { type LensId, textValue } from '@/lib/elements/lens'
@@ -60,6 +61,19 @@ export function ElementPanel({
   const name = locale === 'id' ? element.nameId : element.name
   const onLens = textValue(lens, element)
   const rationale = positionRationale(element.z)
+
+  /*
+   * Escape closes. The panel is not a modal and does not trap focus
+   * (invariant 15), so this is not the dismissal a dialog owes its user — but
+   * Escape is what everyone reaches for, and the cost is one listener.
+   */
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [onClose])
 
   return (
     <aside

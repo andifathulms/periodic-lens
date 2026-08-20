@@ -72,6 +72,21 @@ export function TableView({
     setSelected((current) => (current === z ? undefined : z))
   }, [])
 
+  /*
+   * Closing the panel used to strand focus. The Close button removes the
+   * element containing itself, so focus fell to <body> and the next Tab
+   * restarted at the top of the document, past the skip link, the header and
+   * every control (WCAG 2.4.3). Focus goes back to the cell that opened it.
+   */
+  const close = useCallback(() => {
+    const origin = selected
+    setSelected(undefined)
+    if (origin === undefined) return
+    requestAnimationFrame(() => {
+      document.querySelector<HTMLElement>(`[data-z="${origin}"]`)?.focus()
+    })
+  }, [selected])
+
   return (
     <div className="mx-auto max-w-[1440px] px-16 py-24">
       {/*
@@ -158,7 +173,7 @@ export function TableView({
             z={selected}
             lens={lens}
             locale={locale}
-            onClose={() => setSelected(undefined)}
+            onClose={close}
           />
         ) : (
           /*
