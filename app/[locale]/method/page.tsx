@@ -32,7 +32,7 @@ const COPY = {
     ptable:
       'For a more comprehensive general reference — isotopes, compounds, spectra, orbital viewers — ptable.com is excellent, free and mature. This project is not trying to replace it. It exists for two things ptable does not do: explaining where the shape comes from, and showing Indonesia’s share of world production per element.',
     noSafety:
-      'There is no safety, handling, exposure or first-aid information anywhere in this product. Hazard classification may appear as a cited fact; guidance is a regulated domain and this is not that tool.',
+      'There is no safety, handling, exposure or emergency-response information anywhere in this product. Hazard classification may appear as a cited fact; guidance is a regulated domain and this is not that tool.',
   },
   id: {
     unknown:
@@ -50,7 +50,7 @@ const COPY = {
     ptable:
       'Untuk rujukan umum yang lebih lengkap — isotop, senyawa, spektrum — ptable.com sangat baik, gratis dan matang. Proyek ini tidak berupaya menggantikannya.',
     noSafety:
-      'Tidak ada informasi keselamatan, penanganan, paparan atau pertolongan pertama di produk ini. Klasifikasi bahaya dapat muncul sebagai fakta bersitasi; panduan adalah ranah teregulasi dan ini bukan alat untuk itu.',
+      'Tidak ada informasi keselamatan, penanganan, paparan atau tanggap darurat di produk ini. Klasifikasi bahaya dapat muncul sebagai fakta bersitasi; panduan adalah ranah teregulasi dan ini bukan alat untuk itu.',
   },
 } as const
 

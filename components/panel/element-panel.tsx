@@ -63,7 +63,16 @@ export function ElementPanel({
   return (
     <aside
       aria-label={`${element.symbol} — ${name}`}
-      className="border border-rule rounded bg-paper p-16 flex flex-col gap-16 lg:sticky lg:top-16 lg:w-[360px] lg:shrink-0"
+      /*
+       * DESIGN.md §6 — a bottom sheet on mobile, a side panel from lg up. Both
+       * keep the table visible; neither is a modal.
+       */
+      className={[
+        'bg-paper p-16 flex flex-col gap-16 overflow-y-auto',
+        'fixed inset-x-0 bottom-0 z-20 max-h-[70vh] border-t border-rule',
+        'lg:static lg:z-auto lg:max-h-none lg:w-[360px] lg:shrink-0 lg:sticky lg:top-16',
+        'lg:rounded lg:border lg:border-rule',
+      ].join(' ')}
     >
       <div className="flex items-start justify-between gap-16">
         <div>
