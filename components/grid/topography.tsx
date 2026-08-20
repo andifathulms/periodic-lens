@@ -39,7 +39,7 @@ export function Topography({
   return (
     <div className="overflow-x-auto">
       <div
-        role="group"
+        role="grid"
         aria-label={`${t(locale, `lens.${lens}`)} — topography`}
         className="relative"
         style={{
@@ -57,6 +57,7 @@ export function Topography({
               key={element.z}
               type="button"
               data-z={element.z}
+              role="gridcell"
               aria-selected={selected === element.z}
               onClick={() => onSelect(element.z)}
               aria-label={`${element.z} ${element.symbol} ${

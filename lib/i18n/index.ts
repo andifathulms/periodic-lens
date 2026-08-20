@@ -26,6 +26,16 @@ const en: Dictionary = {
   'nav.method': 'Method',
   'lens.label': 'Lens',
   'layout.label': 'Layout',
+  'view.label': 'View',
+  'view.grid': 'Grid',
+  'view.topography': 'Topography',
+  'view.timeline': 'Timeline',
+  'view.topographyUnavailable':
+    'Topography needs a continuous lens — height cannot order categories.',
+  'view.topographyNote':
+    'The same lens as height as well as colour. Unknown values are drawn as a dashed void spanning the whole range, because a cell resting on the baseline would read as the smallest value.',
+  'view.timelineNote':
+    'The same 118 elements along one axis, coloured by the active lens. Elements with no recorded year are held off the axis in their own group.',
   'lens.category': 'Category',
   'lens.block': 'Block',
   'lens.origin': 'Origin',
@@ -88,6 +98,16 @@ const id: Dictionary = {
   'nav.method': 'Metode',
   'lens.label': 'Lensa',
   'layout.label': 'Tata letak',
+  'view.label': 'Tampilan',
+  'view.grid': 'Kisi',
+  'view.topography': 'Topografi',
+  'view.timeline': 'Lini masa',
+  'view.topographyUnavailable':
+    'Topografi memerlukan lensa kontinu — tinggi tidak dapat mengurutkan kategori.',
+  'view.topographyNote':
+    'Lensa yang sama sebagai tinggi sekaligus warna. Nilai yang tidak diketahui digambar sebagai rongga putus-putus setinggi seluruh rentang, karena sel yang rata di garis dasar akan terbaca sebagai nilai terkecil.',
+  'view.timelineNote':
+    'Ke-118 unsur yang sama pada satu sumbu, diwarnai oleh lensa aktif. Unsur tanpa tahun tercatat ditahan di luar sumbu dalam kelompok tersendiri.',
   'lens.category': 'Kategori',
   'lens.block': 'Blok',
   'lens.origin': 'Asal-usul',

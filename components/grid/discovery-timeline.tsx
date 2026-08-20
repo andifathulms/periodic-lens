@@ -39,7 +39,8 @@ export function DiscoveryTimeline({
         key={z}
         type="button"
         data-z={z}
-        aria-selected={selected === z}
+        /* Not a grid, so selection is expressed as a pressed toggle. */
+        aria-pressed={selected === z}
         onClick={() => onSelect(z)}
         aria-label={`${element.z} ${element.symbol} ${
           locale === 'id' ? element.nameId : element.name
