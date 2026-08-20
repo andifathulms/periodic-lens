@@ -52,6 +52,29 @@ export function predict(z: number): Subshell[] {
   return out
 }
 
+/**
+ * The subshell the rule fills at Z, and how far into it Z sits.
+ *
+ * This is the differentiating electron, and it is where the table's SHAPE
+ * comes from: s two wide, p six, d ten, f fourteen. layout.ts builds every
+ * position from it, so the grid is not a picture of the table — it is the
+ * filling order drawn out. PRD.md §5.
+ *
+ * Note this uses the RULE, not the published configuration. Chromium's
+ * published 3d5 4s1 does not move chromium out of the d-block.
+ */
+export function differentiating(z: number): { n: number; l: Block; index: number } {
+  const filled = predict(z)
+  const last = filled[filled.length - 1]
+  if (!last) throw new Error(`no subshell for Z=${z}`)
+  return { n: last.n, l: last.l, index: last.electrons }
+}
+
+/** s, p, d or f, from the rule. */
+export function blockOf(z: number): Block {
+  return differentiating(z).l
+}
+
 /** Sort into shell order for notation: by n, then by l. */
 export function inShellOrder(subshells: readonly Subshell[]): Subshell[] {
   return [...subshells].sort((a, b) =>
