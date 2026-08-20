@@ -1,0 +1,142 @@
+# Element properties. "?" means NOT KNOWN and is never rendered as zero or as a
+# ramp position (PRD.md §9, DESIGN.md §4).
+#
+# mass         standard atomic weight, or the mass number of the most stable
+#              known isotope for elements with no stable nuclide.
+#              Source: IUPAC Commission on Isotopic Abundances and Atomic
+#              Weights, "Atomic weights of the elements 2021" (2022).
+# category     eight-value taxonomy, DESIGN.md §4 / invariant 7.
+# origin       dominant nucleosynthetic source, simplified to seven values.
+#              Source: Johnson, J. A., Science 363, 474 (2019).
+# discovery    year first isolated or identified. "?" for elements in use since
+#              antiquity, which have no recorded year — see the method page.
+#              Source: IUPAC element discovery records; Emsley, Nature's
+#              Building Blocks (2011).
+# en           Pauling electronegativity. Source: CRC Handbook, 104th ed.
+# radius       empirical atomic radius, pm. Source: Slater, J. Chem. Phys. 41,
+#              3199 (1964); CRC Handbook, 104th ed.
+# ie           first ionisation energy, kJ/mol. Source: NIST Atomic Spectra
+#              Database, Ionization Energies Data.
+# melt         melting point at standard pressure, K. Source: CRC Handbook.
+# density      density at 298 K, g/cm3 (gases at 273 K, 101.325 kPa).
+#              Source: CRC Handbook, 104th ed.
+#
+# z	symbol	name_en	name_id	mass	category	origin	discovery	en	radius	ie	melt	density
+1	H	Hydrogen	Hidrogen	1.008	reactive-nonmetal	big-bang	1766	2.20	25	1312.0	13.99	0.00008988
+2	He	Helium	Helium	4.0026	noble-gas	big-bang	1868	?	31	2372.3	0.95	0.0001785
+3	Li	Lithium	Litium	6.94	alkali-metal	big-bang	1817	0.98	145	520.2	453.65	0.534
+4	Be	Beryllium	Berilium	9.0122	alkaline-earth-metal	cosmic-ray-fission	1798	1.57	105	899.5	1560	1.85
+5	B	Boron	Boron	10.81	metalloid	cosmic-ray-fission	1808	2.04	85	800.6	2349	2.34
+6	C	Carbon	Karbon	12.011	reactive-nonmetal	dying-low-mass-stars	?	2.55	70	1086.5	3823	2.267
+7	N	Nitrogen	Nitrogen	14.007	reactive-nonmetal	dying-low-mass-stars	1772	3.04	65	1402.3	63.15	0.0012506
+8	O	Oxygen	Oksigen	15.999	reactive-nonmetal	exploding-massive-stars	1774	3.44	60	1313.9	54.36	0.001429
+9	F	Fluorine	Fluorin	18.998	reactive-nonmetal	dying-low-mass-stars	1886	3.98	50	1681.0	53.53	0.001696
+10	Ne	Neon	Neon	20.180	noble-gas	exploding-massive-stars	1898	?	38	2080.7	24.56	0.0008999
+11	Na	Sodium	Natrium	22.990	alkali-metal	exploding-massive-stars	1807	0.93	180	495.8	370.94	0.971
+12	Mg	Magnesium	Magnesium	24.305	alkaline-earth-metal	exploding-massive-stars	1755	1.31	150	737.7	923	1.738
+13	Al	Aluminium	Aluminium	26.982	post-transition-metal	exploding-massive-stars	1825	1.61	125	577.5	933.47	2.698
+14	Si	Silicon	Silikon	28.085	metalloid	exploding-massive-stars	1824	1.90	110	786.5	1687	2.3296
+15	P	Phosphorus	Fosforus	30.974	reactive-nonmetal	exploding-massive-stars	1669	2.19	100	1011.8	317.3	1.82
+16	S	Sulfur	Belerang	32.06	reactive-nonmetal	exploding-massive-stars	?	2.58	100	999.6	388.36	2.067
+17	Cl	Chlorine	Klorin	35.45	reactive-nonmetal	exploding-massive-stars	1774	3.16	100	1251.2	171.6	0.003214
+18	Ar	Argon	Argon	39.95	noble-gas	exploding-massive-stars	1894	?	71	1520.6	83.81	0.0017837
+19	K	Potassium	Kalium	39.098	alkali-metal	exploding-massive-stars	1807	0.82	220	418.8	336.53	0.862
+20	Ca	Calcium	Kalsium	40.078	alkaline-earth-metal	exploding-massive-stars	1808	1.00	180	589.8	1115	1.54
+21	Sc	Scandium	Skandium	44.956	transition-metal	exploding-massive-stars	1879	1.36	160	633.1	1814	2.989
+22	Ti	Titanium	Titanium	47.867	transition-metal	exploding-massive-stars	1791	1.54	140	658.8	1941	4.54
+23	V	Vanadium	Vanadium	50.942	transition-metal	exploding-massive-stars	1801	1.63	135	650.9	2183	6.11
+24	Cr	Chromium	Kromium	51.996	transition-metal	exploding-white-dwarfs	1794	1.66	140	652.9	2180	7.15
+25	Mn	Manganese	Mangan	54.938	transition-metal	exploding-white-dwarfs	1774	1.55	140	717.3	1519	7.44
+26	Fe	Iron	Besi	55.845	transition-metal	exploding-white-dwarfs	?	1.83	140	762.5	1811	7.874
+27	Co	Cobalt	Kobalt	58.933	transition-metal	exploding-white-dwarfs	1735	1.88	135	760.4	1768	8.86
+28	Ni	Nickel	Nikel	58.693	transition-metal	exploding-white-dwarfs	1751	1.91	135	737.1	1728	8.912
+29	Cu	Copper	Tembaga	63.546	transition-metal	exploding-massive-stars	?	1.90	135	745.5	1357.77	8.96
+30	Zn	Zinc	Seng	65.38	transition-metal	exploding-massive-stars	1746	1.65	135	906.4	692.68	7.134
+31	Ga	Gallium	Galium	69.723	post-transition-metal	exploding-massive-stars	1875	1.81	130	578.8	302.91	5.907
+32	Ge	Germanium	Germanium	72.630	metalloid	exploding-massive-stars	1886	2.01	125	762.0	1211.4	5.323
+33	As	Arsenic	Arsen	74.922	metalloid	dying-low-mass-stars	1250	2.18	115	947.0	1090	5.776
+34	Se	Selenium	Selenium	78.971	reactive-nonmetal	dying-low-mass-stars	1817	2.55	115	941.0	493	4.809
+35	Br	Bromine	Bromin	79.904	reactive-nonmetal	dying-low-mass-stars	1826	2.96	115	1139.9	265.8	3.122
+36	Kr	Krypton	Kripton	83.798	noble-gas	dying-low-mass-stars	1898	3.00	88	1350.8	115.79	0.003733
+37	Rb	Rubidium	Rubidium	85.468	alkali-metal	dying-low-mass-stars	1861	0.82	235	403.0	312.46	1.532
+38	Sr	Strontium	Stronsium	87.62	alkaline-earth-metal	dying-low-mass-stars	1790	0.95	200	549.5	1050	2.64
+39	Y	Yttrium	Itrium	88.906	transition-metal	dying-low-mass-stars	1794	1.22	180	600.0	1799	4.469
+40	Zr	Zirconium	Zirkonium	91.224	transition-metal	dying-low-mass-stars	1789	1.33	155	640.1	2128	6.506
+41	Nb	Niobium	Niobium	92.906	transition-metal	dying-low-mass-stars	1801	1.60	145	652.1	2750	8.57
+42	Mo	Molybdenum	Molibdenum	95.95	transition-metal	dying-low-mass-stars	1781	2.16	145	684.3	2896	10.22
+43	Tc	Technetium	Teknesium	98	transition-metal	dying-low-mass-stars	1937	1.90	135	702.0	2430	11.5
+44	Ru	Ruthenium	Rutenium	101.07	transition-metal	merging-neutron-stars	1844	2.20	130	710.2	2607	12.37
+45	Rh	Rhodium	Rodium	102.91	transition-metal	merging-neutron-stars	1803	2.28	135	719.7	2237	12.41
+46	Pd	Palladium	Paladium	106.42	transition-metal	merging-neutron-stars	1802	2.20	140	804.4	1828.05	12.02
+47	Ag	Silver	Perak	107.87	transition-metal	merging-neutron-stars	?	1.93	160	731.0	1234.93	10.501
+48	Cd	Cadmium	Kadmium	112.41	transition-metal	dying-low-mass-stars	1817	1.69	155	867.8	594.22	8.69
+49	In	Indium	Indium	114.82	post-transition-metal	dying-low-mass-stars	1863	1.78	155	558.3	429.75	7.31
+50	Sn	Tin	Timah	118.71	post-transition-metal	dying-low-mass-stars	?	1.96	145	708.6	505.08	7.287
+51	Sb	Antimony	Antimon	121.76	metalloid	merging-neutron-stars	?	2.05	145	834.0	903.78	6.685
+52	Te	Tellurium	Telurium	127.60	metalloid	merging-neutron-stars	1782	2.10	140	869.3	722.66	6.232
+53	I	Iodine	Iodin	126.90	reactive-nonmetal	merging-neutron-stars	1811	2.66	140	1008.4	386.85	4.93
+54	Xe	Xenon	Xenon	131.29	noble-gas	merging-neutron-stars	1898	2.60	108	1170.4	161.4	0.005887
+55	Cs	Caesium	Sesium	132.91	alkali-metal	dying-low-mass-stars	1860	0.79	260	375.7	301.59	1.873
+56	Ba	Barium	Barium	137.33	alkaline-earth-metal	dying-low-mass-stars	1808	0.89	215	502.9	1000	3.594
+57	La	Lanthanum	Lantanum	138.91	inner-transition-metal	dying-low-mass-stars	1839	1.10	195	538.1	1193	6.145
+58	Ce	Cerium	Serium	140.12	inner-transition-metal	dying-low-mass-stars	1803	1.12	185	534.4	1068	6.77
+59	Pr	Praseodymium	Praseodimium	140.91	inner-transition-metal	dying-low-mass-stars	1885	1.13	185	527.0	1208	6.773
+60	Nd	Neodymium	Neodimium	144.24	inner-transition-metal	dying-low-mass-stars	1885	1.14	185	533.1	1297	7.007
+61	Pm	Promethium	Prometium	145	inner-transition-metal	merging-neutron-stars	1945	1.13	185	540.0	1315	7.26
+62	Sm	Samarium	Samarium	150.36	inner-transition-metal	merging-neutron-stars	1879	1.17	185	544.5	1345	7.52
+63	Eu	Europium	Europium	151.96	inner-transition-metal	merging-neutron-stars	1901	1.20	185	547.1	1099	5.243
+64	Gd	Gadolinium	Gadolinium	157.25	inner-transition-metal	merging-neutron-stars	1880	1.20	180	593.4	1585	7.895
+65	Tb	Terbium	Terbium	158.93	inner-transition-metal	merging-neutron-stars	1843	1.20	175	565.8	1629	8.229
+66	Dy	Dysprosium	Disprosium	162.50	inner-transition-metal	merging-neutron-stars	1886	1.22	175	573.0	1680	8.55
+67	Ho	Holmium	Holmium	164.93	inner-transition-metal	merging-neutron-stars	1878	1.23	175	581.0	1734	8.795
+68	Er	Erbium	Erbium	167.26	inner-transition-metal	merging-neutron-stars	1843	1.24	175	589.3	1802	9.066
+69	Tm	Thulium	Tulium	168.93	inner-transition-metal	merging-neutron-stars	1879	1.25	175	596.7	1818	9.321
+70	Yb	Ytterbium	Iterbium	173.05	inner-transition-metal	dying-low-mass-stars	1878	1.10	175	603.4	1097	6.965
+71	Lu	Lutetium	Lutesium	174.97	transition-metal	dying-low-mass-stars	1907	1.27	175	523.5	1925	9.84
+72	Hf	Hafnium	Hafnium	178.49	transition-metal	dying-low-mass-stars	1923	1.30	155	658.5	2506	13.31
+73	Ta	Tantalum	Tantalum	180.95	transition-metal	dying-low-mass-stars	1802	1.50	145	761.0	3290	16.654
+74	W	Tungsten	Wolfram	183.84	transition-metal	dying-low-mass-stars	1783	2.36	135	770.0	3695	19.25
+75	Re	Rhenium	Renium	186.21	transition-metal	merging-neutron-stars	1925	1.90	135	760.0	3459	21.02
+76	Os	Osmium	Osmium	190.23	transition-metal	merging-neutron-stars	1803	2.20	130	840.0	3306	22.61
+77	Ir	Iridium	Iridium	192.22	transition-metal	merging-neutron-stars	1803	2.20	135	880.0	2719	22.56
+78	Pt	Platinum	Platina	195.08	transition-metal	merging-neutron-stars	1735	2.28	135	870.0	2041.4	21.46
+79	Au	Gold	Emas	196.97	transition-metal	merging-neutron-stars	?	2.54	135	890.1	1337.33	19.282
+80	Hg	Mercury	Raksa	200.59	transition-metal	dying-low-mass-stars	?	2.00	150	1007.1	234.32	13.5336
+81	Tl	Thallium	Talium	204.38	post-transition-metal	dying-low-mass-stars	1861	1.62	190	589.4	577	11.85
+82	Pb	Lead	Timbal	207.2	post-transition-metal	dying-low-mass-stars	?	2.33	180	715.6	600.61	11.342
+83	Bi	Bismuth	Bismut	208.98	post-transition-metal	dying-low-mass-stars	1400	2.02	160	703.0	544.55	9.807
+84	Po	Polonium	Polonium	209	post-transition-metal	merging-neutron-stars	1898	2.00	190	812.1	527	9.32
+85	At	Astatine	Astatin	210	reactive-nonmetal	merging-neutron-stars	1940	2.20	?	899.0	575	?
+86	Rn	Radon	Radon	222	noble-gas	merging-neutron-stars	1900	2.20	120	1037.0	202	0.00973
+87	Fr	Francium	Fransium	223	alkali-metal	merging-neutron-stars	1939	0.70	?	380.0	300	?
+88	Ra	Radium	Radium	226	alkaline-earth-metal	merging-neutron-stars	1898	0.90	215	509.3	973	5.5
+89	Ac	Actinium	Aktinium	227	inner-transition-metal	merging-neutron-stars	1899	1.10	195	499.0	1323	10.07
+90	Th	Thorium	Torium	232.04	inner-transition-metal	merging-neutron-stars	1829	1.30	180	587.0	2115	11.72
+91	Pa	Protactinium	Protaktinium	231.04	inner-transition-metal	merging-neutron-stars	1913	1.50	180	568.0	1841	15.37
+92	U	Uranium	Uranium	238.03	inner-transition-metal	merging-neutron-stars	1789	1.38	175	597.6	1405.3	18.95
+93	Np	Neptunium	Neptunium	237	inner-transition-metal	human-made	1940	1.36	175	604.5	917	20.45
+94	Pu	Plutonium	Plutonium	244	inner-transition-metal	human-made	1940	1.28	175	584.7	912.5	19.84
+95	Am	Americium	Amerisium	243	inner-transition-metal	human-made	1944	1.13	175	578.0	1449	13.69
+96	Cm	Curium	Kurium	247	inner-transition-metal	human-made	1944	1.28	?	581.0	1613	13.51
+97	Bk	Berkelium	Berkelium	247	inner-transition-metal	human-made	1949	1.30	?	601.0	1259	14.79
+98	Cf	Californium	Kalifornium	251	inner-transition-metal	human-made	1950	1.30	?	608.0	1173	15.1
+99	Es	Einsteinium	Einsteinium	252	inner-transition-metal	human-made	1952	1.30	?	619.0	1133	8.84
+100	Fm	Fermium	Fermium	257	inner-transition-metal	human-made	1952	1.30	?	627.0	?	?
+101	Md	Mendelevium	Mendelevium	258	inner-transition-metal	human-made	1955	1.30	?	635.0	?	?
+102	No	Nobelium	Nobelium	259	inner-transition-metal	human-made	1966	1.30	?	642.0	?	?
+103	Lr	Lawrencium	Lawrensium	266	transition-metal	human-made	1961	1.30	?	478.6	?	?
+104	Rf	Rutherfordium	Ruterfordium	267	transition-metal	human-made	1964	?	?	?	?	?
+105	Db	Dubnium	Dubnium	268	transition-metal	human-made	1970	?	?	?	?	?
+106	Sg	Seaborgium	Seaborgium	269	transition-metal	human-made	1974	?	?	?	?	?
+107	Bh	Bohrium	Bohrium	270	transition-metal	human-made	1981	?	?	?	?	?
+108	Hs	Hassium	Hasium	269	transition-metal	human-made	1984	?	?	?	?	?
+109	Mt	Meitnerium	Meitnerium	278	transition-metal	human-made	1982	?	?	?	?	?
+110	Ds	Darmstadtium	Darmstadtium	281	transition-metal	human-made	1994	?	?	?	?	?
+111	Rg	Roentgenium	Roentgenium	282	transition-metal	human-made	1994	?	?	?	?	?
+112	Cn	Copernicium	Kopernisium	285	transition-metal	human-made	1996	?	?	?	?	?
+113	Nh	Nihonium	Nihonium	286	post-transition-metal	human-made	2004	?	?	?	?	?
+114	Fl	Flerovium	Flerovium	289	post-transition-metal	human-made	1999	?	?	?	?	?
+115	Mc	Moscovium	Moskovium	290	post-transition-metal	human-made	2003	?	?	?	?	?
+116	Lv	Livermorium	Livermorium	293	post-transition-metal	human-made	2000	?	?	?	?	?
+117	Ts	Tennessine	Tenesin	294	reactive-nonmetal	human-made	2010	?	?	?	?	?
+118	Og	Oganesson	Oganeson	294	noble-gas	human-made	2002	?	?	?	?	?

@@ -1,0 +1,29 @@
+# Indonesian share of world production, by element.
+#
+# Source: U.S. Geological Survey, Mineral Commodity Summaries 2024 (January
+# 2024). A work of the United States Government, and therefore in the public
+# domain. Figures are USGS estimates for 2023.
+#
+# share is Indonesia's output divided by world total, as reported. stage is
+# where in the chain the figure is measured (invariant 10) — mined ore or
+# refined metal. commodity is the commodity USGS reports, which is not always
+# the element itself: aluminium is reported here as bauxite ore.
+#
+# Invariant 9: producing nothing and producing a little are different facts.
+# Elements USGS tracks as commodities but reports no Indonesian output for are
+# listed in tracked.tsv and render as "not produced", not as the bottom of the
+# ramp. Elements USGS does not track at all have no production data and render
+# as unknown.
+#
+# Invariant 11: this file states production share. It carries no commentary on
+# mining policy, downstream processing, or environmental impact, in either
+# direction.
+#
+# z	symbol	commodity	share	stage	edition	dataYear
+28	Ni	Nickel	0.500	mined	2024	2023
+50	Sn	Tin	0.179	mined	2024	2023
+27	Co	Cobalt	0.074	mined	2024	2023
+13	Al	Bauxite	0.053	mined	2024	2023
+29	Cu	Copper	0.038	mined	2024	2023
+79	Au	Gold	0.037	mined	2024	2023
+47	Ag	Silver	0.009	mined	2024	2023
