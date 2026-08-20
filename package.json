@@ -1,0 +1,40 @@
+{
+  "name": "periodic-lens",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "dev": "next dev",
+    "build": "pnpm data:validate && next build",
+    "preview": "node scripts/preview.mjs",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:config": "vitest run tests/config",
+    "test:aufbau": "vitest run tests/aufbau",
+    "test:structure": "vitest run tests/structure",
+    "test:lens": "vitest run tests/lens",
+    "data:build": "tsx scripts/data-build.ts",
+    "data:validate": "tsx scripts/data-validate.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.15",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.13",
+    "tsx": "4.19.1",
+    "typescript": "5.5.4",
+    "vitest": "2.1.2"
+  }
+}
