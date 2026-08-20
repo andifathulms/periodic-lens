@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { Counterfactual } from '@/components/build/counterfactual'
 import { OrbitalBuild } from '@/components/build/orbital-build'
 import { WorkedExample } from '@/components/build/worked-example'
 import {
@@ -43,6 +44,11 @@ export default function BuildPage({ params }: { params: { locale: string } }) {
       </section>
 
       <OrbitalBuild locale={locale} />
+
+      {/* The claim, made testable rather than asserted. */}
+      <section className="max-w-[1440px]">
+        <Counterfactual locale={locale} />
+      </section>
 
       <section className="max-w-[70ch]">
         <h2 className="font-display text-title font-semibold mb-12">

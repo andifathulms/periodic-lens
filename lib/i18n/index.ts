@@ -151,6 +151,17 @@ const en: Dictionary = {
   'worked.note3': 'Shell 1 is finished, so the next electron starts shell 2 — and a new row.',
   'worked.closing':
     'All 118 are placed this way. Nothing below is drawn by hand: every position in the table on this page comes out of that rule and the capacities 2, 6, 10 and 14.',
+  'what.heading': 'What if the order were different?',
+  'what.intro':
+    'The claim on this page is that the shape follows from the filling order. That is worth testing rather than taking on trust, so here is the other ordering — the one most people assume before they meet the rule: finish shell 1, then shell 2, then shell 3, in order. Switch between them and watch the row lengths.',
+  'what.label': 'Fill by',
+  'what.madelung': 'n + ℓ (the real rule)',
+  'what.strict-n': 'strict shell order',
+  'what.rows': 'Row lengths',
+  'what.realNote':
+    '2, 8, 8, 18, 18, 32, 32 — the row lengths of the actual periodic table. Nothing here is drawn from a picture of the table; these numbers fall out of the ordering above and the capacities 2, 6, 10 and 14.',
+  'what.hypotheticalNote':
+    'A different table. Filling shell by shell puts 3d before 4s, so the transition metals move up a row and the third period becomes eighteen elements long instead of eight — there would be no short second and third rows at all. This is a hypothetical: it is not what atoms do, and nothing else on this site is built from it. It is here because the difference between these two lists is the entire reason the rule matters.',
   'rule.heading': 'The rule, in full',
   'rule.statement':
     'Electrons fill subshells in order of n + ℓ, lowest first; where two subshells tie, the one with the lower n fills first. n is the shell number and ℓ is 0 for s, 1 for p, 2 for d, 3 for f. That is the entire rule — every sum below is worked out from it, and the order of the table follows.',
@@ -298,6 +309,17 @@ const id: Dictionary = {
   'worked.note3': 'Kulit 1 selesai, sehingga elektron berikutnya memulai kulit 2 — dan baris baru.',
   'worked.closing':
     'Ke-118 unsur ditempatkan dengan cara ini. Tidak ada yang digambar manual: setiap posisi dalam tabel di halaman ini keluar dari aturan itu dan kapasitas 2, 6, 10 dan 14.',
+  'what.heading': 'Bagaimana jika urutannya berbeda?',
+  'what.intro':
+    'Klaim di halaman ini adalah bahwa bentuk tabel mengikuti urutan pengisian. Itu layak diuji, bukan sekadar dipercaya, jadi inilah urutan yang lain — yang biasanya diandaikan orang sebelum mengenal aturannya: selesaikan kulit 1, lalu kulit 2, lalu kulit 3, berurutan. Bergantilah di antara keduanya dan perhatikan panjang barisnya.',
+  'what.label': 'Isi menurut',
+  'what.madelung': 'n + ℓ (aturan sebenarnya)',
+  'what.strict-n': 'urutan kulit ketat',
+  'what.rows': 'Panjang baris',
+  'what.realNote':
+    '2, 8, 8, 18, 18, 32, 32 — panjang baris tabel periodik yang sebenarnya. Tidak ada yang disalin dari gambar tabel; angka-angka ini keluar dari urutan di atas dan kapasitas 2, 6, 10 dan 14.',
+  'what.hypotheticalNote':
+    'Tabel yang berbeda. Mengisi kulit demi kulit menempatkan 3d sebelum 4s, sehingga logam transisi naik satu baris dan periode ketiga menjadi delapan belas unsur, bukan delapan — tidak akan ada baris kedua dan ketiga yang pendek sama sekali. Ini hipotesis: bukan perilaku atom yang sebenarnya, dan tidak ada bagian lain situs ini yang dibangun darinya. Ia ada di sini karena perbedaan antara kedua daftar itulah seluruh alasan aturan tersebut penting.',
   'rule.heading': 'Aturannya, selengkapnya',
   'rule.statement':
     'Elektron mengisi subkulit menurut urutan n + ℓ, terkecil lebih dahulu; bila dua subkulit bernilai sama, yang ber-n lebih kecil mengisi lebih dahulu. n adalah nomor kulit dan ℓ bernilai 0 untuk s, 1 untuk p, 2 untuk d, 3 untuk f. Itulah keseluruhan aturannya — setiap penjumlahan di bawah dihitung darinya, dan urutan tabel mengikutinya.',

@@ -6,7 +6,8 @@
  * were wrong, oxygen would not land in group 16.
  */
 import { describe, expect, it } from 'vitest'
-import { blockOf } from '@/lib/elements/aufbau'
+import { FILLING_ORDER, blockOf } from '@/lib/elements/aufbau'
+import { ordering, periodLengths } from '@/lib/elements/counterfactual'
 import { ELEMENTS, elementAt } from '@/lib/elements/data'
 import {
   ALL_Z,
@@ -118,5 +119,29 @@ describe('layout completeness — invariant 5', () => {
       if (blockOf(z) !== 's' || z === HELIUM_POSITION_EXCEPTION) continue
       expect(position('left-step', z).x, `Z=${z}`).toBeGreaterThanOrEqual(30)
     }
+  })
+})
+
+/**
+ * The counterfactual on the build page. It exists to let a reader change the
+ * filling rule and watch the row lengths change — which is only honest if,
+ * set back to the real rule, it reproduces the real table.
+ *
+ * It is also asserted to touch nothing: layout and configuration come from
+ * aufbau.ts, and this module is display-only.
+ */
+describe('the filling-order counterfactual', () => {
+  it('reproduces the real period lengths when set to the real rule', () => {
+    expect(periodLengths('madelung')).toEqual([2, 8, 8, 18, 18, 32, 32])
+  })
+
+  it('produces a different table under strict shell order', () => {
+    expect(periodLengths('strict-n')).not.toEqual(periodLengths('madelung'))
+  })
+
+  it('agrees with aufbau.ts about the real ordering, subshell for subshell', () => {
+    const real = FILLING_ORDER.map((s) => `${s.n}${s.l}`)
+    const mirrored = ordering('madelung').map((s) => `${s.n}${s.l}`)
+    expect(mirrored.slice(0, real.length)).toEqual(real)
   })
 })
