@@ -15,7 +15,15 @@ export default function LocaleLayout({
 }) {
   if (!isLocale(params.locale)) notFound()
   return (
-    <div className="min-h-screen flex flex-col">
+    /*
+     * lang on the localised subtree. The root layout owns <html> and cannot
+     * see params.locale, so every /id/ page shipped lang="en" and Indonesian
+     * prose was read aloud by an English synthesiser (WCAG 3.1.1). Assistive
+     * tech honours lang on any ancestor, and scoping it here is also more
+     * truthful than the document default: element names and chemical terms
+     * stay international in both locales.
+     */
+    <div lang={params.locale} className="min-h-screen flex flex-col">
       {/*
        * Five nav links, two locale links and seventeen controls stand between
        * the top of the document and the first cell. Visible only on focus, so
