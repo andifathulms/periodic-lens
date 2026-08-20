@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { AUFBAU_EXCEPTIONS } from '@/lib/elements/aufbau'
 import { ELEMENTS, GENERATED_FROM, LICENCE_LINES, USGS_EDITION } from '@/lib/elements/data'
 import { LENS_IDS } from '@/lib/elements/lens'
+import { VIEW_IDS } from '@/lib/elements/view'
 import { SOURCES } from '@/lib/elements/sources'
 import { isLocale, t } from '@/lib/i18n'
 
@@ -27,6 +28,10 @@ const COPY = {
       'Group 3 contains scandium, yttrium, lutetium and lawrencium, and the f-block runs 57–70 and 89–102. This follows the IUPAC provisional recommendation and keeps the block widths exactly 2, 6, 10 and 14. Helium is s-block and sits with the noble gases; that is the one position in the table that contradicts its configuration, and it is a chemical convention rather than an error.',
     origin:
       'Nucleosynthetic origin is the dominant source, simplified to seven categories. Most elements have more than one production channel, and a single colour cannot say so — the lens names its own limit in the legend.',
+    views:
+      'The table has three views and one of them is showing at a time. The grid colours the cells by the active lens. Topography renders the same lens as height as well as colour, so periodicity reads as waves across the periods rather than as a claim in a caption — it is offered only for continuous lenses, because height cannot order categories without inventing a ranking. The timeline puts the same 118 elements on one axis by year of discovery, still coloured by whichever lens is active.',
+    spectra:
+      'Emission spectra are not in this version. The NIST Atomic Spectra Database is a US Government work and would licence cleanly, but per-element line data is a substantially larger dataset than anything here and it has not been sourced or verified yet.',
     lenses:
       'Exactly one lens is active at any time. Colour is a channel that is swapped, never decoration that accumulates: 118 cells carrying several encodings at once is unreadable, and that is the failure mode this project is built to avoid.',
     ptable:
@@ -45,6 +50,10 @@ const COPY = {
       'Golongan 3 memuat skandium, itrium, lutesium dan lawrensium, dan blok f mencakup 57–70 serta 89–102. Ini mengikuti rekomendasi sementara IUPAC dan menjaga lebar blok tepat 2, 6, 10 dan 14. Helium berada di blok s namun ditempatkan bersama gas mulia.',
     origin:
       'Asal-usul nukleosintesis adalah sumber dominan, disederhanakan menjadi tujuh kategori. Sebagian besar unsur memiliki lebih dari satu jalur pembentukan, dan satu warna tidak dapat menyatakannya.',
+    views:
+      'Tabel memiliki tiga tampilan dan satu di antaranya aktif setiap saat. Kisi mewarnai sel menurut lensa aktif. Topografi menampilkan lensa yang sama sebagai tinggi sekaligus warna, sehingga keberkalaan terbaca sebagai gelombang — hanya tersedia untuk lensa kontinu, karena tinggi tidak dapat mengurutkan kategori. Lini masa menempatkan ke-118 unsur pada satu sumbu menurut tahun penemuan.',
+    spectra:
+      'Spektrum emisi belum ada di versi ini. NIST Atomic Spectra Database adalah karya Pemerintah AS dan lisensinya bersih, tetapi data garis spektrum per unsur jauh lebih besar daripada data mana pun di sini dan belum diperoleh maupun diverifikasi.',
     lenses:
       'Tepat satu lensa aktif setiap saat. Warna adalah kanal yang ditukar, bukan dekorasi yang menumpuk.',
     ptable:
@@ -143,6 +152,18 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
 
       <section className="flex flex-col gap-12">
         <h2 className="font-display text-22 font-semibold">
+          {locale === 'id' ? 'Tampilan' : 'The views'}
+        </h2>
+        <p className="text-16">{copy.views}</p>
+        <ul className="flex flex-wrap gap-x-16 gap-y-4 font-mono text-14 text-muted">
+          {VIEW_IDS.map((view) => (
+            <li key={view}>{view}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="flex flex-col gap-12">
+        <h2 className="font-display text-22 font-semibold">
           {locale === 'id' ? 'Produksi' : 'Production'}
         </h2>
         <p className="text-16">
@@ -157,6 +178,7 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
           {locale === 'id' ? 'Batasan' : 'Bounds'}
         </h2>
         <p className="text-16">{copy.noSafety}</p>
+        <p className="text-16">{copy.spectra}</p>
         <p className="text-16">{copy.ptable}</p>
         <p className="font-mono text-14 text-muted">https://ptable.com</p>
       </section>

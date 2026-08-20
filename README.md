@@ -35,6 +35,12 @@ pnpm dev
 
 All four suites and `data:validate` gate the build and CI.
 
+## The three views
+
+The grid colours 118 cells by the active lens. **Topography** renders the same lens as height as well as colour, so periodicity reads as waves across the periods — offered only for continuous lenses, because height cannot order categories without inventing a ranking. **Timeline** puts the same elements on one axis by year of discovery, still coloured by the active lens; the metals of antiquity are held off the axis in their own group rather than dated to whichever recorded year happens to be earliest.
+
+One view at a time, for the same reason one lens at a time.
+
 ## How it is put together
 
 `lib/elements` is pure and runs in Node. `aufbau.ts` implements the filling rule and drives the animation; it never supplies a configuration for display. `unknown.ts` is the single definition of a missing value. `lens.ts` turns a value into a scale position, and `layout.ts` turns an atomic number into a position — the standard table, Janet's left-step, and a Benfey-style spiral are three position maps over the same 118 records.
@@ -51,6 +57,8 @@ A property value is `{ type: 'known', value, unit, source } | { type: 'unknown' 
 
 Full licence and citation detail is on the method page.
 
+Emission spectra are not included. The NIST Atomic Spectra Database would licence cleanly, but per-element line data is a substantially larger dataset than anything here and has not been sourced or verified.
+
 ## What it does not do
 
 No molecule builder, reaction predictor or equation balancer. No safety, handling, exposure or first-aid guidance — hazard classification may appear as a cited fact, but guidance is a regulated domain and this is not that tool. No commentary on Indonesian mining policy, downstream processing or environmental impact, in either direction.
@@ -58,5 +66,7 @@ No molecule builder, reaction predictor or equation balancer. No safety, handlin
 For a more comprehensive general reference — isotopes, compounds, spectra — [ptable.com](https://ptable.com) is excellent, free and mature. This project is not trying to replace it.
 
 ## Deployment
+
+Live at **https://andifathulms.github.io/periodic-lens/**.
 
 `main` builds and deploys to GitHub Pages via Actions. `basePath` must match the repository name; `.nojekyll` is written into `out/` by the build. Verify with `pnpm preview` before pushing.
