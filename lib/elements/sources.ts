@@ -44,6 +44,15 @@ export const SOURCES = {
     cite: 'U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain.',
   },
   /*
+   * The ordering rule itself, cited where it is applied rather than in a
+   * footnote block. The app used to say electrons fill "in energy order",
+   * which is the result and not a rule a reader could check.
+   */
+  madelung: {
+    ref: 'madelung-1936',
+    cite: 'The n+ℓ ordering, generally attributed to E. Madelung, Die mathematischen Hilfsmittel des Physikers, 3rd ed. (1936); also known as the Klechkovsky rule.',
+  },
+  /*
    * The one derived figure in the product, and it is derived from absence.
    * Invariant 4 still applies: the count is traceable to a stated rule over a
    * stated field list, and each of those fields carries its own citation where

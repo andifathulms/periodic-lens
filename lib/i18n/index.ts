@@ -121,6 +121,11 @@ const en: Dictionary = {
   'text.sortedBy': 'Sorted by',
   'text.heading': 'The table as text',
   'text.note': 'Always present, never a fallback. Sortable by any column.',
+  'rule.heading': 'The rule, in full',
+  'rule.statement':
+    'Electrons fill subshells in order of n + ℓ, lowest first; where two subshells tie, the one with the lower n fills first. n is the shell number and ℓ is 0 for s, 1 for p, 2 for d, 3 for f. That is the entire rule — every sum below is worked out from it, and the order of the table follows.',
+  'rule.backtrack':
+    'Read along and the surprise is 4s before 3d: 4+0 = 4 and 3+2 = 5, so the fourth shell starts before the third one finishes. That single step is why the transition metals sit where they do, and why period 4 is eighteen elements long instead of eight.',
   'build.title': 'How the table gets its shape',
   'build.play': 'Play',
   'build.pause': 'Pause',
@@ -231,6 +236,11 @@ const id: Dictionary = {
   'text.sortedBy': 'Diurutkan menurut',
   'text.heading': 'Tabel dalam bentuk teks',
   'text.note': 'Selalu tersedia, bukan cadangan. Dapat diurutkan menurut kolom mana pun.',
+  'rule.heading': 'Aturannya, selengkapnya',
+  'rule.statement':
+    'Elektron mengisi subkulit menurut urutan n + ℓ, terkecil lebih dahulu; bila dua subkulit bernilai sama, yang ber-n lebih kecil mengisi lebih dahulu. n adalah nomor kulit dan ℓ bernilai 0 untuk s, 1 untuk p, 2 untuk d, 3 untuk f. Itulah keseluruhan aturannya — setiap penjumlahan di bawah dihitung darinya, dan urutan tabel mengikutinya.',
+  'rule.backtrack':
+    'Susuri urutannya dan kejutannya adalah 4s sebelum 3d: 4+0 = 4 dan 3+2 = 5, sehingga kulit keempat mulai terisi sebelum kulit ketiga selesai. Satu langkah itulah sebabnya logam transisi berada di tempatnya, dan sebabnya periode 4 memuat delapan belas unsur, bukan delapan.',
   'build.title': 'Bagaimana tabel memperoleh bentuknya',
   'build.play': 'Mainkan',
   'build.pause': 'Jeda',

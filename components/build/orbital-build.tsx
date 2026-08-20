@@ -9,6 +9,7 @@ import {
   stepAt,
 } from '@/lib/elements/build'
 import { ELEMENTS } from '@/lib/elements/data'
+import { FillingRule } from '@/components/build/filling-rule'
 import { LensLegend } from '@/components/legend/lens-legend'
 import { tokenFor } from '@/lib/elements/lens'
 import { extent, position } from '@/lib/elements/layout'
@@ -78,6 +79,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
 
   return (
     <div className="flex flex-col gap-16">
+      <FillingRule current={step ? `${step.n}${step.l}` : undefined} locale={locale} />
       <div className="overflow-x-auto">
         <div
           className="relative"

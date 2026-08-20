@@ -15,7 +15,14 @@ export const CAPACITY: Readonly<Record<Block, number>> = {
   f: 14,
 }
 
-const L_INDEX: Readonly<Record<Block, number>> = { s: 0, p: 1, d: 2, f: 3 }
+/**
+ * The azimuthal quantum number ℓ for each subshell type. Exported because it
+ * is half of the rule — the build page shows n + ℓ worked out per subshell,
+ * and it should read the same numbers the ordering uses rather than a copy.
+ */
+export const AZIMUTHAL: Readonly<Record<Block, number>> = { s: 0, p: 1, d: 2, f: 3 }
+
+const L_INDEX = AZIMUTHAL
 
 /**
  * Filling order by increasing n+l, then increasing n (Madelung's rule).
