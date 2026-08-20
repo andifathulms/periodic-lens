@@ -49,9 +49,16 @@ export const ElementCell = forwardRef<HTMLButtonElement, CellProps>(function Ele
     <button
       ref={ref}
       type="button"
-      role="gridcell"
       data-z={element.z}
-      aria-selected={selected}
+      /*
+       * A plain button. It carried role="gridcell", which overrode the native
+       * button role — 118 controls announced as cells, with no hint that they
+       * do anything — inside a role="grid" that owned no rows at all, so the
+       * structure was invalid and no position was ever conveyed. Selection is
+       * a toggle (clicking the open element closes it), so aria-pressed is the
+       * accurate state; aria-selected belongs to grid and listbox children.
+       */
+      aria-pressed={selected}
       aria-label={`${element.z} ${element.symbol} ${name}`}
       onClick={() => onSelect(element.z)}
       style={{ ...background(fill), width: 'var(--cell)', height: 'var(--cell)' }}

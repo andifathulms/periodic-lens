@@ -38,9 +38,11 @@ export function Topography({
 
   return (
     <div className="overflow-x-auto">
-      <div
-        role="grid"
-        aria-label={`${t(locale, `lens.${lens}`)} — topography`}
+      <ul
+        /* Same as the grid: a labelled list of buttons, not a rowless grid.
+           role="list" restores what Tailwind's preflight removes. */
+        role="list"
+        aria-label={`${t(locale, `lens.${lens}`)} — ${t(locale, 'view.topography')}`}
         className="relative"
         style={{
           width: `calc(${box.width} * var(--cell))`,
@@ -53,12 +55,11 @@ export function Topography({
           const paint = fill(lens, element, scale)
           const lift = height.type === 'known' ? height.lift : 0
           return (
+            <li key={element.z}>
             <button
-              key={element.z}
               type="button"
               data-z={element.z}
-              role="gridcell"
-              aria-selected={selected === element.z}
+              aria-pressed={selected === element.z}
               onClick={() => onSelect(element.z)}
               aria-label={`${element.z} ${element.symbol} ${
                 locale === 'id' ? element.nameId : element.name
@@ -136,9 +137,10 @@ export function Topography({
                 </span>
               </span>
             </button>
+            </li>
           )
         })}
-      </div>
+      </ul>
     </div>
   )
 }

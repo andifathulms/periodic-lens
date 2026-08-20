@@ -30,11 +30,11 @@ export function TableGrid({
 }) {
   const scale = domain(lens, ELEMENTS)
   const box = extent(layout)
-  const container = useRef<HTMLDivElement>(null)
+  const container = useRef<HTMLUListElement>(null)
 
   /** Arrow keys walk the grid in grid order (DESIGN.md §9). */
   const onKeyDown = useCallback(
-    (event: React.KeyboardEvent<HTMLDivElement>) => {
+    (event: React.KeyboardEvent<HTMLUListElement>) => {
       const active = document.activeElement as HTMLElement | null
       const z = Number(active?.dataset?.z)
       if (!z) return
@@ -73,9 +73,17 @@ export function TableGrid({
 
   return (
     <div className="overflow-x-auto">
-      <div
+      <ul
         ref={container}
-        role="grid"
+        /*
+         * A labelled list of buttons, which is what this is. It was a
+         * role="grid" whose gridcells were not inside any role="row", so the
+         * required owned structure was missing and readers got no row or
+         * column position from it. role="list" is here only because Tailwind's
+         * preflight sets list-style: none, which makes Safari drop list
+         * semantics — it restores a native role rather than inventing one.
+         */
+        role="list"
         aria-label={t(locale, 'view.gridRegion')}
         onKeyDown={onKeyDown}
         className="relative"
@@ -88,7 +96,7 @@ export function TableGrid({
           const point = position(layout, element.z)
           const paint: Fill = fill(lens, element, scale)
           return (
-            <div
+            <li
               key={element.z}
               className="cell-travel absolute left-0 top-0"
               style={{
@@ -102,10 +110,10 @@ export function TableGrid({
                 selected={selected === element.z}
                 onSelect={onSelect}
               />
-            </div>
+            </li>
           )
         })}
-      </div>
+      </ul>
     </div>
   )
 }
