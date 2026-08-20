@@ -34,7 +34,9 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         >
           {t(locale, 'site.name')}
         </Link>
-        <nav aria-label={t(locale, 'site.name')} className="flex flex-wrap gap-16 text-body">
+        {/* No aria-label: it is the only nav in the document, and naming it
+            after the site announced "Periodic Lens navigation". */}
+        <nav className="flex flex-wrap gap-16 text-body">
           {PAGES.map((page) => {
             const current = page === segment
             return (

@@ -63,7 +63,11 @@ export function ElementPanel({
 
   return (
     <aside
-      aria-label={`${element.symbol} — ${name}`}
+      /*
+       * Labelled by its own heading rather than by a duplicate aria-label:
+       * the region and the h2 announced the same string twice in a row.
+       */
+      aria-labelledby="panel-heading"
       /*
        * DESIGN.md §6 — a bottom sheet on mobile, a side panel from lg up. Both
        * keep the table visible; neither is a modal.
@@ -82,7 +86,7 @@ export function ElementPanel({
            * hang off — the visible identity is the symbol, set in display type
            * rather than heading type, so the heading itself is for the outline.
            */}
-          <h2 className="sr-only">{`${element.symbol} — ${name}`}</h2>
+          <h2 id="panel-heading" className="sr-only">{`${element.symbol} — ${name}`}</h2>
           <p className="font-mono text-micro tabular text-muted">{element.z}</p>
           <p aria-hidden className="font-display text-display font-semibold leading-none">
             {element.symbol}
