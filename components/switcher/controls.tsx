@@ -50,7 +50,9 @@ function Group<T extends string>({
             onClick={() => onChange(option)}
             className={[
               'rounded hairline transition-colors duration-fast ease-house',
-              primary ? 'px-12 py-8 text-body' : 'px-8 py-4 text-micro',
+              /* Tighter below sm: eleven lens options wrapped to four rows on
+                 a phone and pushed the grid off the first screen. */
+              primary ? 'px-8 py-4 text-micro sm:px-12 sm:py-8 sm:text-body' : 'px-8 py-4 text-micro',
               option === value ? 'bg-ink text-paper font-semibold' : 'hover:border-ink',
               disabled ? 'text-muted cursor-not-allowed hover:border-rule' : '',
             ].join(' ')}

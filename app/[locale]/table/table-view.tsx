@@ -81,12 +81,19 @@ export function TableView({
        * instrument — the tagline already existed and shipped nowhere a first
        * visitor would see it.
        */}
-      <header className="flex max-w-[70ch] flex-col gap-8">
-        <h1 className="font-display text-page font-semibold leading-tight">
+      <header className="flex max-w-[70ch] flex-col gap-4 sm:gap-8">
+        {/*
+         * Every step is one size smaller below sm. On a 375px screen the full
+         * desktop stack — heading, tagline, lead, links, seventeen controls,
+         * legend — put the first cell about 560px down, and "the table is the
+         * page" (DESIGN.md §6) stopped being true exactly where it matters
+         * most. Nothing is hidden; it is set tighter.
+         */}
+        <h1 className="font-display text-title sm:text-page font-semibold leading-tight">
           {t(locale, 'site.name')}
         </h1>
-        <p className="text-title">{t(locale, 'site.tagline')}</p>
-        <p className="text-body text-muted">{t(locale, 'site.lead')}</p>
+        <p className="text-lead sm:text-title">{t(locale, 'site.tagline')}</p>
+        <p className="text-micro sm:text-body text-muted">{t(locale, 'site.lead')}</p>
         <p className="mt-4 flex flex-wrap gap-x-24 gap-y-8 text-body">
           <Link
             href={`/${locale}/build`}
@@ -104,7 +111,7 @@ export function TableView({
       </header>
 
       {/* Lens leads; layout and view are adjustments and share a row. */}
-      <div className="mt-24 flex flex-col gap-12 border-t border-rule pt-16">
+      <div className="mt-16 sm:mt-24 flex flex-col gap-8 sm:gap-12 border-t border-rule pt-12 sm:pt-16">
         <LensSwitcher lens={lens} onChange={setLens} locale={locale} />
         <div className="flex flex-wrap items-baseline gap-x-32 gap-y-12">
           <LayoutSwitcher layout={layout} onChange={setLayout} locale={locale} />
