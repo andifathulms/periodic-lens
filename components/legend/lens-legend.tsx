@@ -50,7 +50,18 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
       aria-label={t(locale, 'legend.region')}
       className="flex flex-col gap-12 rounded border border-rule p-12"
     >
-      <p className="flex flex-wrap items-baseline gap-8">
+      {/*
+       * The one status message in the product. Changing lens recolours 118
+       * cells and rewrites this block, and a screen reader user heard only
+       * their own button's state flip — the result of the app's central
+       * interaction was silent (WCAG 4.1.3).
+       *
+       * Only this line is live. The scale endpoints and the unknown note
+       * change with it, and announcing all of them would bury the one fact
+       * that matters. The copy is the legend's own, so there is no second
+       * sentence to keep in step.
+       */}
+      <p className="flex flex-wrap items-baseline gap-8" aria-live="polite">
         <span className="label-eyebrow">{t(locale, 'legend.showing')}</span>
         <span className="font-display text-title font-semibold">
           {t(locale, `lens.${lens}`)}

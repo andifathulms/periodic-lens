@@ -68,6 +68,14 @@ export function ElementTextTable({ lens, locale }: { lens: LensId; locale: Local
     <section className="mt-48">
       <h2 className="font-display text-title font-semibold">{t(locale, 'text.heading')}</h2>
       <p className="text-micro text-muted mt-4">{t(locale, 'text.note')}</p>
+      {/*
+       * aria-sort marks the column for anyone who navigates back to the
+       * header, but nothing spoke at the moment 118 rows reordered (WCAG
+       * 4.1.3). This says which column, once, on change.
+       */}
+      <p aria-live="polite" className="sr-only">
+        {t(locale, 'text.sortedBy')} {headers.find((h) => h.key === sort)?.label}
+      </p>
       <div className="mt-12 overflow-x-auto">
         <table className="w-full text-body border-collapse">
           <thead>
