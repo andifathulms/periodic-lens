@@ -3,6 +3,7 @@
 import {
   BLOCK_COLOURS,
   CATEGORY_COLOURS,
+  NOT_PRODUCED_GLYPH,
   ORIGIN_COLOURS,
   RAMPS,
 } from '@/lib/design/palette'
@@ -47,15 +48,17 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
   return (
     <section
       aria-label="Legend"
-      className="border-t border-rule pt-12 mt-12 flex flex-col gap-12"
+      className="flex flex-col gap-12 rounded border border-rule p-12"
     >
-      <p className="text-16">
-        <span className="text-muted">{t(locale, 'legend.showing')}: </span>
-        <span className="font-semibold">{t(locale, `lens.${lens}`)}</span>
+      <p className="flex flex-wrap items-baseline gap-8">
+        <span className="label-eyebrow">{t(locale, 'legend.showing')}</span>
+        <span className="font-display text-title font-semibold">
+          {t(locale, `lens.${lens}`)}
+        </span>
       </p>
 
       {categorical ? (
-        <ul className="flex flex-wrap gap-x-24 gap-y-8 text-14">
+        <ul className="flex flex-wrap gap-x-24 gap-y-8 text-micro">
           {categorical.map((key) => (
             <li key={key} className="flex items-center gap-8">
               <Swatch token={tokenFor(lens, key)} />
@@ -66,7 +69,7 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
       ) : null}
 
       {kind !== 'categorical' && scale ? (
-        <div className="flex flex-wrap items-center gap-12 text-14">
+        <div className="flex flex-wrap items-center gap-12 text-micro">
           <span className="text-muted">{t(locale, 'legend.scale')}</span>
           <span className="font-mono tabular">{format(scale.min)}</span>
           <span className="flex" aria-hidden>
@@ -84,15 +87,18 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
       ) : null}
 
       {lens === 'production-id' ? (
-        <div className="flex flex-col gap-8 text-14">
+        <div className="flex flex-col gap-8 text-micro">
           <span className="flex items-center gap-8">
             <Swatch token={tokenFor('production-id', 'none')} />
             <span>
-              {t(locale, 'legend.notProduced')} <span className="font-mono">·</span>
+              <span className="font-mono" aria-hidden>
+                {NOT_PRODUCED_GLYPH}
+              </span>{' '}
+              {t(locale, 'legend.notProduced')}
             </span>
           </span>
           {/* Invariant 10 — never an undated production number. */}
-          <p className="font-mono text-14 text-muted">
+          <p className="font-mono text-micro text-muted">
             USGS Mineral Commodity Summaries {USGS_EDITION} ·{' '}
             {stage?.production.type === 'produced'
               ? `${term(locale, stage.production.production.stage)}, ${stage.production.production.dataYear}`
@@ -101,14 +107,38 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
         </div>
       ) : null}
 
-      <div className="flex items-center gap-8 text-14">
-        <Swatch hatch />
-        <span>{t(locale, 'legend.unknown')}</span>
-        <span className="text-muted">
-          — {t(locale, 'legend.cannotShow')}{' '}
-          {lens === 'discovery' ? t(locale, 'ancient.note') : t(locale, 'legend.unknown')}
-        </span>
-      </div>
+      {/*
+       * The unmeasured lens is the one lens where nothing is ever hatched,
+       * because the count of missing properties is itself always known. Saying
+       * that plainly is cheaper than letting a reader wonder whether the hatch
+       * has quietly changed meaning. DESIGN.md §8 — a view states what it
+       * cannot show, and here what it cannot show is an unknown.
+       */}
+      {lens === 'unmeasured' ? (
+        <p className="text-micro text-muted">{t(locale, 'legend.nothingHatched')}</p>
+      ) : (
+        <div className="flex flex-wrap items-center gap-8 text-micro">
+          <Swatch hatch />
+          <span>{t(locale, 'legend.unknown')}</span>
+          <span className="text-muted">
+            —{' '}
+            {lens === 'discovery'
+              ? t(locale, 'ancient.note')
+              : t(locale, 'legend.unknownNote')}
+          </span>
+          {/*
+           * Same appearance, honestly, but not the same reason: on production
+           * the hatch means USGS publishes no commodity covering the element,
+           * not that nobody has measured it. The look is fixed; the words are
+           * allowed to be precise.
+           */}
+          <span className="basis-full text-muted">
+            {lens === 'production-id'
+              ? t(locale, 'legend.unknownReasonProduction')
+              : t(locale, 'legend.unknownReasonProperty')}
+          </span>
+        </div>
+      )}
     </section>
   )
 }

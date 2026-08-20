@@ -75,6 +75,31 @@ export function blockOf(z: number): Block {
   return differentiating(z).l
 }
 
+/**
+ * Why the element sits where it sits, as structured facts rather than prose.
+ *
+ * Every field here comes from the RULE, not from the stored record: the
+ * differentiating electron is what puts an element in its block, and the block
+ * is as wide as the subshell is deep. That is the whole shape argument (PRD.md
+ * §5) narrowed to one cell.
+ *
+ * `conventional` marks the single element whose POSITION contradicts this
+ * derivation: helium is s-block by configuration and sits with the noble gases
+ * by chemical convention. It is not an error in the data and it is asserted in
+ * tests/structure — see the method page.
+ */
+export function positionRationale(z: number): {
+  block: Block
+  n: number
+  l: Block
+  index: number
+  capacity: number
+  conventional: boolean
+} {
+  const { n, l, index } = differentiating(z)
+  return { block: l, n, l, index, capacity: CAPACITY[l], conventional: z === 2 }
+}
+
 /** Sort into shell order for notation: by n, then by l. */
 export function inShellOrder(subshells: readonly Subshell[]): Subshell[] {
   return [...subshells].sort((a, b) =>
@@ -150,6 +175,23 @@ export const AUFBAU_EXCEPTIONS: readonly number[] = [
   96, // Cm  [Rn] 5f7 6d1 7s2
   103, // Lr [Rn] 5f14 7s2 7p1
 ]
+
+/**
+ * The notation the RULE predicts for Z. Invariant 3, read carefully.
+ *
+ * This is not a configuration and must never be displayed as one. It exists so
+ * the twenty documented exceptions can be shown as what they are — a rule and
+ * a measurement disagreeing — instead of as an unsupported claim that they
+ * disagree. Every display site is required to render it beside the published
+ * value, labelled as the prediction, and only for elements in
+ * AUFBAU_EXCEPTIONS, where it is by definition the wrong answer.
+ *
+ * There is deliberately no path from here to element.configuration: displayed
+ * configurations come from data/configurations/published.tsv, always.
+ */
+export function predictedNotation(z: number): string {
+  return format(predict(z))
+}
 
 /** Parse a published notation string into subshells, expanding the core. */
 export function parseNotation(notation: string): Subshell[] {

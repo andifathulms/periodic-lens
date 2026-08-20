@@ -1,12 +1,18 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AUFBAU_EXCEPTIONS } from '@/lib/elements/aufbau'
 import { ELEMENTS, GENERATED_FROM, LICENCE_LINES, USGS_EDITION } from '@/lib/elements/data'
 import { LENS_IDS } from '@/lib/elements/lens'
 import { VIEW_IDS } from '@/lib/elements/view'
 import { SOURCES } from '@/lib/elements/sources'
-import { isLocale, t } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale, pageTitle, t } from '@/lib/i18n'
 
 export { generateStaticParams } from '../layout'
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
+  return { title: pageTitle(locale, 'nav.method') }
+}
 
 /**
  * PRD.md §10.7 — every dataset, version and licence; the USGS edition; the
@@ -76,33 +82,33 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
   return (
     <div className="mx-auto max-w-[900px] px-16 py-24 flex flex-col gap-32">
       <header className="flex flex-col gap-12">
-        <h1 className="font-display text-36 font-semibold">{t(locale, 'nav.method')}</h1>
-        <p className="text-18">{t(locale, 'site.tagline')}</p>
+        <h1 className="font-display text-page font-semibold">{t(locale, 'nav.method')}</h1>
+        <p className="text-lead">{t(locale, 'site.tagline')}</p>
       </header>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Data dan lisensi' : 'Datasets and licences'}
         </h2>
         <dl className="flex flex-col">
           {LICENCE_LINES.map((licence) => (
             <div key={licence.dataset} className="border-b border-rule py-8">
-              <dt className="text-16 font-semibold">{licence.dataset}</dt>
-              <dd className="text-16">{licence.licence}</dd>
-              <dd className="font-mono text-14 text-muted break-all">{licence.url}</dd>
+              <dt className="text-body font-semibold">{licence.dataset}</dt>
+              <dd className="text-body">{licence.licence}</dd>
+              <dd className="font-mono text-micro text-muted break-all">{licence.url}</dd>
             </div>
           ))}
         </dl>
-        <p className="font-mono text-14 text-muted">
+        <p className="font-mono text-micro text-muted">
           {locale === 'id' ? 'Dibangun dari' : 'Built from'}: {GENERATED_FROM.join(', ')}
         </p>
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Sitasi per bidang' : 'Citations, per field'}
         </h2>
-        <ul className="flex flex-col gap-8 font-mono text-14 text-muted">
+        <ul className="flex flex-col gap-8 font-mono text-micro text-muted">
           {Object.values(SOURCES).map((source) => (
             <li key={source.ref} className="border-b border-rule pb-8">
               {source.cite}
@@ -112,12 +118,12 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Tidak diketahui bukan nol' : 'Unknown is not zero'}
         </h2>
-        <p className="text-16">{copy.unknown}</p>
-        <p className="text-16">{copy.ancient}</p>
-        <p className="font-mono text-14 text-muted">
+        <p className="text-body">{copy.unknown}</p>
+        <p className="text-body">{copy.ancient}</p>
+        <p className="font-mono text-micro text-muted">
           {locale === 'id' ? 'Nilai tidak diketahui' : 'Unknown values'}:{' '}
           {unknownCounts.electronegativity} electronegativity · {unknownCounts.density} density ·{' '}
           {unknownCounts.discovery} discovery
@@ -125,37 +131,37 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Aturan aufbau dan pengecualiannya' : 'The aufbau rule and its exceptions'}
         </h2>
-        <p className="text-16">{copy.configurations}</p>
-        <p className="font-mono text-14 text-muted">
+        <p className="text-body">{copy.configurations}</p>
+        <p className="font-mono text-micro text-muted">
           {AUFBAU_EXCEPTIONS.length} {locale === 'id' ? 'pengecualian' : 'exceptions'}:{' '}
           {AUFBAU_EXCEPTIONS.join(', ')}
         </p>
-        <p className="font-mono text-14 text-muted">{SOURCES.nistLevels.cite}</p>
-        <p className="text-16">{copy.blocks}</p>
+        <p className="font-mono text-micro text-muted">{SOURCES.nistLevels.cite}</p>
+        <p className="text-body">{copy.blocks}</p>
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Lensa' : 'The lenses'}
         </h2>
-        <p className="text-16">{copy.lenses}</p>
-        <ul className="flex flex-wrap gap-x-16 gap-y-4 font-mono text-14 text-muted">
+        <p className="text-body">{copy.lenses}</p>
+        <ul className="flex flex-wrap gap-x-16 gap-y-4 font-mono text-micro text-muted">
           {LENS_IDS.map((lens) => (
             <li key={lens}>{lens}</li>
           ))}
         </ul>
-        <p className="text-16">{copy.origin}</p>
+        <p className="text-body">{copy.origin}</p>
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Tampilan' : 'The views'}
         </h2>
-        <p className="text-16">{copy.views}</p>
-        <ul className="flex flex-wrap gap-x-16 gap-y-4 font-mono text-14 text-muted">
+        <p className="text-body">{copy.views}</p>
+        <ul className="flex flex-wrap gap-x-16 gap-y-4 font-mono text-micro text-muted">
           {VIEW_IDS.map((view) => (
             <li key={view}>{view}</li>
           ))}
@@ -163,10 +169,10 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Produksi' : 'Production'}
         </h2>
-        <p className="text-16">
+        <p className="text-body">
           {locale === 'id'
             ? `Setiap angka produksi membawa tahun edisi dan tahap pelaporannya. Edisi yang dipakai: USGS Mineral Commodity Summaries ${USGS_EDITION}.`
             : `Every production figure carries its edition year and its reporting stage. The edition in use is USGS Mineral Commodity Summaries ${USGS_EDITION}.`}
@@ -174,13 +180,13 @@ export default function MethodPage({ params }: { params: { locale: string } }) {
       </section>
 
       <section className="flex flex-col gap-12">
-        <h2 className="font-display text-22 font-semibold">
+        <h2 className="font-display text-title font-semibold">
           {locale === 'id' ? 'Batasan' : 'Bounds'}
         </h2>
-        <p className="text-16">{copy.noSafety}</p>
-        <p className="text-16">{copy.spectra}</p>
-        <p className="text-16">{copy.ptable}</p>
-        <p className="font-mono text-14 text-muted">https://ptable.com</p>
+        <p className="text-body">{copy.noSafety}</p>
+        <p className="text-body">{copy.spectra}</p>
+        <p className="text-body">{copy.ptable}</p>
+        <p className="font-mono text-micro text-muted">https://ptable.com</p>
       </section>
     </div>
   )

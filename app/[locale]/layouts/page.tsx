@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { isLocale, t } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale, pageTitle, t } from '@/lib/i18n'
 import { LayoutsView } from './layouts-view'
 
 export { generateStaticParams } from '../layout'
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
+  return { title: pageTitle(locale, 'nav.layouts') }
+}
 
 const COPY = {
   en: {
@@ -38,11 +44,11 @@ export default function LayoutsPage({ params }: { params: { locale: string } }) 
   return (
     <div className="mx-auto max-w-[1440px] px-16 py-24 flex flex-col gap-24">
       <header className="max-w-[70ch] flex flex-col gap-12">
-        <h1 className="font-display text-36 font-semibold">{t(locale, 'nav.layouts')}</h1>
-        <p className="text-18">{copy.intro}</p>
+        <h1 className="font-display text-page font-semibold">{t(locale, 'nav.layouts')}</h1>
+        <p className="text-lead">{copy.intro}</p>
       </header>
       <LayoutsView locale={locale} />
-      <section className="max-w-[70ch] flex flex-col gap-12 text-16">
+      <section className="max-w-[70ch] flex flex-col gap-12 text-body">
         <p>{copy.standard}</p>
         <p>{copy.janet}</p>
         <p>{copy.spiral}</p>

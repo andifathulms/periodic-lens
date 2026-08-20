@@ -10,6 +10,11 @@ import { type Locale, t } from '@/lib/i18n'
  * The atom of the design (DESIGN.md §3). The lens colours the fill; the type
  * never changes. Nothing here decides anything — the fill arrives already
  * resolved by lib/elements/lens.ts.
+ *
+ * Every size and offset below is a token from globals.css, and every glyph is
+ * full --ink. Invariant 8 is a property of the lens palettes — they clear AA
+ * against ink — and it only holds if the cell paints in ink and not in a
+ * fraction of it.
  */
 export type CellProps = {
   element: Element
@@ -56,24 +61,50 @@ export const ElementCell = forwardRef<HTMLButtonElement, CellProps>(function Ele
         selected ? 'ring-2 ring-ink z-10' : '',
       ].join(' ')}
     >
-      <span className="absolute left-[3px] top-[2px] font-mono text-[10px] tabular text-ink/80">
+      <span
+        className="absolute font-mono tabular text-ink"
+        style={{
+          left: 'var(--cell-pad)',
+          top: 'calc(var(--cell-pad) / 2)',
+          fontSize: 'var(--cell-type-z)',
+        }}
+      >
         {element.z}
       </span>
       {fill.type === 'absent' ? (
         <span
           aria-hidden
-          className="absolute right-[4px] top-[1px] font-mono text-[12px] text-muted"
+          className="absolute font-mono text-ink"
+          style={{
+            right: 'var(--cell-pad)',
+            top: 'calc(var(--cell-pad) / 2)',
+            fontSize: 'var(--cell-type-glyph)',
+          }}
         >
           {fill.glyph}
         </span>
       ) : null}
-      <span className="absolute inset-x-0 top-[13px] text-center font-display text-18 font-semibold leading-none">
+      <span
+        className="absolute inset-x-0 text-center font-display font-semibold leading-none"
+        style={{ top: 'var(--cell-symbol-top)', fontSize: 'var(--cell-type-symbol)' }}
+      >
         {element.symbol}
       </span>
-      <span className="absolute inset-x-[2px] top-[32px] text-center text-[8px] leading-tight text-ink/75 truncate">
+      <span
+        className="absolute text-center leading-tight text-ink truncate"
+        style={{
+          left: 'calc(var(--cell-pad) / 2)',
+          right: 'calc(var(--cell-pad) / 2)',
+          top: 'var(--cell-name-top)',
+          fontSize: 'var(--cell-type-name)',
+        }}
+      >
         {name}
       </span>
-      <span className="absolute inset-x-0 bottom-[2px] text-center font-mono text-[8px] tabular text-ink/70">
+      <span
+        className="absolute inset-x-0 text-center font-mono tabular text-ink"
+        style={{ bottom: 'calc(var(--cell-pad) / 2)', fontSize: 'var(--cell-type-mass)' }}
+      >
         {mass}
       </span>
     </button>

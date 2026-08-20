@@ -35,6 +35,17 @@ export const RAMPS = {
   'production-id': [
     '#FFEDEA', '#F7D9D4', '#EFC5BE', '#E6B2A8', '#DC9E93', '#D38B7E', '#C9776A',
   ],
+  /*
+   * Six stops, not seven — one per possible count, so the colour IS the number
+   * of properties nobody has published rather than a position in a range. A
+   * reader can count the legend swatches and land on an integer.
+   *
+   * Deliberately the coolest, least saturated ramp in the set: this lens is
+   * about absence, and it should not compete with the ramps that carry
+   * measurements. It is not grey, because grey at the light end would read as
+   * the unknown hatch.
+   */
+  unmeasured: ['#E4E9F3', '#CFD7E6', '#BAC5D9', '#A5B3CC', '#90A1BF', '#7B8FB2'],
 } as const
 
 /** Invariant 7 — eight values, and not one more. */

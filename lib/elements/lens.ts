@@ -16,6 +16,7 @@ import {
   RAMPS,
 } from '../design/palette'
 import { blockOf } from './aufbau'
+import { SOURCES } from './sources'
 import { isKnown } from './unknown'
 import type { Element, PropertyValue } from './types'
 
@@ -30,6 +31,7 @@ export type LensId =
   | 'melting-point'
   | 'density'
   | 'discovery'
+  | 'unmeasured'
 
 export const LENS_IDS: readonly LensId[] = [
   'category',
@@ -42,6 +44,7 @@ export const LENS_IDS: readonly LensId[] = [
   'melting-point',
   'density',
   'discovery',
+  'unmeasured',
 ]
 
 export type LensKind = 'categorical' | 'continuous' | 'production'
@@ -71,6 +74,21 @@ const LOG_SCALED: readonly LensId[] = ['density', 'production-id']
 
 type Continuous = Extract<LensId, keyof typeof RAMPS>
 
+/**
+ * The properties the unmeasured lens counts over. This list is the lens's
+ * definition, and it is the list named in the citation on SOURCES.unknownCount
+ * — the two must stay in step, which tests/lens asserts.
+ */
+const UNMEASURED_FIELDS: readonly ((e: Element) => PropertyValue<number>)[] = [
+  (e) => e.mass,
+  (e) => e.discovery,
+  (e) => e.electronegativity,
+  (e) => e.atomicRadius,
+  (e) => e.ionisationEnergy,
+  (e) => e.meltingPoint,
+  (e) => e.density,
+]
+
 const CONTINUOUS_READERS: Readonly<
   Record<Continuous, (e: Element) => PropertyValue<number>>
 > = {
@@ -89,6 +107,24 @@ const CONTINUOUS_READERS: Readonly<
           source: e.production.production.source,
         }
       : { type: 'unknown' },
+  /*
+   * The lens that counts absence. Its own value is always known — an element
+   * with five missing properties is a fact, not a gap — which is why this
+   * reader never returns unknown and why nothing is ever hatched on this lens.
+   * The legend has to say so; see the note in the legend component.
+   *
+   * Production is not counted. It is not a property of the element, and USGS
+   * not tracking a commodity is a different kind of absence from nobody having
+   * measured a melting point.
+   */
+  unmeasured: (e) => ({
+    type: 'known',
+    value: UNMEASURED_FIELDS.filter((read) => !isKnown(read(e))).length,
+    /* The denominator is part of the fact: five missing out of seven is a
+     * different statement from five missing out of forty. */
+    unit: `of ${UNMEASURED_FIELDS.length} tracked properties`,
+    source: SOURCES.unknownCount,
+  }),
 }
 
 export type Domain = { readonly min: number; readonly max: number; readonly unit: string }
@@ -136,6 +172,7 @@ export function kindOf(lens: LensId): LensKind {
     case 'melting-point':
     case 'density':
     case 'discovery':
+    case 'unmeasured':
       return 'continuous'
     default: {
       const never: never = lens
@@ -204,7 +241,8 @@ export function fill(lens: LensId, element: Element, d?: Domain): Fill {
     case 'ionisation-energy':
     case 'melting-point':
     case 'density':
-    case 'discovery': {
+    case 'discovery':
+    case 'unmeasured': {
       const value = CONTINUOUS_READERS[lens](element)
       if (!isKnown(value) || !d) return UNKNOWN_FILL
       const index = rampIndex(lens, value.value, d)

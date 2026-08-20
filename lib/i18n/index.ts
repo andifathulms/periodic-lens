@@ -19,6 +19,13 @@ type Dictionary = Record<string, string>
 const en: Dictionary = {
   'site.name': 'Periodic Lens',
   'site.tagline': 'Why the table has that shape — and who digs the elements out of the ground.',
+  'site.lead':
+    'An interactive periodic table built for two things a general reference does not do: it animates where the shape of the table comes from, and it shows Indonesia’s share of world production, element by element.',
+  'site.toBuild': 'Watch the shape get built',
+  'site.toIndonesia': 'See the production figures',
+  'table.hint':
+    'One lens is active at a time. Choosing a lens recolours all 118 cells; choosing a cell opens its detail beside the table.',
+  'panel.empty': 'Select any element for its configuration, its properties and the source behind each one.',
   'nav.table': 'Table',
   'nav.build': 'The build',
   'nav.layouts': 'Layouts',
@@ -46,13 +53,30 @@ const en: Dictionary = {
   'lens.melting-point': 'Melting point',
   'lens.density': 'Density',
   'lens.discovery': 'Discovery',
+  'lens.unmeasured': 'Unknown properties',
+  'legend.nothingHatched':
+    'Nothing is hatched on this lens. The count itself is always known — an element with five missing properties is a fact, not a gap.',
+  'legend.unknownReasonProduction':
+    'no commodity covering this element appears in the USGS edition in use',
+  'legend.unknownReasonProperty': 'no published value exists for this element',
+  'panel.rulePredicts': 'The aufbau rule predicts',
+  'panel.ruleWrong': 'and is wrong here',
+  'panel.whyHere': 'Why it sits here',
+  'panel.differentiating': 'Differentiating electron',
+  'panel.blockWidth': 'Block width',
+  'panel.byConvention':
+    'Position by convention, not by configuration: helium is s-block and sits with the noble gases.',
+  'panel.positionFromRule':
+    'Position follows the filling order, not the published configuration — which is why this differs from the notation above, and why the exception stays in its block.',
+  'build.published': 'Published',
+  'build.predicted': 'Rule predicts',
   'layout.standard': 'Standard',
   'layout.left-step': 'Left-step (Janet)',
   'layout.spiral': 'Spiral (after Benfey)',
   'legend.showing': 'Showing',
   'legend.unknown': 'not known',
   'legend.notProduced': 'not produced',
-  'legend.cannotShow': 'This lens cannot show',
+  'legend.unknownNote': 'hatched on every lens — never a colour, never a position on the scale',
   'legend.scale': 'Scale',
   'panel.close': 'Close',
   'panel.configuration': 'Electron configuration',
@@ -73,6 +97,7 @@ const en: Dictionary = {
   'prop.block': 'Block',
   'prop.group': 'Group',
   'prop.period': 'Period',
+  'text.symbol': 'Symbol',
   'text.heading': 'The table as text',
   'text.note': 'Always present, never a fallback. Sortable by any column.',
   'build.title': 'How the table gets its shape',
@@ -91,6 +116,13 @@ const en: Dictionary = {
 const id: Dictionary = {
   'site.name': 'Periodic Lens',
   'site.tagline': 'Mengapa tabel ini berbentuk demikian — dan siapa yang menambang unsurnya.',
+  'site.lead':
+    'Tabel periodik interaktif yang dibangun untuk dua hal yang tidak dilakukan rujukan umum: menganimasikan asal-usul bentuk tabel, dan menampilkan pangsa produksi dunia milik Indonesia, unsur demi unsur.',
+  'site.toBuild': 'Lihat bentuknya tersusun',
+  'site.toIndonesia': 'Lihat angka produksinya',
+  'table.hint':
+    'Satu lensa aktif setiap saat. Memilih lensa mewarnai ulang ke-118 sel; memilih sel membuka rinciannya di samping tabel.',
+  'panel.empty': 'Pilih unsur mana pun untuk konfigurasi, sifat, dan sumber di balik masing-masingnya.',
   'nav.table': 'Tabel',
   'nav.build': 'Pembentukan',
   'nav.layouts': 'Tata letak',
@@ -118,13 +150,30 @@ const id: Dictionary = {
   'lens.melting-point': 'Titik leleh',
   'lens.density': 'Massa jenis',
   'lens.discovery': 'Penemuan',
+  'lens.unmeasured': 'Sifat tidak diketahui',
+  'legend.nothingHatched':
+    'Tidak ada yang diarsir pada lensa ini. Cacahnya sendiri selalu diketahui — unsur dengan lima sifat yang hilang adalah sebuah fakta, bukan sebuah rongga.',
+  'legend.unknownReasonProduction':
+    'tidak ada komoditas yang mencakup unsur ini dalam edisi USGS yang dipakai',
+  'legend.unknownReasonProperty': 'tidak ada nilai terbitan untuk unsur ini',
+  'panel.rulePredicts': 'Aturan aufbau memprediksi',
+  'panel.ruleWrong': 'dan keliru di sini',
+  'panel.whyHere': 'Mengapa berada di sini',
+  'panel.differentiating': 'Elektron pembeda',
+  'panel.blockWidth': 'Lebar blok',
+  'panel.byConvention':
+    'Posisi menurut konvensi, bukan menurut konfigurasi: helium berada di blok s dan ditempatkan bersama gas mulia.',
+  'panel.positionFromRule':
+    'Posisi mengikuti urutan pengisian, bukan konfigurasi terbitan — karena itu nilai ini berbeda dari notasi di atas, dan pengecualian tetap berada di bloknya.',
+  'build.published': 'Terbitan',
+  'build.predicted': 'Prediksi aturan',
   'layout.standard': 'Standar',
   'layout.left-step': 'Langkah kiri (Janet)',
   'layout.spiral': 'Spiral (mengikuti Benfey)',
   'legend.showing': 'Menampilkan',
   'legend.unknown': 'tidak diketahui',
   'legend.notProduced': 'tidak diproduksi',
-  'legend.cannotShow': 'Lensa ini tidak menampilkan',
+  'legend.unknownNote': 'diarsir pada setiap lensa — bukan warna, bukan posisi pada skala',
   'legend.scale': 'Skala',
   'panel.close': 'Tutup',
   'panel.configuration': 'Konfigurasi elektron',
@@ -145,6 +194,7 @@ const id: Dictionary = {
   'prop.block': 'Blok',
   'prop.group': 'Golongan',
   'prop.period': 'Periode',
+  'text.symbol': 'Lambang',
   'text.heading': 'Tabel dalam bentuk teks',
   'text.note': 'Selalu tersedia, bukan cadangan. Dapat diurutkan menurut kolom mana pun.',
   'build.title': 'Bagaimana tabel memperoleh bentuknya',
@@ -161,6 +211,16 @@ const id: Dictionary = {
 }
 
 const DICTIONARIES: Record<Locale, Dictionary> = { en, id }
+
+/**
+ * Document titles. Every page carried the same <title>, so five open tabs all
+ * read "Periodic Lens". The landing keeps the bare name; every other page
+ * names itself first, because that is the half a narrow tab shows.
+ */
+export function pageTitle(locale: Locale, key?: string): string {
+  const name = t(locale, 'site.name')
+  return key ? `${t(locale, key)} — ${name}` : name
+}
 
 export function t(locale: Locale, key: string): string {
   return DICTIONARIES[locale][key] ?? DICTIONARIES.en[key] ?? key

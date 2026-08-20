@@ -11,7 +11,26 @@
   --dur-lens: 500ms;
   --dur-layout: 600ms;
   --ease-house: cubic-bezier(0.2, 0, 0, 1);
+
+  /*
+   * Cell metrics. DESIGN.md §3 — the cell is the one place in the product
+   * that sits below the 16px type floor, because it is a 52px square holding
+   * four facts. Those sizes are tokens rather than literals so the whole grid
+   * retunes from here; nothing in components/cell hardcodes a pixel.
+   *
+   * Every one of these is painted in FULL --ink. The lens ramps stop where AA
+   * does (5.1:1 at the dark end against ink); fading ink to 70–80% took the
+   * name and the mass down to 3.2–3.9:1, which is invariant 8 failing quietly.
+   */
   --cell: 52px;
+  --cell-pad: 4px;
+  --cell-type-z: 10px;
+  --cell-type-symbol: 18px;
+  --cell-type-name: 9px;
+  --cell-type-mass: 9px;
+  --cell-type-glyph: 12px;
+  --cell-symbol-top: 12px;
+  --cell-name-top: 31px;
 }
 
 @layer base {
@@ -43,6 +62,20 @@
   /* Unknown, in one place, painted from one token. DESIGN.md §4. */
   .fill-unknown {
     background-image: var(--lens-unknown);
+  }
+
+  /*
+   * The label above a group of controls, and above a block of secondary
+   * facts. It has to out-rank the options it names, so it is full --ink and
+   * semibold rather than muted — a muted label reads as less important than
+   * the buttons underneath it, which is backwards.
+   */
+  .label-eyebrow {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
   }
 
   .cell-morph {

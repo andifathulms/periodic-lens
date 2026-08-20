@@ -43,6 +43,17 @@ export const SOURCES = {
     ref: 'usgs-mcs-2024',
     cite: 'U.S. Geological Survey, Mineral Commodity Summaries 2024 (January 2024). Public domain.',
   },
+  /*
+   * The one derived figure in the product, and it is derived from absence.
+   * Invariant 4 still applies: the count is traceable to a stated rule over a
+   * stated field list, and each of those fields carries its own citation where
+   * a value exists. Where one does not, there is nothing to cite — which is
+   * the fact being counted.
+   */
+  unknownCount: {
+    ref: 'derived-unknown-count',
+    cite: 'Derived: the number of the seven tracked properties — atomic weight, discovery year, electronegativity, atomic radius, first ionisation energy, melting point, density — for which no published value exists in the sources listed above.',
+  },
 } as const satisfies Record<string, Source>
 
 export const LICENCES = [

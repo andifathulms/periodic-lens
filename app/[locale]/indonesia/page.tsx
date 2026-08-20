@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ELEMENTS, USGS_EDITION } from '@/lib/elements/data'
-import { isLocale, t, term } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale, pageTitle, t, term } from '@/lib/i18n'
 
 export { generateStaticParams } from '../layout'
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
+  return { title: pageTitle(locale, 'nav.indonesia') }
+}
 
 /**
  * PRD.md §4 and invariant 11.
@@ -58,13 +64,13 @@ export default function IndonesiaPage({ params }: { params: { locale: string } }
   return (
     <div className="mx-auto max-w-[1440px] px-16 py-24 flex flex-col gap-24">
       <header className="max-w-[70ch] flex flex-col gap-12">
-        <h1 className="font-display text-36 font-semibold">{t(locale, 'lens.production-id')}</h1>
-        <p className="text-18">{copy.intro}</p>
+        <h1 className="font-display text-page font-semibold">{t(locale, 'lens.production-id')}</h1>
+        <p className="text-lead">{copy.intro}</p>
       </header>
 
       <section className="max-w-[900px]">
-        <table className="w-full text-16 border-collapse">
-          <caption className="text-left text-14 text-muted pb-8">
+        <table className="w-full text-body border-collapse">
+          <caption className="text-left text-micro text-muted pb-8">
             USGS Mineral Commodity Summaries {USGS_EDITION}
           </caption>
           <thead>
@@ -115,16 +121,16 @@ export default function IndonesiaPage({ params }: { params: { locale: string } }
         </table>
       </section>
 
-      <section className="max-w-[70ch] flex flex-col gap-12 text-16">
+      <section className="max-w-[70ch] flex flex-col gap-12 text-body">
         <p>{copy.reads}</p>
         <p>{copy.stage}</p>
         <p>{copy.absent}</p>
-        <p className="font-mono text-14 text-muted">
+        <p className="font-mono text-micro text-muted">
           {locale === 'id' ? 'Dilacak tanpa produksi Indonesia' : 'Tracked, no Indonesian output'}:{' '}
           {notProduced.length} {locale === 'id' ? 'unsur' : 'elements'}
         </p>
         <p className="text-muted">{copy.bounds}</p>
-        <p className="font-mono text-14 text-muted">
+        <p className="font-mono text-micro text-muted">
           U.S. Geological Survey, Mineral Commodity Summaries {USGS_EDITION}. Public domain.
         </p>
       </section>

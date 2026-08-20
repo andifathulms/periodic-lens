@@ -207,3 +207,80 @@ describe('one lens at a time — invariant 1', () => {
     }
   })
 })
+
+/**
+ * The lens that counts absence. It inverts the usual risk — instead of an
+ * unknown leaking onto a ramp, the danger is the count silently drifting out
+ * of step with the citation that defines it, or the ramp gaining a stop that
+ * no count can reach.
+ */
+describe('the unmeasured lens', () => {
+  const TRACKED = [
+    'mass',
+    'discovery',
+    'electronegativity',
+    'atomicRadius',
+    'ionisationEnergy',
+    'meltingPoint',
+    'density',
+  ] as const
+
+  it('counts exactly the properties its citation names', () => {
+    for (const element of ELEMENTS) {
+      const expected = TRACKED.filter((field) => element[field].type === 'unknown').length
+      const value = textValue('unmeasured', element)
+      expect(isKnown(value) && value.value, element.symbol).toBe(expected)
+    }
+  })
+
+  it('names every tracked field in the citation, so the count is traceable', () => {
+    const value = textValue('unmeasured', ELEMENTS[0]!)
+    expect(isKnown(value)).toBe(true)
+    if (!isKnown(value)) return
+    expect(value.unit).toContain(String(TRACKED.length))
+    for (const phrase of [
+      'atomic weight',
+      'discovery year',
+      'electronegativity',
+      'atomic radius',
+      'ionisation energy',
+      'melting point',
+      'density',
+    ]) {
+      expect(value.source.cite.toLowerCase(), phrase).toContain(phrase)
+    }
+  })
+
+  it('hatches nothing, because the count is always known', () => {
+    const d = domain('unmeasured', ELEMENTS)
+    for (const element of ELEMENTS) {
+      expect(fill('unmeasured', element, d).type, element.symbol).toBe('value')
+    }
+  })
+
+  it('gives one ramp stop per reachable count, so the colour IS the number', () => {
+    const d = domain('unmeasured', ELEMENTS)!
+    expect(d.min).toBe(0)
+    expect(RAMPS.unmeasured.length).toBeGreaterThan(d.max)
+    for (const element of ELEMENTS) {
+      const value = textValue('unmeasured', element)
+      if (!isKnown(value) || typeof value.value !== 'number') throw new Error('unreachable')
+      const painted = fill('unmeasured', element, d)
+      expect(painted.type === 'value' && painted.token, element.symbol).toBe(
+        `--lens-unmeasured-${value.value}`,
+      )
+    }
+  })
+
+  it('excludes production, which is a different kind of absence', () => {
+    // Francium is tracked by nobody for production and has known properties
+    // beyond the two it is missing; if production were counted its number
+    // would be higher than the property count above.
+    const fr = ELEMENTS.find((e) => e.z === 87)!
+    expect(fr.production.type).not.toBe('produced')
+    const value = textValue('unmeasured', fr)
+    expect(isKnown(value) && value.value).toBe(
+      TRACKED.filter((field) => fr[field].type === 'unknown').length,
+    )
+  })
+})

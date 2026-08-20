@@ -58,7 +58,7 @@ export function ElementTextTable({ lens, locale }: { lens: LensId; locale: Local
 
   const headers: { key: Column; label: string }[] = [
     { key: 'z', label: 'Z' },
-    { key: 'symbol', label: 'Symbol' },
+    { key: 'symbol', label: t(locale, 'text.symbol') },
     { key: 'name', label: locale === 'id' ? 'Nama' : 'Name' },
     { key: 'mass', label: locale === 'id' ? 'Massa' : 'Mass' },
     { key: 'lens', label: t(locale, `lens.${lens}`) },
@@ -66,10 +66,10 @@ export function ElementTextTable({ lens, locale }: { lens: LensId; locale: Local
 
   return (
     <section className="mt-48">
-      <h2 className="font-display text-22 font-semibold">{t(locale, 'text.heading')}</h2>
-      <p className="text-14 text-muted mt-4">{t(locale, 'text.note')}</p>
+      <h2 className="font-display text-title font-semibold">{t(locale, 'text.heading')}</h2>
+      <p className="text-micro text-muted mt-4">{t(locale, 'text.note')}</p>
       <div className="mt-12 overflow-x-auto">
-        <table className="w-full text-16 border-collapse">
+        <table className="w-full text-body border-collapse">
           <thead>
             <tr className="border-b border-rule text-left">
               {headers.map((header) => (

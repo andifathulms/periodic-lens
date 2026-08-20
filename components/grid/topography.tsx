@@ -108,10 +108,20 @@ export function Topography({
                     paint.type === 'unknown' ? undefined : `var(${paint.token})`,
                 }}
               >
-                <span className="absolute left-[3px] top-[2px] font-mono text-[10px] tabular text-ink/80">
+                <span
+                  className="absolute font-mono tabular text-ink"
+                  style={{
+                    left: 'var(--cell-pad)',
+                    top: 'calc(var(--cell-pad) / 2)',
+                    fontSize: 'var(--cell-type-z)',
+                  }}
+                >
                   {element.z}
                 </span>
-                <span className="absolute inset-x-0 top-[16px] text-center font-display text-18 font-semibold leading-none">
+                <span
+                  className="absolute inset-x-0 text-center font-display font-semibold leading-none"
+                  style={{ top: 'var(--cell-symbol-top)', fontSize: 'var(--cell-type-symbol)' }}
+                >
                   {element.symbol}
                 </span>
               </span>

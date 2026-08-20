@@ -112,14 +112,32 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
                 >
                   {revealed ? (
                     <>
-                      <span className="absolute left-[3px] top-[2px] font-mono text-[10px] tabular text-ink/80">
+                      <span
+                        className="absolute font-mono tabular text-ink"
+                        style={{
+                          left: 'var(--cell-pad)',
+                          top: 'calc(var(--cell-pad) / 2)',
+                          fontSize: 'var(--cell-type-z)',
+                        }}
+                      >
                         {element.z}
                       </span>
-                      <span className="absolute inset-x-0 top-[16px] text-center font-display text-18 font-semibold leading-none">
+                      <span
+                        className="absolute inset-x-0 text-center font-display font-semibold leading-none"
+                        style={{ top: 'var(--cell-symbol-top)', fontSize: 'var(--cell-type-symbol)' }}
+                      >
                         {element.symbol}
                       </span>
                       {exceptions && anomalous ? (
-                        <span className="absolute inset-x-[2px] bottom-[2px] text-center font-mono text-[8px] text-ink/80 truncate">
+                        <span
+                          className="absolute text-center font-mono text-ink truncate"
+                          style={{
+                            left: 'calc(var(--cell-pad) / 2)',
+                            right: 'calc(var(--cell-pad) / 2)',
+                            bottom: 'calc(var(--cell-pad) / 2)',
+                            fontSize: 'var(--cell-type-name)',
+                          }}
+                        >
                           {element.configuration.notation}
                         </span>
                       ) : null}
@@ -137,7 +155,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
           <button
             type="button"
             onClick={stepForward}
-            className="rounded hairline px-12 py-4 text-16 hover:border-ink"
+            className="rounded hairline px-12 py-4 text-body hover:border-ink"
           >
             {t(locale, 'build.step')}
           </button>
@@ -145,7 +163,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
           <button
             type="button"
             onClick={() => setPlaying((current) => !current)}
-            className="rounded hairline px-12 py-4 text-16 hover:border-ink"
+            className="rounded hairline px-12 py-4 text-body hover:border-ink"
           >
             {playing ? t(locale, 'build.pause') : t(locale, 'build.play')}
           </button>
@@ -156,11 +174,11 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
             setPlaying(false)
             setPlaced(0)
           }}
-          className="rounded hairline px-12 py-4 text-16 hover:border-ink"
+          className="rounded hairline px-12 py-4 text-body hover:border-ink"
         >
           {t(locale, 'build.replay')}
         </button>
-        <label className="flex items-center gap-8 text-16">
+        <label className="flex items-center gap-8 text-body">
           <input
             type="checkbox"
             checked={exceptions}
@@ -185,7 +203,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
         />
       </label>
 
-      <p className="font-mono text-16 tabular">
+      <p className="font-mono text-body tabular">
         {t(locale, 'build.filling')}{' '}
         <span className="font-semibold">
           {step ? `${step.n}${step.l}` : '—'}
@@ -195,7 +213,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
         {step ? ` · ${term(locale, step.l)}` : ''}
       </p>
 
-      {reduced ? <p className="text-14 text-muted">{t(locale, 'build.reduced')}</p> : null}
+      {reduced ? <p className="text-micro text-muted">{t(locale, 'build.reduced')}</p> : null}
     </div>
   )
 }

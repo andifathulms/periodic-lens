@@ -46,7 +46,7 @@ export function DiscoveryTimeline({
           locale === 'id' ? element.nameId : element.name
         }`}
         className={[
-          'cell-morph block rounded hairline text-center font-display text-16 font-semibold',
+          'cell-morph block rounded hairline text-center font-display text-body font-semibold',
           paint.type === 'unknown' ? 'fill-unknown' : '',
           selected === z ? 'ring-2 ring-ink' : '',
         ].join(' ')}
@@ -76,9 +76,16 @@ export function DiscoveryTimeline({
                 style={{ minWidth: '34px' }}
               />
               {decade.decade % 50 === 0 ? (
-                <span className="font-mono text-[10px] tabular text-muted">{decade.decade}</span>
+                <span
+                  className="font-mono tabular text-muted"
+                  style={{ fontSize: 'var(--cell-type-z)' }}
+                >
+                  {decade.decade}
+                </span>
               ) : (
-                <span className="font-mono text-[10px] text-muted">&nbsp;</span>
+                <span className="font-mono text-muted" style={{ fontSize: 'var(--cell-type-z)' }}>
+                  &nbsp;
+                </span>
               )}
             </div>
           ))}
@@ -86,10 +93,10 @@ export function DiscoveryTimeline({
       </div>
 
       <section className="border-t border-rule pt-12">
-        <h3 className="text-16 font-semibold">
+        <h3 className="text-body font-semibold">
           {locale === 'id' ? 'Tanpa tahun tercatat' : 'No recorded year'}
         </h3>
-        <p className="text-14 text-muted mt-4 max-w-[70ch]">{t(locale, 'ancient.note')}</p>
+        <p className="text-micro text-muted mt-4 max-w-[70ch]">{t(locale, 'ancient.note')}</p>
         <div className="mt-12 flex flex-wrap gap-[2px]">
           {line.unrecorded.map((element) => chip(element.z))}
         </div>

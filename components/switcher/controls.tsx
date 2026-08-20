@@ -20,6 +20,7 @@ function Group<T extends string>({
   labelFor,
   disabledFor,
   reasonFor,
+  primary = false,
 }: {
   label: string
   options: readonly T[]
@@ -28,11 +29,13 @@ function Group<T extends string>({
   labelFor: (option: T) => string
   disabledFor?: (option: T) => boolean
   reasonFor?: (option: T) => string | undefined
+  /** The lens is the idea of the product; layout and view are adjustments. */
+  primary?: boolean
 }) {
   return (
     <fieldset className="flex flex-wrap items-baseline gap-8">
       <legend className="sr-only">{label}</legend>
-      <span aria-hidden className="text-14 text-muted mr-4">
+      <span aria-hidden className="label-eyebrow mr-4 self-center">
         {label}
       </span>
       {options.map((option) => {
@@ -46,8 +49,9 @@ function Group<T extends string>({
             title={disabled ? reasonFor?.(option) : undefined}
             onClick={() => onChange(option)}
             className={[
-              'rounded hairline px-12 py-4 text-16 transition-colors duration-fast ease-house',
-              option === value ? 'bg-ink text-paper' : 'hover:border-ink',
+              'rounded hairline transition-colors duration-fast ease-house',
+              primary ? 'px-12 py-8 text-body' : 'px-8 py-4 text-micro',
+              option === value ? 'bg-ink text-paper font-semibold' : 'hover:border-ink',
               disabled ? 'text-muted cursor-not-allowed hover:border-rule' : '',
             ].join(' ')}
           >
@@ -75,6 +79,7 @@ export function LensSwitcher({
       value={lens}
       onChange={onChange}
       labelFor={(id) => t(locale, `lens.${id}`)}
+      primary
     />
   )
 }

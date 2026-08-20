@@ -13,7 +13,9 @@ import {
   FILLING_ORDER,
   blockOf,
   format,
+  positionRationale,
   predict,
+  predictedNotation,
   sameConfiguration,
 } from '@/lib/elements/aufbau'
 import { ELEMENTS, elementAt } from '@/lib/elements/data'
@@ -75,5 +77,61 @@ describe('the aufbau rule', () => {
   it('lists exactly twenty exceptions, in ascending order', () => {
     expect(AUFBAU_EXCEPTIONS).toHaveLength(20)
     expect([...AUFBAU_EXCEPTIONS]).toEqual([...AUFBAU_EXCEPTIONS].sort((a, b) => a - b))
+  })
+})
+
+/**
+ * Invariant 3 at the display boundary. The prediction is allowed on screen
+ * only as the rule's failed answer; these assertions are what stop it drifting
+ * into being used as a configuration.
+ */
+describe('the prediction, where it is shown', () => {
+  it('differs from the published notation for every element it is shown for', () => {
+    for (const z of AUFBAU_EXCEPTIONS) {
+      expect(predictedNotation(z), `Z=${z}`).not.toBe(elementAt(z).configuration.notation)
+    }
+  })
+
+  it('agrees with the published notation everywhere it is NOT shown', () => {
+    for (const element of ELEMENTS) {
+      if (AUFBAU_EXCEPTIONS.includes(element.z)) continue
+      expect(
+        sameConfiguration(
+          predict(element.z),
+          element.configuration.subshells,
+        ),
+        `Z=${element.z} ${element.symbol}`,
+      ).toBe(true)
+    }
+  })
+
+  it('is only ever offered for elements flagged anomalous in the data', () => {
+    for (const element of ELEMENTS) {
+      expect(element.configuration.anomalous, `Z=${element.z}`).toBe(
+        AUFBAU_EXCEPTIONS.includes(element.z),
+      )
+    }
+  })
+})
+
+describe('position rationale — the shape argument, per cell', () => {
+  it('derives a block matching the stored record for all 118', () => {
+    for (const element of ELEMENTS) {
+      expect(positionRationale(element.z).block, element.symbol).toBe(element.block)
+    }
+  })
+
+  it('reports a capacity equal to the block width, for all 118', () => {
+    for (const element of ELEMENTS) {
+      const rationale = positionRationale(element.z)
+      expect(rationale.capacity, element.symbol).toBe(CAPACITY[rationale.block])
+      expect(rationale.index, element.symbol).toBeGreaterThan(0)
+      expect(rationale.index, element.symbol).toBeLessThanOrEqual(rationale.capacity)
+    }
+  })
+
+  it('flags helium, and only helium, as positioned by convention', () => {
+    const flagged = ELEMENTS.filter((e) => positionRationale(e.z).conventional)
+    expect(flagged.map((e) => e.z)).toEqual([2])
   })
 })
