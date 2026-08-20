@@ -69,56 +69,60 @@ export default function IndonesiaPage({ params }: { params: { locale: string } }
       </header>
 
       <section className="max-w-[900px]">
-        <table className="w-full text-body border-collapse">
-          <caption className="text-left text-micro text-muted pb-8">
-            USGS Mineral Commodity Summaries {USGS_EDITION}
-          </caption>
-          <thead>
-            <tr className="border-b border-rule text-left">
-              <th scope="col" className="py-8 pr-16">
-                Z
-              </th>
-              <th scope="col" className="py-8 pr-16">
-                {locale === 'id' ? 'Unsur' : 'Element'}
-              </th>
-              <th scope="col" className="py-8 pr-16">
-                {copy.commodity}
-              </th>
-              <th scope="col" className="py-8 pr-16">
-                {copy.share}
-              </th>
-              <th scope="col" className="py-8 pr-16">
-                {locale === 'id' ? 'Tahap' : 'Stage'}
-              </th>
-              <th scope="col" className="py-8">
-                {locale === 'id' ? 'Tahun data' : 'Data year'}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {produced.map((element) => {
-              if (element.production.type !== 'produced') return null
-              const p = element.production.production
-              return (
-                <tr key={element.z} className="border-b border-rule">
-                  <td className="py-8 pr-16 font-mono tabular">{element.z}</td>
-                  <td className="py-8 pr-16">
-                    <span className="font-display">{element.symbol}</span>{' '}
-                    <span className="text-muted">
-                      {locale === 'id' ? element.nameId : element.name}
-                    </span>
-                  </td>
-                  <td className="py-8 pr-16">{p.commodity}</td>
-                  <td className="py-8 pr-16 font-mono tabular">
-                    {(p.share * 100).toFixed(1)}%
-                  </td>
-                  <td className="py-8 pr-16">{term(locale, p.stage)}</td>
-                  <td className="py-8 font-mono tabular">{p.dataYear}</td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+        {/* The table scrolls, not the page — the same wrapper every other
+            table in the product has. Six columns overflow a phone. */}
+        <div className="overflow-x-auto">
+          <table className="w-full text-body border-collapse">
+            <caption className="text-left text-micro text-muted pb-8">
+              USGS Mineral Commodity Summaries {USGS_EDITION}
+            </caption>
+            <thead>
+              <tr className="border-b border-rule text-left">
+                <th scope="col" className="py-8 pr-16">
+                  Z
+                </th>
+                <th scope="col" className="py-8 pr-16">
+                  {locale === 'id' ? 'Unsur' : 'Element'}
+                </th>
+                <th scope="col" className="py-8 pr-16">
+                  {copy.commodity}
+                </th>
+                <th scope="col" className="py-8 pr-16">
+                  {copy.share}
+                </th>
+                <th scope="col" className="py-8 pr-16">
+                  {locale === 'id' ? 'Tahap' : 'Stage'}
+                </th>
+                <th scope="col" className="py-8">
+                  {locale === 'id' ? 'Tahun data' : 'Data year'}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {produced.map((element) => {
+                if (element.production.type !== 'produced') return null
+                const p = element.production.production
+                return (
+                  <tr key={element.z} className="border-b border-rule">
+                    <td className="py-8 pr-16 font-mono tabular">{element.z}</td>
+                    <td className="py-8 pr-16">
+                      <span className="font-display">{element.symbol}</span>{' '}
+                      <span className="text-muted">
+                        {locale === 'id' ? element.nameId : element.name}
+                      </span>
+                    </td>
+                    <td className="py-8 pr-16">{p.commodity}</td>
+                    <td className="py-8 pr-16 font-mono tabular">
+                      {(p.share * 100).toFixed(1)}%
+                    </td>
+                    <td className="py-8 pr-16">{term(locale, p.stage)}</td>
+                    <td className="py-8 font-mono tabular">{p.dataYear}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section className="max-w-[70ch] flex flex-col gap-12 text-body">
