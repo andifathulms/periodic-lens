@@ -3,6 +3,7 @@
 import { ELEMENTS } from '@/lib/elements/data'
 import { type LensId, domain, fill } from '@/lib/elements/lens'
 import { extent, position } from '@/lib/elements/layout'
+import { useCellKeys } from './use-cell-keys'
 import { MAX_LIFT, elevation } from '@/lib/elements/topography'
 import { type Locale, t } from '@/lib/i18n'
 
@@ -35,10 +36,15 @@ export function Topography({
 }) {
   const scale = domain(lens, ELEMENTS)
   const box = extent('standard')
+  /* Same movement model as the grid: one tab stop in, arrows within. This
+     view placed 118 buttons by coordinate with no arrow keys at all. */
+  const { container, onKeyDown, tabStop } = useCellKeys('standard', selected)
 
   return (
     <div className="overflow-x-auto">
       <ul
+        ref={container}
+        onKeyDown={onKeyDown}
         /* Same as the grid: a labelled list of buttons, not a rowless grid.
            role="list" restores what Tailwind's preflight removes. */
         role="list"
@@ -59,6 +65,7 @@ export function Topography({
             <button
               type="button"
               data-z={element.z}
+              tabIndex={element.z === tabStop ? 0 : -1}
               aria-pressed={selected === element.z}
               onClick={() => onSelect(element.z)}
               aria-label={`${element.z} ${element.symbol} ${

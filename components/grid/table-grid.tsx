@@ -1,10 +1,11 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { ElementCell } from '@/components/cell/element-cell'
 import { ELEMENTS } from '@/lib/elements/data'
 import { type Fill, type LensId, domain, fill } from '@/lib/elements/lens'
 import { type LayoutId, extent, position } from '@/lib/elements/layout'
+import { useCellKeys } from './use-cell-keys'
 import { type Locale, t } from '@/lib/i18n'
 
 /**
@@ -30,50 +31,7 @@ export function TableGrid({
 }) {
   const scale = domain(lens, ELEMENTS)
   const box = extent(layout)
-  const container = useRef<HTMLUListElement>(null)
-
-  /*
-   * The roving tab stop. Hydrogen holds it until the reader moves, and the
-   * selected element takes it whenever there is one, so returning to the grid
-   * by Tab lands where they left off rather than at the beginning.
-   */
-  const [rover, setRover] = useState(1)
-  const tabStop = selected ?? rover
-
-  /** Arrow keys walk the grid in grid order (DESIGN.md §9). */
-  const onKeyDown = useCallback(
-    (event: React.KeyboardEvent<HTMLUListElement>) => {
-      const active = document.activeElement as HTMLElement | null
-      const z = Number(active?.dataset?.z)
-      if (!z) return
-      const here = position(layout, z)
-      const deltas: Record<string, [number, number]> = {
-        ArrowLeft: [-1, 0],
-        ArrowRight: [1, 0],
-        ArrowUp: [0, -1],
-        ArrowDown: [0, 1],
-      }
-      const delta = deltas[event.key]
-      if (!delta) return
-      event.preventDefault()
-      let best: { z: number; distance: number } | undefined
-      for (const element of ELEMENTS) {
-        if (element.z === z) continue
-        const there = position(layout, element.z)
-        const dx = there.x - here.x
-        const dy = there.y - here.y
-        if (dx * delta[0] + dy * delta[1] <= 0) continue
-        const distance = Math.hypot(dx, dy) + Math.abs(dx * delta[1] + dy * delta[0]) * 4
-        if (!best || distance < best.distance) best = { z: element.z, distance }
-      }
-      if (!best) return
-      setRover(best.z)
-      container.current
-        ?.querySelector<HTMLElement>(`[data-z="${best.z}"]`)
-        ?.focus()
-    },
-    [layout],
-  )
+  const { container, onKeyDown, tabStop } = useCellKeys(layout, selected)
 
   useEffect(() => {
     if (selected === undefined) return
