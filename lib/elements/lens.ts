@@ -72,6 +72,22 @@ export function tokenFor(lens: LensId, key: string): string {
 /** Continuous lenses that need a log scale, because their range spans decades. */
 const LOG_SCALED: readonly LensId[] = ['density', 'production-id']
 
+/**
+ * Whether a lens is scaled logarithmically — exported because the legend has
+ * to SAY so. A log ramp drawn between a min and a max looks exactly like a
+ * linear one, so a reader reads the middle swatch as the middle value and is
+ * wrong by an order of magnitude. topography.ts reads this too, so the two
+ * views cannot drift apart about what scale they are drawing.
+ */
+export function isLogScaled(lens: LensId): boolean {
+  return LOG_SCALED.includes(lens)
+}
+
+/** How many steps a continuous lens is quantised into. The legend states it. */
+export function rampStops(lens: LensId): number | undefined {
+  return lens in RAMPS ? RAMPS[lens as Continuous].length : undefined
+}
+
 type Continuous = Extract<LensId, keyof typeof RAMPS>
 
 /**

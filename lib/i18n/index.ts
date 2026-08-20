@@ -92,6 +92,10 @@ const en: Dictionary = {
   'legend.notProduced': 'not produced',
   'legend.unknownNote': 'hatched on every lens — never a colour, never a position on the scale',
   'legend.scale': 'Scale',
+  'legend.logScale':
+    'Logarithmic scale — each step is a multiple, not an addition. The middle of the ramp is not the middle value.',
+  'legend.binned':
+    'colour steps, so this ramp groups values rather than distinguishing all 118. Two elements sharing a colour are close, not equal.',
   'panel.close': 'Close',
   'panel.configuration': 'Electron configuration',
   'panel.anomalous': 'Published configuration departs from the aufbau rule.',
@@ -198,6 +202,10 @@ const id: Dictionary = {
   'legend.notProduced': 'tidak diproduksi',
   'legend.unknownNote': 'diarsir pada setiap lensa — bukan warna, bukan posisi pada skala',
   'legend.scale': 'Skala',
+  'legend.logScale':
+    'Skala logaritmik — setiap langkah adalah kelipatan, bukan penambahan. Bagian tengah skala bukan nilai tengah.',
+  'legend.binned':
+    'langkah warna, sehingga skala ini mengelompokkan nilai alih-alih membedakan ke-118 unsur. Dua unsur berwarna sama berarti berdekatan, bukan sama.',
   'panel.close': 'Tutup',
   'panel.configuration': 'Konfigurasi elektron',
   'panel.anomalous': 'Konfigurasi terbitan menyimpang dari aturan aufbau.',

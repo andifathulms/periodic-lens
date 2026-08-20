@@ -12,7 +12,7 @@
  * a position on the scale.
  */
 import { ELEMENTS } from './data'
-import { type Domain, type LensId, domain, kindOf, textValue } from './lens'
+import { type Domain, type LensId, domain, isLogScaled, kindOf, textValue } from './lens'
 import { isKnown } from './unknown'
 import type { Element } from './types'
 
@@ -23,14 +23,11 @@ export type Elevation =
   | { readonly type: 'known'; readonly lift: number; readonly fraction: number }
   | { readonly type: 'unknown' }
 
-const LOG_SCALED: readonly LensId[] = ['density', 'production-id']
-
 export function elevation(lens: LensId, element: Element, d: Domain | undefined): Elevation {
   if (kindOf(lens) !== 'continuous' || !d) return { type: 'unknown' }
   const value = textValue(lens, element)
   if (!isKnown(value) || typeof value.value !== 'number') return { type: 'unknown' }
-  const scale = (v: number) =>
-    LOG_SCALED.includes(lens) ? Math.log10(Math.max(v, 1e-9)) : v
+  const scale = (v: number) => (isLogScaled(lens) ? Math.log10(Math.max(v, 1e-9)) : v)
   const lo = scale(d.min)
   const hi = scale(d.max)
   const fraction = hi <= lo ? 0 : (scale(value.value) - lo) / (hi - lo)

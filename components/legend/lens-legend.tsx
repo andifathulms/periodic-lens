@@ -8,7 +8,7 @@ import {
   RAMPS,
 } from '@/lib/design/palette'
 import { ELEMENTS, USGS_EDITION } from '@/lib/elements/data'
-import { type LensId, domain, kindOf, tokenFor } from '@/lib/elements/lens'
+import { type LensId, domain, isLogScaled, kindOf, rampStops, tokenFor } from '@/lib/elements/lens'
 import { type Locale, t, term } from '@/lib/i18n'
 
 /**
@@ -44,6 +44,7 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
   const scale = domain(lens, ELEMENTS)
   const categorical = CATEGORICAL_KEYS[lens]
   const stage = ELEMENTS.find((e) => e.production.type === 'produced')
+  const stops = rampStops(lens)
 
   return (
     <section
@@ -94,6 +95,22 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
           </span>
           <span className="font-mono tabular">{format(scale.max)}</span>
           <span className="text-muted">{scale.unit}</span>
+          {/*
+           * What the arithmetic actually is, next to the arithmetic.
+           *
+           * Density and production are scaled with log10, and a log ramp drawn
+           * between a min and a max is visually indistinguishable from a
+           * linear one — a reader takes the middle swatch for the middle value
+           * and is wrong by an order of magnitude. And every continuous lens
+           * rounds into a handful of steps, which is a real simplification:
+           * 118 distinguishable colours would be the unreadable noise this
+           * project exists to avoid. Both are stated rather than left to be
+           * discovered.
+           */}
+          <span className="basis-full text-muted">
+            {isLogScaled(lens) ? `${t(locale, 'legend.logScale')} ` : ''}
+            {stops} {t(locale, 'legend.binned')}
+          </span>
         </div>
       ) : null}
 
