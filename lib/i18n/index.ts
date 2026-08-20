@@ -105,6 +105,8 @@ const en: Dictionary = {
   'legend.unknown': 'not known',
   'legend.notProduced': 'not produced',
   'legend.unknownNote': 'hatched on every lens — never a colour, never a position on the scale',
+  'legend.blockNote':
+    'These four colours are the shape of the table. A block is as wide as its subshell is deep — s holds 2 electrons, p holds 6, d holds 10, f holds 14 — so the blocks are 2, 6, 10 and 14 columns across. Count them. The outline of the table is that and nothing else.',
   'legend.scale': 'Scale',
   'legend.logScale':
     'Logarithmic scale — each step is a multiple, not an addition. The middle of the ramp is not the middle value.',
@@ -263,6 +265,8 @@ const id: Dictionary = {
   'legend.unknown': 'tidak diketahui',
   'legend.notProduced': 'tidak diproduksi',
   'legend.unknownNote': 'diarsir pada setiap lensa — bukan warna, bukan posisi pada skala',
+  'legend.blockNote':
+    'Keempat warna ini adalah bentuk tabelnya. Lebar sebuah blok sama dengan kapasitas subkulitnya — s menampung 2 elektron, p 6, d 10, f 14 — sehingga blok-blok itu selebar 2, 6, 10 dan 14 kolom. Hitunglah. Garis luar tabel hanyalah itu.',
   'legend.scale': 'Skala',
   'legend.logScale':
     'Skala logaritmik — setiap langkah adalah kelipatan, bukan penambahan. Bagian tengah skala bukan nilai tengah.',

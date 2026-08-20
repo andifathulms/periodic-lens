@@ -69,6 +69,20 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
         </span>
       </p>
 
+      {/*
+       * The concept, attached to the lens that shows it, on the page the
+       * reader actually lands on. The block lens IS the shape argument
+       * rendered as colour — four colours whose widths are four capacities —
+       * and it said nothing about that, so the app's whole reason for
+       * existing lived one click away behind a link.
+       *
+       * Only on this lens. A note under every lens is decoration; a note under
+       * the one lens it explains is the explanation next to the thing.
+       */}
+      {lens === 'block' ? (
+        <p className="max-w-[70ch] text-micro">{t(locale, 'legend.blockNote')}</p>
+      ) : null}
+
       {categorical ? (
         <ul className="flex flex-wrap gap-x-24 gap-y-8 text-micro">
           {categorical.map((key) => (
