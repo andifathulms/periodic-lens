@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LOCALES, type Locale, t } from '@/lib/i18n'
+import { LOCALES, LOCALE_NAMES, type Locale, t } from '@/lib/i18n'
 
 const PAGES = ['table', 'build', 'layouts', 'indonesia', 'method'] as const
 
@@ -63,6 +63,14 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                 key={other}
                 href={`/${other}/${segment}`}
                 aria-current={current ? 'page' : undefined}
+                /*
+                 * The visible label stays two letters; the accessible name is
+                 * the language, tagged with its own lang so a synthesiser
+                 * pronounces "Bahasa Indonesia" as Indonesian rather than
+                 * reading it in the surrounding voice.
+                 */
+                lang={other}
+                aria-label={LOCALE_NAMES[other]}
                 /* Not colour alone — the current locale is underlined too. */
                 className={
                   current
@@ -70,7 +78,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                     : 'text-muted hover:text-ink'
                 }
               >
-                {other.toUpperCase()}
+                <span aria-hidden>{other.toUpperCase()}</span>
               </Link>
             )
           })}

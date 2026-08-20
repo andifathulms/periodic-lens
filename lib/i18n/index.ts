@@ -10,6 +10,16 @@ export const LOCALES = ['en', 'id'] as const
 export type Locale = (typeof LOCALES)[number]
 export const DEFAULT_LOCALE: Locale = 'en'
 
+/**
+ * Each locale named in its own language, for the switcher's accessible name.
+ * "EN" and "ID" announce as two letters with no meaning (WCAG 2.4.4); the
+ * visible label stays short, the accessible name says what it does.
+ */
+export const LOCALE_NAMES: Record<Locale, string> = {
+  en: 'English',
+  id: 'Bahasa Indonesia',
+}
+
 export function isLocale(value: string): value is Locale {
   return (LOCALES as readonly string[]).includes(value)
 }
