@@ -5,7 +5,7 @@ import { ElementCell } from '@/components/cell/element-cell'
 import { ELEMENTS } from '@/lib/elements/data'
 import { type Fill, type LensId, domain, fill } from '@/lib/elements/lens'
 import { type LayoutId, extent, position } from '@/lib/elements/layout'
-import type { Locale } from '@/lib/i18n'
+import { type Locale, t } from '@/lib/i18n'
 
 /**
  * 118 cells, one active lens, absolutely placed.
@@ -76,7 +76,7 @@ export function TableGrid({
       <div
         ref={container}
         role="grid"
-        aria-label="Periodic table"
+        aria-label={t(locale, 'view.gridRegion')}
         onKeyDown={onKeyDown}
         className="relative"
         style={{

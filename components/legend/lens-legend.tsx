@@ -47,7 +47,7 @@ export function LensLegend({ lens, locale }: { lens: LensId; locale: Locale }) {
 
   return (
     <section
-      aria-label="Legend"
+      aria-label={t(locale, 'legend.region')}
       className="flex flex-col gap-12 rounded border border-rule p-12"
     >
       <p className="flex flex-wrap items-baseline gap-8">
