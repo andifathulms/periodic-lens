@@ -92,34 +92,21 @@ for (const licence of LICENCES) {
   check(licence.licence.length > 10, `${licence.dataset}: licence text is too thin`)
 }
 
-// PRD.md §7 / invariants 11 and 12 — no policy commentary, no safety guidance,
-// in either locale. Scanned as words, so "hazard classification" as a cited
-// fact is fine and "wear gloves" is not.
-const BANNED = [
-  'first aid',
-  'first-aid',
-  'wear gloves',
-  'protective equipment',
-  'safe handling',
-  'do not inhale',
-  'downstreaming',
-  'hilirisasi',
-  'export ban',
-  'environmental damage',
-  'kerusakan lingkungan',
-]
+// PRD.md §7 / invariants 11 and 12 — no policy commentary, no safety
+// guidance, in either locale. Scanned over SHIPPED copy only: tests/ names the
+// banned phrases on purpose, and scanning them would make the check
+// self-defeating. tests/structure/copy.test.ts is the fuller scan.
 const copy = execFileSync(
   'bash',
   [
     '-lc',
-    "grep -ril --include='*.tsx' --include='*.ts' --include='*.tsv' -e 'first aid' -e 'wear gloves' -e 'downstreaming' -e 'hilirisasi' -e 'export ban' . --exclude-dir=node_modules --exclude-dir=.next --exclude=data-validate.ts || true",
+    "grep -ril --include='*.tsx' --include='*.ts' --include='*.tsv' -e 'first aid' -e 'wear gloves' -e 'downstreaming' -e 'hilirisasi' -e 'export ban' app components lib data || true",
   ],
   { cwd: root },
 )
   .toString()
   .trim()
 check(copy === '', `policy or safety language found in: ${copy}`)
-void BANNED
 
 if (failures.length > 0) {
   console.error('data:validate FAILED')
