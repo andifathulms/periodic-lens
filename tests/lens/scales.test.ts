@@ -314,3 +314,22 @@ describe('the aufbau exception colours', () => {
     expect(contrast(AUFBAU_FOLLOWS_COLOUR, ground.ink)).toBeGreaterThanOrEqual(4.5)
   })
 })
+
+/**
+ * The focus ring. It is two tones because one is not enough: a single --ink
+ * ring disappears on the active control (bg-ink), and no single mid-tone
+ * clears 3:1 against every painted surface — the best candidate measured
+ * 1.42:1 against the dark end of the ionisation-energy ramp.
+ *
+ * This asserts the property the composition relies on: for every surface a
+ * focused element can sit on, at least one of the two bands is visible.
+ */
+describe('the focus indicator', () => {
+  it('keeps one of its two bands visible against every painted surface', () => {
+    const surfaces = [...everyLensValue, ground.paper, ground.ink]
+    for (const surface of surfaces) {
+      const best = Math.max(contrast(ground.ink, surface), contrast(ground.paper, surface))
+      expect(best, `neither band reads against ${surface}`).toBeGreaterThanOrEqual(3)
+    }
+  })
+})

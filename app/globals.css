@@ -68,9 +68,23 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /*
+   * A two-tone focus ring: a --paper band against the element, then an --ink
+   * ring outside it. Neither colour alone is enough. A single ink ring
+   * vanishes on the active control, which is bg-ink; a single mid-tone ring
+   * cannot be found either, because no one hue clears 3:1 against every
+   * painted surface here — the best candidate tested at 1.42:1 against the
+   * dark end of the ionisation-energy ramp.
+   *
+   * Composed from two tokens already in the system, it is guaranteed rather
+   * than tuned: every lens value clears AA against --ink (invariant 8) so the
+   * ink ring always reads on a cell, and --paper is 15.67:1 against --ink so
+   * the paper band always reads on a dark control. Asserted in tests/lens.
+   */
   :focus-visible {
     outline: 3px solid var(--ink);
-    outline-offset: 1px;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--paper);
   }
 }
 
