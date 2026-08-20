@@ -31,6 +31,14 @@
   --cell-type-glyph: 12px;
   --cell-symbol-top: 12px;
   --cell-name-top: 31px;
+
+  /*
+   * Topography. The wall under a lifted cell is narrower than the cell so it
+   * reads as subordinate — it is not tinted or faded, because a lens value
+   * shown at a fraction of itself no longer matches its own legend swatch.
+   */
+  --relief-wall-inset: 8px;
+  --relief-void-inset: 3px;
 }
 
 @layer base {

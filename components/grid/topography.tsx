@@ -83,15 +83,23 @@ export function Topography({
                   }}
                 />
               ) : (
-                /* The wall, so the lift reads as elevation rather than as a gap. */
+                /*
+                 * The wall, so the lift reads as elevation rather than as a
+                 * gap. It carries the lens colour at full strength: it used to
+                 * be drawn at 0.45 opacity, which meant the colour a reader
+                 * compared against the legend was not the colour in the
+                 * legend. The wall stays subordinate by being narrower than
+                 * the cell, which costs the value nothing.
+                 */
                 <span
                   aria-hidden
-                  className="cell-morph absolute inset-x-[6px] rounded-none"
+                  className="cell-morph absolute rounded-none"
                   style={{
+                    left: 'var(--relief-wall-inset)',
+                    right: 'var(--relief-wall-inset)',
                     bottom: 0,
                     height: `${lift}px`,
                     backgroundColor: paint.type === 'unknown' ? undefined : `var(${paint.token})`,
-                    opacity: 0.45,
                   }}
                 />
               )}
