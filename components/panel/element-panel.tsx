@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { blockOf, positionRationale, predictedNotation } from '@/lib/elements/aufbau'
 import { elementAt } from '@/lib/elements/data'
+import { GROUP_OFFSETS, PERIOD_OFFSETS, groupOf, periodOf } from '@/lib/elements/layout'
 import { type LensId, textValue } from '@/lib/elements/lens'
 import { isKnown } from '@/lib/elements/unknown'
 import type { PropertyValue, Source } from '@/lib/elements/types'
@@ -183,6 +184,40 @@ export function ElementPanel({
             locale={locale}
           />
         </dl>
+        {/*
+         * The bridge. This section showed "3d4" and the properties list showed
+         * "Group 6" a few rows apart, with the one interesting step — 2 + 4 —
+         * left out. The reader had the input and the answer and no arithmetic
+         * between them, which is the whole complaint: a result without its
+         * derivation.
+         *
+         * The offsets come from lib/elements/layout, the same constants
+         * groupOf and periodOf use, so this cannot show a sum the table was
+         * not actually placed by.
+         */}
+        <dl className="mt-8 flex flex-col gap-4 text-micro">
+          {rationale.block !== 'f' ? (
+            <div className="flex flex-wrap gap-x-8">
+              <dt className="text-muted">{t(locale, 'panel.groupFrom')}</dt>
+              <dd className="font-mono tabular">
+                {GROUP_OFFSETS[rationale.block as 's' | 'p' | 'd']} + {rationale.index} ={' '}
+                {groupOf(element.z)}
+              </dd>
+            </div>
+          ) : (
+            <p className="text-muted">{t(locale, 'panel.fBlockNoGroup')}</p>
+          )}
+          <div className="flex flex-wrap gap-x-8">
+            <dt className="text-muted">{t(locale, 'panel.periodFrom')}</dt>
+            <dd className="font-mono tabular">
+              {rationale.n} + {PERIOD_OFFSETS[rationale.block]} = {periodOf(element.z)}
+            </dd>
+          </div>
+          <p className="text-muted">
+            {t(locale, `panel.why${rationale.block}`)}
+          </p>
+        </dl>
+
         {/*
          * For the twenty exceptions the differentiating electron above will not
          * match the published notation, because block membership comes from the

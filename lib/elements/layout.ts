@@ -34,17 +34,46 @@ export const ALL_Z: readonly number[] = Array.from(
  */
 export const HELIUM_POSITION_EXCEPTION = 2
 
+/**
+ * Where each block's group numbering starts, and why.
+ *
+ * s-block takes groups 1-2, so d-block begins at 3 — its first column is
+ * group 2 + 1. p-block begins at 13, because s(2) and d(10) have already
+ * taken twelve columns to its left. These two constants ARE the offsets used
+ * by groupOf below; they are named and exported so the detail panel can show
+ * a reader where a group number came from instead of asserting it.
+ */
+export const GROUP_OFFSETS: Readonly<Record<'s' | 'p' | 'd', number>> = {
+  s: 0,
+  d: 2,
+  p: 12,
+}
+
+/**
+ * How far a block's period sits below its shell number, and why.
+ *
+ * An s or p subshell fills in the row named by its own shell number. 3d fills
+ * after 4s, so it belongs to row 4 — one below its shell number. 4f fills
+ * after 6s, so it belongs to row 6, two below. Same constants as periodOf.
+ */
+export const PERIOD_OFFSETS: Readonly<Record<Block, number>> = {
+  s: 0,
+  p: 0,
+  d: 1,
+  f: 2,
+}
+
 /** Group in the IUPAC sense; 0 for the f-block, which has no group number. */
 export function groupOf(z: number): number {
   if (z === HELIUM_POSITION_EXCEPTION) return 18
   const { l, index } = differentiating(z)
   switch (l) {
     case 's':
-      return index
+      return GROUP_OFFSETS.s + index
     case 'p':
-      return 12 + index
+      return GROUP_OFFSETS.p + index
     case 'd':
-      return 2 + index
+      return GROUP_OFFSETS.d + index
     case 'f':
       return 0
     default: {
@@ -60,11 +89,11 @@ export function periodOf(z: number): number {
   switch (l) {
     case 's':
     case 'p':
-      return n
+      return n + PERIOD_OFFSETS[l]
     case 'd':
-      return n + 1
+      return n + PERIOD_OFFSETS.d
     case 'f':
-      return n + 2
+      return n + PERIOD_OFFSETS.f
     default: {
       const never: never = l
       return never
