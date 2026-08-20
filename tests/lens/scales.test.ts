@@ -6,6 +6,8 @@
  */
 import { describe, expect, it } from 'vitest'
 import {
+  AUFBAU_EXCEPTION_COLOUR,
+  AUFBAU_FOLLOWS_COLOUR,
   BLOCK_COLOURS,
   CATEGORY_COLOURS,
   NOT_PRODUCED_COLOUR,
@@ -47,6 +49,8 @@ const everyLensValue = [
   ...Object.values(RAMPS).flat(),
   ...Object.values(CATEGORICAL).flatMap((palette) => Object.values(palette)),
   NOT_PRODUCED_COLOUR,
+  AUFBAU_EXCEPTION_COLOUR,
+  AUFBAU_FOLLOWS_COLOUR,
 ]
 
 describe('scale integrity', () => {
@@ -282,5 +286,31 @@ describe('the unmeasured lens', () => {
     expect(isKnown(value) && value.value).toBe(
       TRACKED.filter((field) => fr[field].type === 'unknown').length,
     )
+  })
+})
+
+/**
+ * The build page's exception view. It borrowed the category palette once and
+ * said something false with it — chromium, a transition metal, painted in the
+ * alkali-metal colour. These assertions are what stop that recurring.
+ */
+describe('the aufbau exception colours', () => {
+  it('are not borrowed from any lens palette', () => {
+    const lensValues = [
+      ...Object.values(RAMPS).flat(),
+      ...Object.values(CATEGORICAL).flatMap((palette) => Object.values(palette)),
+      NOT_PRODUCED_COLOUR,
+    ]
+    expect(lensValues).not.toContain(AUFBAU_EXCEPTION_COLOUR)
+    expect(lensValues).not.toContain(AUFBAU_FOLLOWS_COLOUR)
+  })
+
+  it('separate from each other well enough to read as two states', () => {
+    expect(contrast(AUFBAU_EXCEPTION_COLOUR, AUFBAU_FOLLOWS_COLOUR)).toBeGreaterThan(1.5)
+  })
+
+  it('clear AA against --ink, like every other painted value', () => {
+    expect(contrast(AUFBAU_EXCEPTION_COLOUR, ground.ink)).toBeGreaterThanOrEqual(4.5)
+    expect(contrast(AUFBAU_FOLLOWS_COLOUR, ground.ink)).toBeGreaterThanOrEqual(4.5)
   })
 })

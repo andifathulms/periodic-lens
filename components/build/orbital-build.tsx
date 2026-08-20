@@ -89,8 +89,16 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
             const point = position('standard', element.z)
             const revealed = element.z <= placed
             const anomalous = AUFBAU_EXCEPTIONS.includes(element.z)
+            /*
+             * The exception view has its own two tokens. Borrowing the
+             * category palette here painted chromium — a transition metal —
+             * with the alkali-metal colour, which said something false to any
+             * reader who had learned the category lens.
+             */
             const token = exceptions
-              ? tokenFor('category', anomalous ? 'alkali-metal' : 'transition-metal')
+              ? anomalous
+                ? '--aufbau-exception'
+                : '--aufbau-follows'
               : tokenFor('block', blockOf(element.z))
             return (
               <div
@@ -187,6 +195,28 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
           {t(locale, 'build.exceptions')}
         </label>
       </div>
+
+      {/* DESIGN.md §8 — a colour with no key is not shippable. */}
+      {exceptions ? (
+        <ul className="flex flex-wrap items-center gap-x-24 gap-y-8 text-micro">
+          <li className="flex items-center gap-8">
+            <span
+              aria-hidden
+              className="inline-block h-16 w-16 shrink-0 rounded hairline"
+              style={{ backgroundColor: 'var(--aufbau-exception)' }}
+            />
+            {t(locale, 'build.keyException')}
+          </li>
+          <li className="flex items-center gap-8">
+            <span
+              aria-hidden
+              className="inline-block h-16 w-16 shrink-0 rounded hairline"
+              style={{ backgroundColor: 'var(--aufbau-follows)' }}
+            />
+            {t(locale, 'build.keyFollows')}
+          </li>
+        </ul>
+      ) : null}
 
       <label className="flex flex-col gap-4">
         <span className="sr-only">{t(locale, 'build.filling')}</span>

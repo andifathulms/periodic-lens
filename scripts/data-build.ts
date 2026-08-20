@@ -17,6 +17,8 @@ import { blockOf, groupOf, periodOf } from '../lib/elements/layout'
 import { LICENCES, SOURCES } from '../lib/elements/sources'
 import { tableSchema } from '../lib/elements/schema'
 import {
+  AUFBAU_EXCEPTION_COLOUR,
+  AUFBAU_FOLLOWS_COLOUR,
   BLOCK_COLOURS,
   CATEGORY_COLOURS,
   NOT_PRODUCED_COLOUR,
@@ -140,6 +142,8 @@ const lines: string[] = [
   `  --muted: ${ground.muted};`,
   `  --lens-unknown: ${UNKNOWN_HATCH};`,
   `  --lens-production-id-none: ${NOT_PRODUCED_COLOUR};`,
+  `  --aufbau-exception: ${AUFBAU_EXCEPTION_COLOUR};`,
+  `  --aufbau-follows: ${AUFBAU_FOLLOWS_COLOUR};`,
 ]
 for (const [key, hex] of Object.entries(CATEGORY_COLOURS)) {
   lines.push(`  --lens-category-${key}: ${hex};`)

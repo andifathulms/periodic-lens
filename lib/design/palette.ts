@@ -86,6 +86,23 @@ export const NOT_PRODUCED_COLOUR = '#E4E3DC'
 export const NOT_PRODUCED_GLYPH = '·'
 
 /**
+ * The build page's exception toggle. Its own two colours, because it asks its
+ * own question.
+ *
+ * It previously borrowed --lens-category-alkali-metal and
+ * --lens-category-transition-metal, which made the view state something false:
+ * pink means "alkali metal" everywhere else in the product, and chromium — a
+ * transition metal — was painted with it. A token means one thing.
+ *
+ * Not red. DESIGN.md §4: nothing in this product is an error or a warning, and
+ * an element whose measured configuration disagrees with a rule of thumb is
+ * neither. Amber marks it as worth looking at; the quiet neutral is the
+ * majority that the rule gets right.
+ */
+export const AUFBAU_EXCEPTION_COLOUR = '#DFA92E'
+export const AUFBAU_FOLLOWS_COLOUR = '#EFF0EB'
+
+/**
  * Unknown. DESIGN.md §4 — a hatch over --paper, never a fill colour, so it can
  * never be mistaken for a position on any scale.
  */
