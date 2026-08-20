@@ -31,9 +31,19 @@ export function DiscoveryTimeline({
   const line = timeline()
   const scale = domain(lens, ELEMENTS)
 
-  const chip = (z: number) => {
+  /*
+   * `when` is the decade the chip sits in, or undefined for the elements held
+   * off the axis. It goes into the accessible name because the grouping was
+   * otherwise purely visual: the year lived in a sibling span, and only every
+   * fiftieth was labelled at all, so a screen reader user got 118 symbols in
+   * an order they had no way to interpret (WCAG 1.3.1). The axis is the whole
+   * content of this view; it has to be in the names.
+   */
+  const chip = (z: number, when?: number) => {
     const element = ELEMENTS.find((e) => e.z === z)!
     const paint = fill(lens, element, scale)
+    const period =
+      when === undefined ? t(locale, 'view.timelineUnrecorded') : `${when}s`
     return (
       <button
         key={z}
@@ -44,7 +54,7 @@ export function DiscoveryTimeline({
         onClick={() => onSelect(z)}
         aria-label={`${element.z} ${element.symbol} ${
           locale === 'id' ? element.nameId : element.name
-        }`}
+        } — ${period}`}
         className={[
           'cell-morph block rounded hairline text-center font-display text-body font-semibold',
           paint.type === 'unknown' ? 'fill-unknown' : '',
@@ -75,7 +85,7 @@ export function DiscoveryTimeline({
               style={{ gap: 'var(--chip-gap)' }}
             >
               <div className="flex flex-col-reverse" style={{ gap: 'var(--chip-gap)' }}>
-                {decade.elements.map((element) => chip(element.z))}
+                {decade.elements.map((element) => chip(element.z, decade.decade))}
               </div>
               <div
                 aria-hidden
