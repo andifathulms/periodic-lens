@@ -104,28 +104,39 @@ function standard(z: number): Point {
  */
 const LEFT_STEP_WIDTH = 32
 
-const LEFT_STEP_ROWS: readonly (readonly number[])[] = (() => {
+type LeftStepRow = { readonly cells: readonly number[]; readonly fullWidth: number }
+
+/**
+ * A left-step row ENDS on a completed s subshell — that is what steps the
+ * table. Rows are then right-aligned to the width they would have if complete,
+ * which keeps the trailing row (5f 6d 7p, two short of an 8s) lined up with
+ * the row above instead of shunted two columns right.
+ */
+const LEFT_STEP_ROWS: readonly LeftStepRow[] = (() => {
   const rows: number[][] = []
   let current: number[] = []
   for (let z = 1; z <= ELEMENT_COUNT; z += 1) {
+    current.push(z)
     const { l, index } = differentiating(z)
-    if (l === 's' && index === 1 && current.length > 0) {
+    if (l === 's' && index === BLOCK_WIDTHS.s) {
       rows.push(current)
       current = []
     }
-    current.push(z)
   }
-  if (current.length > 0) rows.push(current)
-  return rows
+  const open = current.length > 0 ? current : undefined
+  const closed = rows.map((cells) => ({ cells, fullWidth: cells.length }))
+  if (!open) return closed
+  const previous = closed[closed.length - 1]
+  return [...closed, { cells: open, fullWidth: previous ? previous.fullWidth : open.length }]
 })()
 
 function leftStep(z: number): Point {
   for (let row = 0; row < LEFT_STEP_ROWS.length; row += 1) {
-    const cells = LEFT_STEP_ROWS[row]
-    if (!cells) continue
-    const index = cells.indexOf(z)
+    const entry = LEFT_STEP_ROWS[row]
+    if (!entry) continue
+    const index = entry.cells.indexOf(z)
     if (index >= 0) {
-      return { x: LEFT_STEP_WIDTH - cells.length + index, y: row }
+      return { x: LEFT_STEP_WIDTH - entry.fullWidth + index, y: row }
     }
   }
   throw new Error(`Z=${z} is in no left-step row`)
