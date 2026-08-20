@@ -22,31 +22,38 @@
    * does (5.1:1 at the dark end against ink); fading ink to 70–80% took the
    * name and the mass down to 3.2–3.9:1, which is invariant 8 failing quietly.
    */
-  --cell: 52px;
-  --cell-pad: 4px;
-  --cell-type-z: 10px;
-  --cell-type-symbol: 18px;
-  --cell-type-name: 9px;
-  --cell-type-mass: 9px;
-  --cell-type-glyph: 12px;
-  --cell-symbol-top: 12px;
-  --cell-name-top: 31px;
+  /*
+   * In rem, not px. The cell carries type, and px sizes ignore a reader's
+   * default font size — full-page zoom scales them but text-only zoom does
+   * not (WCAG 1.4.4). In rem the cell grows with the type inside it, so it
+   * never clips; it only ever gets larger, which invariant 16 and DESIGN.md
+   * §3 both want (never shrink the cell, let the grid scroll).
+   */
+  --cell: 3.25rem;
+  --cell-pad: 0.25rem;
+  --cell-type-z: 0.625rem;
+  --cell-type-symbol: 1.125rem;
+  --cell-type-name: 0.5625rem;
+  --cell-type-mass: 0.5625rem;
+  --cell-type-glyph: 0.75rem;
+  --cell-symbol-top: 0.75rem;
+  --cell-name-top: 1.9375rem;
 
   /*
    * Topography. The wall under a lifted cell is narrower than the cell so it
    * reads as subordinate — it is not tinted or faded, because a lens value
    * shown at a fraction of itself no longer matches its own legend swatch.
    */
-  --relief-wall-inset: 8px;
-  --relief-void-inset: 3px;
+  --relief-wall-inset: 0.5rem;
+  --relief-void-inset: 0.1875rem;
 
   /*
    * The timeline chip: a cell reduced to its symbol, so it is sized from the
    * same place the cell is rather than from a literal in the component.
    */
-  --chip: 32px;
-  --chip-gap: 2px;
-  --chip-axis-min: 34px;
+  --chip: 2rem;
+  --chip-gap: 0.125rem;
+  --chip-axis-min: 2.125rem;
 }
 
 @layer base {
@@ -56,8 +63,9 @@
   }
 
   body {
-    /* Type floor 16px, house layer. */
-    font-size: 16px;
+    /* Type floor 16px, house layer — 1rem, so a reader who has
+       raised their default font size gets a raised floor too. */
+    font-size: 1rem;
     line-height: 1.5;
   }
 
@@ -101,7 +109,8 @@
    * the buttons underneath it, which is backwards.
    */
   .label-eyebrow {
-    font-size: 14px;
+    /* 0.875rem — the micro step, in rem like the rest of the scale. */
+    font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
