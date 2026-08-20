@@ -73,11 +73,16 @@ export function ElementTextTable({ lens, locale }: { lens: LensId; locale: Local
           <thead>
             <tr className="border-b border-rule text-left">
               {headers.map((header) => (
-                <th key={header.key} scope="col" className="py-8 pr-16 font-semibold">
+                <th
+                  key={header.key}
+                  scope="col"
+                  /* aria-sort belongs to the column header, not to the control inside it. */
+                  aria-sort={sort === header.key ? 'ascending' : 'none'}
+                  className="py-8 pr-16 font-semibold"
+                >
                   <button
                     type="button"
                     onClick={() => setSort(header.key)}
-                    aria-sort={sort === header.key ? 'ascending' : 'none'}
                     className={sort === header.key ? 'underline' : 'hover:underline'}
                   >
                     {header.label}
