@@ -91,26 +91,29 @@ const NOBLE_CORES: readonly { z: number; symbol: string }[] = [
   { z: 2, symbol: 'He' },
 ]
 
-/** Render subshells in the published notation style, e.g. "[Ar] 3d5 4s1". */
+/**
+ * Render subshells in the published notation style, e.g. "[Ar] 3d5 4s1".
+ *
+ * The core is subtracted by subshell, not by prefix: cerium's 4f1 sits before
+ * 5s in shell order, so a running-total approach would never land exactly on
+ * xenon and would print all fourteen subshells.
+ */
 export function format(subshells: readonly Subshell[]): string {
-  const ordered = inShellOrder(subshells)
+  const ordered = inShellOrder(subshells).filter((s) => s.electrons > 0)
   const total = ordered.reduce((sum, s) => sum + s.electrons, 0)
-  const core = NOBLE_CORES.find((c) => c.z < total)
-  let rest = ordered
-  let prefix = ''
-  if (core) {
-    let counted = 0
-    const tail: Subshell[] = []
-    for (const s of ordered) {
-      if (counted < core.z) counted += s.electrons
-      else tail.push(s)
-    }
-    if (counted === core.z) {
-      prefix = `[${core.symbol}] `
-      rest = tail
-    }
+  for (const core of NOBLE_CORES) {
+    if (core.z >= total) continue
+    const coreShells = predict(core.z)
+    const complete = coreShells.every((c) =>
+      ordered.some((s) => s.n === c.n && s.l === c.l && s.electrons === c.electrons),
+    )
+    if (!complete) continue
+    const tail = ordered.filter(
+      (s) => !coreShells.some((c) => c.n === s.n && c.l === s.l),
+    )
+    return `[${core.symbol}] ${tail.map((s) => `${s.n}${s.l}${s.electrons}`).join(' ')}`
   }
-  return prefix + rest.map((s) => `${s.n}${s.l}${s.electrons}`).join(' ')
+  return ordered.map((s) => `${s.n}${s.l}${s.electrons}`).join(' ')
 }
 
 /**
