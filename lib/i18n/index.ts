@@ -37,6 +37,7 @@ const en: Dictionary = {
   'view.grid': 'Grid',
   'view.topography': 'Topography',
   'view.timeline': 'Timeline',
+  'view.timelineUnrecorded': 'No recorded year',
   'view.topographyUnavailable':
     'Topography needs a continuous lens — height cannot order categories.',
   'view.topographyNote':
@@ -98,6 +99,8 @@ const en: Dictionary = {
   'prop.group': 'Group',
   'prop.period': 'Period',
   'text.symbol': 'Symbol',
+  'text.name': 'Name',
+  'text.mass': 'Mass',
   'text.heading': 'The table as text',
   'text.note': 'Always present, never a fallback. Sortable by any column.',
   'build.title': 'How the table gets its shape',
@@ -136,6 +139,7 @@ const id: Dictionary = {
   'view.grid': 'Kisi',
   'view.topography': 'Topografi',
   'view.timeline': 'Lini masa',
+  'view.timelineUnrecorded': 'Tanpa tahun tercatat',
   'view.topographyUnavailable':
     'Topografi memerlukan lensa kontinu — tinggi tidak dapat mengurutkan kategori.',
   'view.topographyNote':
@@ -197,6 +201,8 @@ const id: Dictionary = {
   'prop.group': 'Golongan',
   'prop.period': 'Periode',
   'text.symbol': 'Lambang',
+  'text.name': 'Nama',
+  'text.mass': 'Massa',
   'text.heading': 'Tabel dalam bentuk teks',
   'text.note': 'Selalu tersedia, bukan cadangan. Dapat diurutkan menurut kolom mana pun.',
   'build.title': 'Bagaimana tabel memperoleh bentuknya',

@@ -59,8 +59,8 @@ export function ElementTextTable({ lens, locale }: { lens: LensId; locale: Local
   const headers: { key: Column; label: string }[] = [
     { key: 'z', label: 'Z' },
     { key: 'symbol', label: t(locale, 'text.symbol') },
-    { key: 'name', label: locale === 'id' ? 'Nama' : 'Name' },
-    { key: 'mass', label: locale === 'id' ? 'Massa' : 'Mass' },
+    { key: 'name', label: t(locale, 'text.name') },
+    { key: 'mass', label: t(locale, 'text.mass') },
     { key: 'lens', label: t(locale, `lens.${lens}`) },
   ]
 
