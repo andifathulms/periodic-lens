@@ -41,6 +41,11 @@ function Group<T extends string>({
    */
   groupBy?: (option: T) => string
 }) {
+  /* Shown, not hovered: the explanation is text on the page when it applies. */
+  const unavailable = options.find((option) => disabledFor?.(option))
+  const reason = unavailable ? reasonFor?.(unavailable) : undefined
+  const reasonId = `${label.replace(/\s+/g, '-').toLowerCase()}-unavailable`
+
   return (
     <fieldset className="flex flex-wrap items-baseline gap-8">
       <legend className="sr-only">{label}</legend>
@@ -48,6 +53,15 @@ function Group<T extends string>({
         {label}
       </span>
       {options.map((option, index) => {
+        /*
+         * aria-disabled, not disabled. A native disabled button leaves the tab
+         * order, so the users most in need of knowing WHY an option is
+         * unavailable were the ones guaranteed not to reach it — and the
+         * reason lived in a title attribute, which never surfaces for a
+         * keyboard user at all (WCAG 1.3.1, 3.3.2). This is the rare case ARIA
+         * is the right tool: there is no native way to keep a control
+         * focusable while marking it unavailable.
+         */
         const disabled = disabledFor?.(option) ?? false
         const newGroup =
           groupBy && index > 0 && groupBy(option) !== groupBy(options[index - 1]!)
@@ -59,9 +73,12 @@ function Group<T extends string>({
             <button
               type="button"
               aria-pressed={option === value}
-              disabled={disabled}
-              title={disabled ? reasonFor?.(option) : undefined}
-              onClick={() => onChange(option)}
+              aria-disabled={disabled || undefined}
+              aria-describedby={disabled ? reasonId : undefined}
+              onClick={() => {
+                if (disabled) return
+                onChange(option)
+              }}
               className={[
                 'rounded hairline transition-colors duration-fast ease-house',
                 /* Tighter below sm: eleven lens options wrapped to four rows
@@ -78,6 +95,11 @@ function Group<T extends string>({
           </div>
         )
       })}
+      {reason ? (
+        <p id={reasonId} className="basis-full text-micro text-muted">
+          {reason}
+        </p>
+      ) : null}
     </fieldset>
   )
 }
