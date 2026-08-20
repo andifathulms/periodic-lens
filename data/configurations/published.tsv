@@ -1,0 +1,128 @@
+# Ground-state electron configurations of neutral atoms — PUBLISHED VALUES.
+# Source: CRC Handbook of Chemistry and Physics, 104th ed. (2023); NIST Atomic
+# Spectra Database ground levels. Z 104-118 are the expected configurations
+# published by IUPAC; they are not measured, and the method page says so.
+# Lawrencium (103) follows Sato et al., Nature 520, 209 (2015).
+#
+# Invariant 3: these are stored, never derived. lib/elements/aufbau.ts must not
+# be used to fill this file in.
+#
+# z	symbol	notation
+1	H	1s1
+2	He	1s2
+3	Li	[He] 2s1
+4	Be	[He] 2s2
+5	B	[He] 2s2 2p1
+6	C	[He] 2s2 2p2
+7	N	[He] 2s2 2p3
+8	O	[He] 2s2 2p4
+9	F	[He] 2s2 2p5
+10	Ne	[He] 2s2 2p6
+11	Na	[Ne] 3s1
+12	Mg	[Ne] 3s2
+13	Al	[Ne] 3s2 3p1
+14	Si	[Ne] 3s2 3p2
+15	P	[Ne] 3s2 3p3
+16	S	[Ne] 3s2 3p4
+17	Cl	[Ne] 3s2 3p5
+18	Ar	[Ne] 3s2 3p6
+19	K	[Ar] 4s1
+20	Ca	[Ar] 4s2
+21	Sc	[Ar] 3d1 4s2
+22	Ti	[Ar] 3d2 4s2
+23	V	[Ar] 3d3 4s2
+24	Cr	[Ar] 3d5 4s1
+25	Mn	[Ar] 3d5 4s2
+26	Fe	[Ar] 3d6 4s2
+27	Co	[Ar] 3d7 4s2
+28	Ni	[Ar] 3d8 4s2
+29	Cu	[Ar] 3d10 4s1
+30	Zn	[Ar] 3d10 4s2
+31	Ga	[Ar] 3d10 4s2 4p1
+32	Ge	[Ar] 3d10 4s2 4p2
+33	As	[Ar] 3d10 4s2 4p3
+34	Se	[Ar] 3d10 4s2 4p4
+35	Br	[Ar] 3d10 4s2 4p5
+36	Kr	[Ar] 3d10 4s2 4p6
+37	Rb	[Kr] 5s1
+38	Sr	[Kr] 5s2
+39	Y	[Kr] 4d1 5s2
+40	Zr	[Kr] 4d2 5s2
+41	Nb	[Kr] 4d4 5s1
+42	Mo	[Kr] 4d5 5s1
+43	Tc	[Kr] 4d5 5s2
+44	Ru	[Kr] 4d7 5s1
+45	Rh	[Kr] 4d8 5s1
+46	Pd	[Kr] 4d10
+47	Ag	[Kr] 4d10 5s1
+48	Cd	[Kr] 4d10 5s2
+49	In	[Kr] 4d10 5s2 5p1
+50	Sn	[Kr] 4d10 5s2 5p2
+51	Sb	[Kr] 4d10 5s2 5p3
+52	Te	[Kr] 4d10 5s2 5p4
+53	I	[Kr] 4d10 5s2 5p5
+54	Xe	[Kr] 4d10 5s2 5p6
+55	Cs	[Xe] 6s1
+56	Ba	[Xe] 6s2
+57	La	[Xe] 5d1 6s2
+58	Ce	[Xe] 4f1 5d1 6s2
+59	Pr	[Xe] 4f3 6s2
+60	Nd	[Xe] 4f4 6s2
+61	Pm	[Xe] 4f5 6s2
+62	Sm	[Xe] 4f6 6s2
+63	Eu	[Xe] 4f7 6s2
+64	Gd	[Xe] 4f7 5d1 6s2
+65	Tb	[Xe] 4f9 6s2
+66	Dy	[Xe] 4f10 6s2
+67	Ho	[Xe] 4f11 6s2
+68	Er	[Xe] 4f12 6s2
+69	Tm	[Xe] 4f13 6s2
+70	Yb	[Xe] 4f14 6s2
+71	Lu	[Xe] 4f14 5d1 6s2
+72	Hf	[Xe] 4f14 5d2 6s2
+73	Ta	[Xe] 4f14 5d3 6s2
+74	W	[Xe] 4f14 5d4 6s2
+75	Re	[Xe] 4f14 5d5 6s2
+76	Os	[Xe] 4f14 5d6 6s2
+77	Ir	[Xe] 4f14 5d7 6s2
+78	Pt	[Xe] 4f14 5d9 6s1
+79	Au	[Xe] 4f14 5d10 6s1
+80	Hg	[Xe] 4f14 5d10 6s2
+81	Tl	[Xe] 4f14 5d10 6s2 6p1
+82	Pb	[Xe] 4f14 5d10 6s2 6p2
+83	Bi	[Xe] 4f14 5d10 6s2 6p3
+84	Po	[Xe] 4f14 5d10 6s2 6p4
+85	At	[Xe] 4f14 5d10 6s2 6p5
+86	Rn	[Xe] 4f14 5d10 6s2 6p6
+87	Fr	[Rn] 7s1
+88	Ra	[Rn] 7s2
+89	Ac	[Rn] 6d1 7s2
+90	Th	[Rn] 6d2 7s2
+91	Pa	[Rn] 5f2 6d1 7s2
+92	U	[Rn] 5f3 6d1 7s2
+93	Np	[Rn] 5f4 6d1 7s2
+94	Pu	[Rn] 5f6 7s2
+95	Am	[Rn] 5f7 7s2
+96	Cm	[Rn] 5f7 6d1 7s2
+97	Bk	[Rn] 5f9 7s2
+98	Cf	[Rn] 5f10 7s2
+99	Es	[Rn] 5f11 7s2
+100	Fm	[Rn] 5f12 7s2
+101	Md	[Rn] 5f13 7s2
+102	No	[Rn] 5f14 7s2
+103	Lr	[Rn] 5f14 7s2 7p1
+104	Rf	[Rn] 5f14 6d2 7s2
+105	Db	[Rn] 5f14 6d3 7s2
+106	Sg	[Rn] 5f14 6d4 7s2
+107	Bh	[Rn] 5f14 6d5 7s2
+108	Hs	[Rn] 5f14 6d6 7s2
+109	Mt	[Rn] 5f14 6d7 7s2
+110	Ds	[Rn] 5f14 6d8 7s2
+111	Rg	[Rn] 5f14 6d9 7s2
+112	Cn	[Rn] 5f14 6d10 7s2
+113	Nh	[Rn] 5f14 6d10 7s2 7p1
+114	Fl	[Rn] 5f14 6d10 7s2 7p2
+115	Mc	[Rn] 5f14 6d10 7s2 7p3
+116	Lv	[Rn] 5f14 6d10 7s2 7p4
+117	Ts	[Rn] 5f14 6d10 7s2 7p5
+118	Og	[Rn] 5f14 6d10 7s2 7p6
