@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { ElementCell } from '@/components/cell/element-cell'
 import { ELEMENTS } from '@/lib/elements/data'
 import { type Fill, type LensId, domain, fill } from '@/lib/elements/lens'
@@ -32,6 +32,14 @@ export function TableGrid({
   const box = extent(layout)
   const container = useRef<HTMLUListElement>(null)
 
+  /*
+   * The roving tab stop. Hydrogen holds it until the reader moves, and the
+   * selected element takes it whenever there is one, so returning to the grid
+   * by Tab lands where they left off rather than at the beginning.
+   */
+  const [rover, setRover] = useState(1)
+  const tabStop = selected ?? rover
+
   /** Arrow keys walk the grid in grid order (DESIGN.md §9). */
   const onKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLUListElement>) => {
@@ -59,6 +67,7 @@ export function TableGrid({
         if (!best || distance < best.distance) best = { z: element.z, distance }
       }
       if (!best) return
+      setRover(best.z)
       container.current
         ?.querySelector<HTMLElement>(`[data-z="${best.z}"]`)
         ?.focus()
@@ -108,6 +117,7 @@ export function TableGrid({
                 fill={paint}
                 locale={locale}
                 selected={selected === element.z}
+                tabStop={element.z === tabStop}
                 onSelect={onSelect}
               />
             </li>

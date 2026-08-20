@@ -21,6 +21,13 @@ export type CellProps = {
   fill: Fill
   locale: Locale
   selected: boolean
+  /**
+   * Whether this cell is the grid's single tab stop. One cell is reachable by
+   * Tab and the arrow keys move within — the grid pattern the container's key
+   * handler already assumes. Without it all 118 were tab stops and reaching
+   * anything below the grid took over a hundred presses.
+   */
+  tabStop?: boolean
   onSelect: (z: number) => void
 }
 
@@ -40,7 +47,7 @@ function background(fill: Fill): React.CSSProperties {
 }
 
 export const ElementCell = forwardRef<HTMLButtonElement, CellProps>(function ElementCell(
-  { element, fill, locale, selected, onSelect },
+  { element, fill, locale, selected, tabStop, onSelect },
   ref,
 ) {
   const name = locale === 'id' ? element.nameId : element.name
@@ -59,6 +66,7 @@ export const ElementCell = forwardRef<HTMLButtonElement, CellProps>(function Ele
        * accurate state; aria-selected belongs to grid and listbox children.
        */
       aria-pressed={selected}
+      tabIndex={tabStop === undefined ? undefined : tabStop ? 0 : -1}
       aria-label={`${element.z} ${element.symbol} ${name}`}
       onClick={() => onSelect(element.z)}
       style={{ ...background(fill), width: 'var(--cell)', height: 'var(--cell)' }}
