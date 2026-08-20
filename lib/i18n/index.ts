@@ -121,6 +121,22 @@ const en: Dictionary = {
   'text.sortedBy': 'Sorted by',
   'text.heading': 'The table as text',
   'text.note': 'Always present, never a fallback. Sortable by any column.',
+  'worked.heading': 'Three elements, all the way through',
+  'worked.intro':
+    'Before the animation, one pass by hand. Each element has one more electron than the last; the rule above says which subshell that electron enters; the subshell decides the block, and the block and the count decide the square.',
+  'worked.electron': 'electron',
+  'worked.electrons': 'electrons',
+  'worked.conventional':
+    'Group 18 here is the one number on this page the rule did not produce. Helium is s-block by configuration and would sit in group 2; it is placed with the noble gases because it behaves like one. A convention, stated as such.',
+  'worked.lastEnters': 'the last one enters',
+  'worked.holds': 'holds',
+  'worked.nowFull': 'is now full',
+  'worked.note1': 'The first row begins.',
+  'worked.note2':
+    'This is why the first row has exactly two elements and then stops: s holds two, and there is nothing else in shell 1 to fill.',
+  'worked.note3': 'Shell 1 is finished, so the next electron starts shell 2 — and a new row.',
+  'worked.closing':
+    'All 118 are placed this way. Nothing below is drawn by hand: every position in the table on this page comes out of that rule and the capacities 2, 6, 10 and 14.',
   'rule.heading': 'The rule, in full',
   'rule.statement':
     'Electrons fill subshells in order of n + ℓ, lowest first; where two subshells tie, the one with the lower n fills first. n is the shell number and ℓ is 0 for s, 1 for p, 2 for d, 3 for f. That is the entire rule — every sum below is worked out from it, and the order of the table follows.',
@@ -236,6 +252,22 @@ const id: Dictionary = {
   'text.sortedBy': 'Diurutkan menurut',
   'text.heading': 'Tabel dalam bentuk teks',
   'text.note': 'Selalu tersedia, bukan cadangan. Dapat diurutkan menurut kolom mana pun.',
+  'worked.heading': 'Tiga unsur, dari awal sampai akhir',
+  'worked.intro':
+    'Sebelum animasinya, satu kali telusur manual. Setiap unsur memiliki satu elektron lebih banyak daripada sebelumnya; aturan di atas menentukan subkulit mana yang diisi elektron itu; subkulit menentukan blok, dan blok beserta cacahnya menentukan kotaknya.',
+  'worked.electron': 'elektron',
+  'worked.electrons': 'elektron',
+  'worked.conventional':
+    'Golongan 18 di sini adalah satu-satunya angka di halaman ini yang bukan hasil aturan. Helium berada di blok s menurut konfigurasinya dan semestinya di golongan 2; ia ditempatkan bersama gas mulia karena sifatnya demikian. Sebuah konvensi, dan dinyatakan sebagai konvensi.',
+  'worked.lastEnters': 'yang terakhir masuk ke',
+  'worked.holds': 'menampung',
+  'worked.nowFull': 'kini penuh',
+  'worked.note1': 'Baris pertama dimulai.',
+  'worked.note2':
+    'Inilah sebabnya baris pertama berisi tepat dua unsur lalu berhenti: s menampung dua, dan tidak ada lagi yang bisa diisi di kulit 1.',
+  'worked.note3': 'Kulit 1 selesai, sehingga elektron berikutnya memulai kulit 2 — dan baris baru.',
+  'worked.closing':
+    'Ke-118 unsur ditempatkan dengan cara ini. Tidak ada yang digambar manual: setiap posisi dalam tabel di halaman ini keluar dari aturan itu dan kapasitas 2, 6, 10 dan 14.',
   'rule.heading': 'Aturannya, selengkapnya',
   'rule.statement':
     'Elektron mengisi subkulit menurut urutan n + ℓ, terkecil lebih dahulu; bila dua subkulit bernilai sama, yang ber-n lebih kecil mengisi lebih dahulu. n adalah nomor kulit dan ℓ bernilai 0 untuk s, 1 untuk p, 2 untuk d, 3 untuk f. Itulah keseluruhan aturannya — setiap penjumlahan di bawah dihitung darinya, dan urutan tabel mengikutinya.',

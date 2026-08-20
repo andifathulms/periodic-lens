@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { OrbitalBuild } from '@/components/build/orbital-build'
+import { WorkedExample } from '@/components/build/worked-example'
 import { AUFBAU_EXCEPTIONS, predictedNotation } from '@/lib/elements/aufbau'
 import { elementAt } from '@/lib/elements/data'
 import { DEFAULT_LOCALE, isLocale, pageTitle, t } from '@/lib/i18n'
@@ -30,6 +31,12 @@ export default function BuildPage({ params }: { params: { locale: string } }) {
             : 'Then the rule fails. For twenty elements the published configuration is not the one the rule predicts. The toggle recolours the table by that question instead — the same cells, a different lens.'}
         </p>
       </header>
+
+      {/* Before any control: the rule producing a real position from a real
+          electron count, with the intermediate values showing. */}
+      <section className="max-w-[70ch]">
+        <WorkedExample locale={locale} />
+      </section>
 
       <OrbitalBuild locale={locale} />
 
