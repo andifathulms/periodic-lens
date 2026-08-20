@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './generated/lens-tokens.css';
+
+/* DESIGN.md §1 — the house motion scale. Nothing outside these durations. */
+:root {
+  --dur-fast: 120ms;
+  --dur-state: 240ms;
+  --dur-lens: 500ms;
+  --dur-layout: 600ms;
+  --ease-house: cubic-bezier(0.2, 0, 0, 1);
+  --cell: 52px;
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  body {
+    /* Type floor 16px, house layer. */
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Tabular figures on anything numeric. DESIGN.md §7. */
+  .mono,
+  table,
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 1px;
+  }
+}
+
+@layer components {
+  /* Unknown, in one place, painted from one token. DESIGN.md §4. */
+  .fill-unknown {
+    background-image: var(--lens-unknown);
+  }
+
+  .cell-morph {
+    transition: background-color var(--dur-lens) var(--ease-house);
+  }
+
+  .cell-travel {
+    transition: transform var(--dur-layout) var(--ease-house);
+  }
+
+  .hairline {
+    border: 0.5px solid var(--rule);
+  }
+}
+
+/*
+ * Reduced motion gets a complete alternative, not a degraded one (DESIGN.md
+ * §5): lens and layout changes apply instantly, and the build becomes the
+ * stepped sequence its own control already provides.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .cell-morph,
+  .cell-travel {
+    transition: none;
+  }
+}
