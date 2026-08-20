@@ -51,8 +51,8 @@ export function DiscoveryTimeline({
           selected === z ? 'ring-2 ring-ink' : '',
         ].join(' ')}
         style={{
-          width: '32px',
-          height: '32px',
+          width: 'var(--chip)',
+          height: 'var(--chip)',
           backgroundColor: paint.type === 'unknown' ? undefined : `var(${paint.token})`,
         }}
       >
@@ -64,16 +64,23 @@ export function DiscoveryTimeline({
   return (
     <div className="flex flex-col gap-24">
       <div className="overflow-x-auto">
-        <div className="flex items-end gap-[2px] pb-8" style={{ minWidth: 'max-content' }}>
+        <div
+          className="flex items-end pb-8"
+          style={{ minWidth: 'max-content', gap: 'var(--chip-gap)' }}
+        >
           {line.decades.map((decade) => (
-            <div key={decade.decade} className="flex flex-col items-center gap-[2px]">
-              <div className="flex flex-col-reverse gap-[2px]">
+            <div
+              key={decade.decade}
+              className="flex flex-col items-center"
+              style={{ gap: 'var(--chip-gap)' }}
+            >
+              <div className="flex flex-col-reverse" style={{ gap: 'var(--chip-gap)' }}>
                 {decade.elements.map((element) => chip(element.z))}
               </div>
               <div
                 aria-hidden
                 className="w-full border-t border-rule"
-                style={{ minWidth: '34px' }}
+                style={{ minWidth: 'var(--chip-axis-min)' }}
               />
               {decade.decade % 50 === 0 ? (
                 <span
@@ -98,7 +105,7 @@ export function DiscoveryTimeline({
             piece of user-facing copy. */}
         <h2 className="text-body font-semibold">{t(locale, 'view.timelineUnrecorded')}</h2>
         <p className="text-micro text-muted mt-4 max-w-[70ch]">{t(locale, 'ancient.note')}</p>
-        <div className="mt-12 flex flex-wrap gap-[2px]">
+        <div className="mt-12 flex flex-wrap" style={{ gap: 'var(--chip-gap)' }}>
           {line.unrecorded.map((element) => chip(element.z))}
         </div>
       </section>

@@ -74,8 +74,10 @@ export function Topography({
                 /* The void: full range, dashed, unmistakably not a height. */
                 <span
                   aria-hidden
-                  className="fill-unknown absolute inset-x-[3px] rounded"
+                  className="fill-unknown absolute rounded"
                   style={{
+                    left: 'var(--relief-void-inset)',
+                    right: 'var(--relief-void-inset)',
                     bottom: 0,
                     height: `calc(var(--cell) + ${MAX_LIFT}px)`,
                     border: '1px dashed var(--rule)',

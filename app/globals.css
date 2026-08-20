@@ -39,6 +39,14 @@
    */
   --relief-wall-inset: 8px;
   --relief-void-inset: 3px;
+
+  /*
+   * The timeline chip: a cell reduced to its symbol, so it is sized from the
+   * same place the cell is rather than from a literal in the component.
+   */
+  --chip: 32px;
+  --chip-gap: 2px;
+  --chip-axis-min: 34px;
 }
 
 @layer base {
