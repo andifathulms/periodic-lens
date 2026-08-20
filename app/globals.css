@@ -117,4 +117,14 @@
   .cell-travel {
     transition: none;
   }
+
+  /*
+   * DESIGN.md §5 says nothing else animates. The control buttons carried a
+   * 120ms colour fade that survived here — not motion under WCAG 2.3.3, and
+   * not a failure, but the document and the stylesheet disagreed by one line
+   * and the document is the one that is right.
+   */
+  .transition-colors {
+    transition: none;
+  }
 }

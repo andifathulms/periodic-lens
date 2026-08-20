@@ -36,7 +36,10 @@ export default function LocaleLayout({
         {t(params.locale, 'site.skipToTable')}
       </a>
       <SiteHeader locale={params.locale} />
-      <main id="main" className="flex-1">
+      {/* tabindex="-1" so the skip link actually moves focus: several
+          browsers scroll to a non-focusable target and leave focus in the
+          header, which makes the link look broken. */}
+      <main id="main" tabIndex={-1} className="flex-1">
         {children}
       </main>
     </div>

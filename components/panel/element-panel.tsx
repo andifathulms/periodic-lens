@@ -89,7 +89,11 @@ export function ElementPanel({
       className={[
         'bg-paper p-16 flex flex-col gap-16 overflow-y-auto',
         'fixed inset-x-0 bottom-0 z-20 max-h-[70vh] border-t border-rule',
-        'lg:static lg:z-auto lg:max-h-none lg:w-[360px] lg:shrink-0 lg:sticky lg:top-16',
+        /* sticky, not static: both were applied and which one won depended on
+           the order Tailwind happened to emit them in. Sticky is the intent —
+           the panel stays beside the table while the page scrolls, which is
+           the whole reason it is not a modal (invariant 15). */
+        'lg:sticky lg:top-16 lg:z-auto lg:max-h-none lg:w-[360px] lg:shrink-0',
         'lg:rounded lg:border lg:border-rule',
       ].join(' ')}
     >
