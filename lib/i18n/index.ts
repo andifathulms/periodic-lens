@@ -21,6 +21,7 @@ const en: Dictionary = {
   'site.tagline': 'Why the table has that shape — and who digs the elements out of the ground.',
   'site.lead':
     'An interactive periodic table built for two things a general reference does not do: it animates where the shape of the table comes from, and it shows Indonesia’s share of world production, element by element.',
+  'site.skipToTable': 'Skip to the table',
   'site.toBuild': 'Watch the shape get built',
   'site.toIndonesia': 'See the production figures',
   'table.hint':
@@ -123,6 +124,7 @@ const id: Dictionary = {
   'site.tagline': 'Mengapa tabel ini berbentuk demikian — dan siapa yang menambang unsurnya.',
   'site.lead':
     'Tabel periodik interaktif yang dibangun untuk dua hal yang tidak dilakukan rujukan umum: menganimasikan asal-usul bentuk tabel, dan menampilkan pangsa produksi dunia milik Indonesia, unsur demi unsur.',
+  'site.skipToTable': 'Lewati ke tabel',
   'site.toBuild': 'Lihat bentuknya tersusun',
   'site.toIndonesia': 'Lihat angka produksinya',
   'table.hint':

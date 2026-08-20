@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { LOCALES, isLocale } from '@/lib/i18n'
+import { LOCALES, isLocale, t } from '@/lib/i18n'
 import { SiteHeader } from '@/components/switcher/site-header'
 
 export function generateStaticParams() {
@@ -16,8 +16,21 @@ export default function LocaleLayout({
   if (!isLocale(params.locale)) notFound()
   return (
     <div className="min-h-screen flex flex-col">
+      {/*
+       * Five nav links, two locale links and seventeen controls stand between
+       * the top of the document and the first cell. Visible only on focus, so
+       * it costs a sighted mouse user nothing.
+       */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-30 focus:m-8 focus:rounded focus:border focus:border-ink focus:bg-paper focus:px-12 focus:py-8"
+      >
+        {t(params.locale, 'site.skipToTable')}
+      </a>
       <SiteHeader locale={params.locale} />
-      <main className="flex-1">{children}</main>
+      <main id="main" className="flex-1">
+        {children}
+      </main>
     </div>
   )
 }
