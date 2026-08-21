@@ -13,7 +13,7 @@
  * A static page with a meta refresh and a real link is crawlable, needs no
  * JavaScript, and lands the reader in the same place just as fast.
  */
-import { writeFileSync, existsSync } from 'node:fs'
+import { writeFileSync, existsSync, renameSync } from 'node:fs'
 import { join } from 'node:path'
 import { LOCALES, DEFAULT_LOCALE, t } from '../lib/i18n/index.ts'
 
@@ -53,6 +53,17 @@ ${LOCALES.map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE}${base}
 `
 }
 
+/*
+ * The generated Open Graph images land without a file extension because the
+ * route sits inside the [locale] segment. GitHub Pages then serves them with a
+ * MIME type no scraper treats as an image, so they get a name that says what
+ * they are. Page metadata points at the renamed path.
+ */
+for (const locale of LOCALES) {
+  const from = join(out, locale, 'opengraph-image')
+  if (existsSync(from)) renameSync(from, join(out, locale, 'opengraph-image.png'))
+}
+
 const stubs = [
   ['index.html', DEFAULT_LOCALE, `${DEFAULT_LOCALE}/table`],
   ...LOCALES.map((l) => [`${l}/index.html`, l, `${l}/table`]),
@@ -62,5 +73,5 @@ for (const [file, locale, target] of stubs) {
 }
 
 console.log(
-  `postbuild — .nojekyll written, ${stubs.length} crawlable redirect stubs replacing Next error shells`,
+  `postbuild — .nojekyll, ${stubs.length} crawlable redirect stubs, ${LOCALES.length} og images named`,
 )

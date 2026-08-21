@@ -60,11 +60,29 @@ export function routeMetadata(locale: Locale, route: Route): Metadata {
       url: `${SITE}${path}`,
       title,
       description,
+      /*
+       * Referenced explicitly rather than by file convention: setting
+       * openGraph here overrides the convention entirely, so the generated
+       * image was being produced and then never mentioned in any page head.
+       * postbuild gives it its .png extension — GitHub Pages serves an
+       * extensionless file with a MIME type no scraper will accept as an
+       * image.
+       */
+      images: [
+        {
+          url: `${SITE}${BASE}/${locale}/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: t(locale, 'site.tagline'),
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      /* summary_large_image, now that there is an image worth showing. */
+      card: 'summary_large_image',
       title,
       description,
+      images: [`${SITE}${BASE}/${locale}/opengraph-image.png`],
     },
   }
 }
