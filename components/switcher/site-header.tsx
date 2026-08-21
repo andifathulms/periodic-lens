@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Mark } from '@/components/switcher/mark'
 import { LOCALES, LOCALE_NAMES, type Locale, t } from '@/lib/i18n'
 
 const PAGES = ['table', 'build', 'layouts', 'indonesia', 'method'] as const
@@ -28,10 +29,13 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   return (
     <header className="border-b border-rule">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-baseline gap-x-16 gap-y-8 px-16 py-12">
+        {/* Mark and wordmark are one target, and the mark sits on the
+            baseline of the type rather than floating above it. */}
         <Link
           href={`/${locale}/table`}
-          className="font-display text-title font-semibold mr-16"
+          className="mr-16 flex items-center gap-8 font-display text-title font-semibold"
         >
+          <Mark />
           {t(locale, 'site.name')}
         </Link>
         {/* No aria-label: it is the only nav in the document, and naming it
