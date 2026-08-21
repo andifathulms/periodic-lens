@@ -61,16 +61,16 @@ export function routeMetadata(locale: Locale, route: Route): Metadata {
       title,
       description,
       /*
-       * Referenced explicitly rather than by file convention: setting
-       * openGraph here overrides the convention entirely, so the generated
-       * image was being produced and then never mentioned in any page head.
-       * postbuild gives it its .png extension — GitHub Pages serves an
-       * extensionless file with a MIME type no scraper will accept as an
-       * image.
+       * The designed share card from the brand kit, replacing the two this
+       * generated with next/og. That version carried each locale's own
+       * tagline, which this one does not — it is one English card for both.
+       * A drawn card by the person who made the mark beats a generated one
+       * with the right words on it, and it drops the WASM text renderer from
+       * the build.
        */
       images: [
         {
-          url: `${SITE}${BASE}/${locale}/opengraph-image.png`,
+          url: `${SITE}${BASE}/og.png`,
           width: 1200,
           height: 630,
           alt: t(locale, 'site.tagline'),
@@ -82,7 +82,7 @@ export function routeMetadata(locale: Locale, route: Route): Metadata {
       card: 'summary_large_image',
       title,
       description,
-      images: [`${SITE}${BASE}/${locale}/opengraph-image.png`],
+      images: [`${SITE}${BASE}/og.png`],
     },
   }
 }

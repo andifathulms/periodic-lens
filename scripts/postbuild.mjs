@@ -13,7 +13,7 @@
  * A static page with a meta refresh and a real link is crawlable, needs no
  * JavaScript, and lands the reader in the same place just as fast.
  */
-import { writeFileSync, readFileSync, readdirSync, statSync, existsSync, renameSync } from 'node:fs'
+import { writeFileSync, readFileSync, readdirSync, statSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { LOCALES, DEFAULT_LOCALE, t } from '../lib/i18n/index.ts'
 
@@ -54,17 +54,6 @@ ${LOCALES.map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE}${base}
 }
 
 /*
- * The generated Open Graph images land without a file extension because the
- * route sits inside the [locale] segment. GitHub Pages then serves them with a
- * MIME type no scraper treats as an image, so they get a name that says what
- * they are. Page metadata points at the renamed path.
- */
-for (const locale of LOCALES) {
-  const from = join(out, locale, 'opengraph-image')
-  if (existsSync(from)) renameSync(from, join(out, locale, 'opengraph-image.png'))
-}
-
-/*
  * app/manifest.ts is a Next file convention, and under output: export it emits
  * <link rel="manifest" href="/manifest.webmanifest"> with no basePath — which
  * 404s wherever the site is not at the domain root. The metadata API cannot
@@ -98,5 +87,5 @@ for (const [file, locale, target] of stubs) {
 }
 
 console.log(
-  `postbuild — .nojekyll, ${stubs.length} redirect stubs, ${LOCALES.length} og images named, ${repaired} manifest links repaired`,
+  `postbuild — .nojekyll, ${stubs.length} redirect stubs, ${repaired} manifest links repaired`,
 )
