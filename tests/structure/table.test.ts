@@ -9,6 +9,7 @@ import { describe, expect, it } from 'vitest'
 import { FILLING_ORDER, blockOf } from '@/lib/elements/aufbau'
 import { ordering, periodLengths } from '@/lib/elements/counterfactual'
 import { ELEMENTS, elementAt } from '@/lib/elements/data'
+import { BACKTRACKS, PATH_Y, fillingPath } from '@/lib/elements/path'
 import {
   ALL_Z,
   BLOCK_WIDTHS,
@@ -143,5 +144,65 @@ describe('the filling-order counterfactual', () => {
     const real = FILLING_ORDER.map((s) => `${s.n}${s.l}`)
     const mirrored = ordering('madelung').map((s) => `${s.n}${s.l}`)
     expect(mirrored.slice(0, real.length)).toEqual(real)
+  })
+})
+
+/**
+ * The filling path. It is drawn over the table, so it has to agree with the
+ * table: one point per element, each at the centre of that element's cell in
+ * whichever layout is being drawn.
+ */
+describe('the filling path', () => {
+  it('has exactly one point per element, in filling order', () => {
+    for (const layout of LAYOUT_IDS) {
+      expect(fillingPath(layout).length, layout).toBe(118)
+    }
+  })
+
+  it('puts every point inside the cell it belongs to', () => {
+    for (const layout of LAYOUT_IDS) {
+      const path = fillingPath(layout)
+      for (const z of ALL_Z) {
+        const cell = position(layout, z)
+        expect(path[z - 1], `${layout} Z=${z}`).toEqual({ x: cell.x + 0.5, y: cell.y + PATH_Y })
+      }
+    }
+  })
+
+  /* The one way this feature could make the table less legible. */
+  it('runs clear of the band the symbol occupies', () => {
+    expect(PATH_Y).toBeGreaterThan(0.6)
+    expect(PATH_Y).toBeLessThan(1)
+  })
+
+  it('finds the four shell backtracks, and only those', () => {
+    expect(BACKTRACKS).toEqual([21, 39, 57, 89])
+  })
+
+  /*
+   * The path must occupy exactly the area the cells do — no more, no less. It
+   * is deliberately NOT asserted against extent(), which returns maximum
+   * coordinates rather than a bounding box: the spiral layout has negative
+   * ones (x from -0.38, y from -6.51), so extent() understates it. That is a
+   * pre-existing clipping bug in the spiral render, found by this test and
+   * left alone here because it is a correctness matter, not a visual one.
+   */
+  it('occupies exactly the area the cells occupy, in any layout', () => {
+    for (const layout of LAYOUT_IDS) {
+      const cells = ALL_Z.map((z) => position(layout, z))
+      const path = fillingPath(layout)
+      const bounds = (points: readonly { x: number; y: number }[]) => ({
+        x0: Math.min(...points.map((p) => p.x)),
+        y0: Math.min(...points.map((p) => p.y)),
+        x1: Math.max(...points.map((p) => p.x)),
+        y1: Math.max(...points.map((p) => p.y)),
+      })
+      const c = bounds(cells)
+      const p = bounds(path)
+      expect(p.x0, layout).toBeCloseTo(c.x0 + 0.5)
+      expect(p.y0, layout).toBeCloseTo(c.y0 + PATH_Y)
+      expect(p.x1, layout).toBeCloseTo(c.x1 + 0.5)
+      expect(p.y1, layout).toBeCloseTo(c.y1 + PATH_Y)
+    }
   })
 })

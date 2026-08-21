@@ -103,6 +103,23 @@ export const AUFBAU_EXCEPTION_COLOUR = '#DFA92E'
 export const AUFBAU_FOLLOWS_COLOUR = '#EFF0EB'
 
 /**
+ * The annotation layer: the filling path drawn over the table.
+ *
+ * It has to be DARK, and that is derived rather than chosen. Every lens value
+ * in this product is a light tint, because invariant 8 requires each of them
+ * to clear AA against --ink and the cell paints its type in ink. So a line
+ * drawn over the table can only separate from what is beneath it by being
+ * darker than all of it.
+ *
+ * A deep ink-blue reads as an instrument line rather than as type, which
+ * matters because it crosses 118 cells full of type. Measured: 12.53:1 on
+ * paper, 11.97:1 on the lightest fill, 4.29:1 on the darkest. The last figure
+ * is a graphic, not text — WCAG 1.4.11 asks 3:1 of it — and the line carries a
+ * --paper casing besides.
+ */
+export const TRACE_COLOUR = '#173047'
+
+/**
  * Unknown. DESIGN.md §4 — a hatch over --paper, never a fill colour, so it can
  * never be mistaken for a position on any scale.
  */

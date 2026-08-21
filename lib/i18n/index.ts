@@ -168,6 +168,9 @@ const en: Dictionary = {
     '2, 8, 8, 18, 18, 32, 32 — the row lengths of the actual periodic table. Nothing here is drawn from a picture of the table; these numbers fall out of the ordering above and the capacities 2, 6, 10 and 14.',
   'what.hypotheticalNote':
     'A different table. Filling shell by shell puts 3d before 4s, so the transition metals move up a row and the third period becomes eighteen elements long instead of eight — there would be no short second and third rows at all. This is a hypothetical: it is not what atoms do, and nothing else on this site is built from it. It is here because the difference between these two lists is the entire reason the rule matters.',
+  'path.title': 'The filling path: all 118 elements in the order electrons are placed.',
+  'path.note':
+    'The line is the filling order — every element in the sequence the rule places it. It sweeps back at each row wrap, and the four rings mark where the rule opens a lower shell than the one it just left: scandium, yttrium, lanthanum, actinium. That backtrack is why the transition metals sit where they do.',
   'rule.heading': 'The rule, in full',
   'rule.statement':
     'Electrons fill subshells in order of n + ℓ, lowest first; where two subshells tie, the one with the lower n fills first. n is the shell number and ℓ is 0 for s, 1 for p, 2 for d, 3 for f. That is the entire rule — every sum below is worked out from it, and the order of the table follows.',
@@ -334,6 +337,9 @@ const id: Dictionary = {
     '2, 8, 8, 18, 18, 32, 32 — panjang baris tabel periodik yang sebenarnya. Tidak ada yang disalin dari gambar tabel; angka-angka ini keluar dari urutan di atas dan kapasitas 2, 6, 10 dan 14.',
   'what.hypotheticalNote':
     'Tabel yang berbeda. Mengisi kulit demi kulit menempatkan 3d sebelum 4s, sehingga logam transisi naik satu baris dan periode ketiga menjadi delapan belas unsur, bukan delapan — tidak akan ada baris kedua dan ketiga yang pendek sama sekali. Ini hipotesis: bukan perilaku atom yang sebenarnya, dan tidak ada bagian lain situs ini yang dibangun darinya. Ia ada di sini karena perbedaan antara kedua daftar itulah seluruh alasan aturan tersebut penting.',
+  'path.title': 'Jalur pengisian: ke-118 unsur dalam urutan penempatan elektron.',
+  'path.note':
+    'Garis ini adalah urutan pengisian — setiap unsur dalam urutan penempatannya oleh aturan. Garis itu menyapu balik pada setiap pergantian baris, dan keempat cincin menandai tempat aturan membuka kulit yang lebih rendah daripada yang baru ditinggalkannya: skandium, itrium, lantanum, aktinium. Pembalikan itulah sebabnya logam transisi berada di tempatnya.',
   'rule.heading': 'Aturannya, selengkapnya',
   'rule.statement':
     'Elektron mengisi subkulit menurut urutan n + ℓ, terkecil lebih dahulu; bila dua subkulit bernilai sama, yang ber-n lebih kecil mengisi lebih dahulu. n adalah nomor kulit dan ℓ bernilai 0 untuk s, 1 untuk p, 2 untuk d, 3 untuk f. Itulah keseluruhan aturannya — setiap penjumlahan di bawah dihitung darinya, dan urutan tabel mengikutinya.',

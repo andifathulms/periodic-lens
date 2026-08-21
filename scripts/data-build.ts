@@ -24,6 +24,7 @@ import {
   NOT_PRODUCED_COLOUR,
   ORIGIN_COLOURS,
   RAMPS,
+  TRACE_COLOUR,
   UNKNOWN_HATCH,
 } from '../lib/design/palette'
 import { ground } from '../lib/design/tokens'
@@ -143,6 +144,7 @@ const lines: string[] = [
   `  --lens-unknown: ${UNKNOWN_HATCH};`,
   `  --lens-production-id-none: ${NOT_PRODUCED_COLOUR};`,
   `  --aufbau-exception: ${AUFBAU_EXCEPTION_COLOUR};`,
+  `  --trace: ${TRACE_COLOUR};`,
   `  --aufbau-follows: ${AUFBAU_FOLLOWS_COLOUR};`,
 ]
 for (const [key, hex] of Object.entries(CATEGORY_COLOURS)) {

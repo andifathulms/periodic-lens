@@ -9,6 +9,7 @@ import {
   stepAt,
 } from '@/lib/elements/build'
 import { ELEMENTS } from '@/lib/elements/data'
+import { FillingPath } from '@/components/build/filling-path'
 import { FillingRule } from '@/components/build/filling-rule'
 import { LensLegend } from '@/components/legend/lens-legend'
 import { tokenFor } from '@/lib/elements/lens'
@@ -88,6 +89,14 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
             height: `calc(${box.height} * var(--cell))`,
           }}
         >
+          {/*
+           * Over the cells, under nothing. The path is drawn in the same
+           * `placed` units the animation already runs on, so it needs no
+           * control of its own and adds no state — scrubbing the existing
+           * slider draws it, and reduced motion gets it whole because
+           * `placed` starts at TOTAL_STEPS.
+           */}
+          <FillingPath placed={placed} locale={locale} />
           {ELEMENTS.map((element) => {
             const point = position('standard', element.z)
             const revealed = element.z <= placed
@@ -242,6 +251,8 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
           className="w-full"
         />
       </label>
+
+      <p className="max-w-[70ch] text-micro text-muted">{t(locale, 'path.note')}</p>
 
       <p className="font-mono text-body tabular">
         {t(locale, 'build.filling')}{' '}
