@@ -6,3 +6,9 @@ out/
 next-env.d.ts
 .vercel
 coverage/
+
+# Brand working directory. The masters and every size live here; only the
+# handful the site actually serves are copied into public/, and the README
+# lockup into .github/brand/. Keeping the rest out of the repo stops it
+# growing by a megabyte of PNG nobody loads.
+exports/
