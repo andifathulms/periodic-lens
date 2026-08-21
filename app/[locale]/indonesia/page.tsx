@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ELEMENTS, USGS_EDITION } from '@/lib/elements/data'
-import { DEFAULT_LOCALE, isLocale, pageTitle, t, term } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale, t, term } from '@/lib/i18n'
+import { routeMetadata } from '@/lib/i18n/metadata'
 
 export { generateStaticParams } from '../layout'
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
-  return { title: pageTitle(locale, 'nav.indonesia') }
+  return routeMetadata(locale, 'indonesia')
 }
 
 /**
@@ -65,7 +66,7 @@ export default function IndonesiaPage({ params }: { params: { locale: string } }
     <div className="mx-auto max-w-[1440px] px-16 py-24 flex flex-col gap-24">
       <header className="max-w-[70ch] flex flex-col gap-12">
         <h1 className="font-display text-page font-semibold">{t(locale, 'lens.production-id')}</h1>
-        <p className="text-lead">{copy.intro}</p>
+        <p className="text-lead">{t(locale, 'indonesia.intro')}</p>
       </header>
 
       <section className="max-w-[900px]">

@@ -9,13 +9,14 @@ import {
   reachesHalfOrFullSubshell,
 } from '@/lib/elements/aufbau'
 import { elementAt } from '@/lib/elements/data'
-import { DEFAULT_LOCALE, isLocale, pageTitle, t } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale, t } from '@/lib/i18n'
+import { routeMetadata } from '@/lib/i18n/metadata'
 
 export { generateStaticParams } from '../layout'
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
-  return { title: pageTitle(locale, 'nav.build') }
+  return routeMetadata(locale, 'build')
 }
 
 export default function BuildPage({ params }: { params: { locale: string } }) {
@@ -25,11 +26,7 @@ export default function BuildPage({ params }: { params: { locale: string } }) {
     <div className="mx-auto max-w-[1440px] px-16 py-24 flex flex-col gap-24">
       <header className="max-w-[70ch] flex flex-col gap-12">
         <h1 className="font-display text-page font-semibold">{t(locale, 'build.title')}</h1>
-        <p className="text-lead">
-          {locale === 'id'
-            ? 'Bentuk tabel adalah konfigurasi elektron. Elektron mengisi subkulit menurut urutan energi — s dua lebar, p enam, d sepuluh, f empat belas — dan garis luar tabel mengikuti urutan itu.'
-            : 'The shape of the table is the electron configuration. Electrons fill subshells in energy order — s two wide, p six, d ten, f fourteen — and the outline of the table follows from that order and nothing else.'}
-        </p>
+        <p className="text-lead">{t(locale, 'build.lead')}</p>
         <p className="text-lead">
           {locale === 'id'
             ? 'Aturan ini kemudian gagal. Untuk dua puluh unsur, konfigurasi terbitan tidak sesuai prediksi aturan. Nyalakan sakelar untuk melihat persisnya di mana.'

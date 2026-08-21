@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { DEFAULT_LOCALE, isLocale, pageTitle } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale } from '@/lib/i18n'
+import { routeMetadata } from '@/lib/i18n/metadata'
 import { TableView } from './table-view'
 
 export { generateStaticParams } from '../layout'
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
-  return { title: pageTitle(locale) }
+  return routeMetadata(locale, 'table')
 }
 
 export default function TablePage({ params }: { params: { locale: string } }) {

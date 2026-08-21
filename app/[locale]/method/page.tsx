@@ -5,13 +5,14 @@ import { ELEMENTS, GENERATED_FROM, LICENCE_LINES, USGS_EDITION } from '@/lib/ele
 import { LENS_IDS } from '@/lib/elements/lens'
 import { VIEW_IDS } from '@/lib/elements/view'
 import { SOURCES } from '@/lib/elements/sources'
-import { DEFAULT_LOCALE, isLocale, pageTitle, t } from '@/lib/i18n'
+import { DEFAULT_LOCALE, isLocale, t } from '@/lib/i18n'
+import { routeMetadata } from '@/lib/i18n/metadata'
 
 export { generateStaticParams } from '../layout'
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
-  return { title: pageTitle(locale, 'nav.method') }
+  return routeMetadata(locale, 'method')
 }
 
 /**

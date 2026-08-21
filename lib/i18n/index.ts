@@ -40,6 +40,10 @@ const en: Dictionary = {
   'nav.table': 'Table',
   'nav.build': 'The build',
   'nav.layouts': 'Layouts',
+  'layouts.intro':
+    'Three arrangements of the same 118 elements. Nothing is added or removed between them — a layout is a set of positions, not a set of elements.',
+  'indonesia.intro':
+    'Indonesia is a major producer of several elements. This page states its share of world production, per element, with the edition and the reporting stage attached to every figure.',
   'nav.indonesia': 'Indonesia',
   'nav.method': 'Method',
   'lens.label': 'Lens',
@@ -170,6 +174,8 @@ const en: Dictionary = {
   'rule.backtrack':
     'Read along and the surprise is 4s before 3d: 4+0 = 4 and 3+2 = 5, so the fourth shell starts before the third one finishes. That single step is why the transition metals sit where they do, and why period 4 is eighteen elements long instead of eight.',
   'build.title': 'How the table gets its shape',
+  'build.lead':
+    'The shape of the table is the electron configuration. Electrons fill subshells in energy order — s two wide, p six, d ten, f fourteen — and the outline of the table follows from that order and nothing else.',
   'build.play': 'Play',
   'build.pause': 'Pause',
   'build.replay': 'Replay',
@@ -200,6 +206,10 @@ const id: Dictionary = {
   'nav.table': 'Tabel',
   'nav.build': 'Pembentukan',
   'nav.layouts': 'Tata letak',
+  'layouts.intro':
+    'Tiga penyusunan atas 118 unsur yang sama. Tidak ada yang ditambah atau dihilangkan di antaranya — tata letak adalah kumpulan posisi, bukan kumpulan unsur.',
+  'indonesia.intro':
+    'Indonesia adalah produsen besar untuk beberapa unsur. Halaman ini menyatakan pangsa produksi dunia, per unsur, dengan edisi dan tahap pelaporan melekat pada setiap angka.',
   'nav.indonesia': 'Indonesia',
   'nav.method': 'Metode',
   'lens.label': 'Lensa',
@@ -330,6 +340,8 @@ const id: Dictionary = {
   'rule.backtrack':
     'Susuri urutannya dan kejutannya adalah 4s sebelum 3d: 4+0 = 4 dan 3+2 = 5, sehingga kulit keempat mulai terisi sebelum kulit ketiga selesai. Satu langkah itulah sebabnya logam transisi berada di tempatnya, dan sebabnya periode 4 memuat delapan belas unsur, bukan delapan.',
   'build.title': 'Bagaimana tabel memperoleh bentuknya',
+  'build.lead':
+    'Bentuk tabel adalah konfigurasi elektron. Elektron mengisi subkulit menurut urutan energi — s dua lebar, p enam, d sepuluh, f empat belas — dan garis luar tabel mengikuti urutan itu.',
   'build.play': 'Mainkan',
   'build.pause': 'Jeda',
   'build.replay': 'Ulangi',
