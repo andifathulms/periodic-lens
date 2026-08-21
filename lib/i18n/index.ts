@@ -170,7 +170,7 @@ const en: Dictionary = {
     'A different table. Filling shell by shell puts 3d before 4s, so the transition metals move up a row and the third period becomes eighteen elements long instead of eight — there would be no short second and third rows at all. This is a hypothetical: it is not what atoms do, and nothing else on this site is built from it. It is here because the difference between these two lists is the entire reason the rule matters.',
   'path.title': 'The filling path: all 118 elements in the order electrons are placed.',
   'path.note':
-    'The line is the filling order — every element in the sequence the rule places it. It sweeps back at each row wrap, and the four rings mark where the rule opens a lower shell than the one it just left: scandium, yttrium, lanthanum, actinium. That backtrack is why the transition metals sit where they do.',
+    'The lines mark the seven places the sequence does not simply carry on to the next square: the gaps in the first three periods, and the four detours the footnote creates — barium runs to lanthanum, and ytterbium comes back up to lutetium. Row endings are left undrawn, because moving to the start of the next row is just how a table is read. The rings mark where the rule opens a lower shell than the one it just left: scandium, yttrium, lanthanum, actinium.',
   'rule.heading': 'The rule, in full',
   'rule.statement':
     'Electrons fill subshells in order of n + ℓ, lowest first; where two subshells tie, the one with the lower n fills first. n is the shell number and ℓ is 0 for s, 1 for p, 2 for d, 3 for f. That is the entire rule — every sum below is worked out from it, and the order of the table follows.',
@@ -184,6 +184,7 @@ const en: Dictionary = {
   'build.replay': 'Replay',
   'build.step': 'Step',
   'build.exceptions': 'Show where the rule fails',
+  'build.showPath': 'Show the sequence',
   'build.keyException': 'published configuration disagrees with the rule',
   'build.keyFollows': 'rule and published configuration agree',
   'build.filling': 'Filling',
@@ -339,7 +340,7 @@ const id: Dictionary = {
     'Tabel yang berbeda. Mengisi kulit demi kulit menempatkan 3d sebelum 4s, sehingga logam transisi naik satu baris dan periode ketiga menjadi delapan belas unsur, bukan delapan — tidak akan ada baris kedua dan ketiga yang pendek sama sekali. Ini hipotesis: bukan perilaku atom yang sebenarnya, dan tidak ada bagian lain situs ini yang dibangun darinya. Ia ada di sini karena perbedaan antara kedua daftar itulah seluruh alasan aturan tersebut penting.',
   'path.title': 'Jalur pengisian: ke-118 unsur dalam urutan penempatan elektron.',
   'path.note':
-    'Garis ini adalah urutan pengisian — setiap unsur dalam urutan penempatannya oleh aturan. Garis itu menyapu balik pada setiap pergantian baris, dan keempat cincin menandai tempat aturan membuka kulit yang lebih rendah daripada yang baru ditinggalkannya: skandium, itrium, lantanum, aktinium. Pembalikan itulah sebabnya logam transisi berada di tempatnya.',
+    'Garis-garis ini menandai tujuh tempat di mana urutan tidak sekadar berlanjut ke kotak berikutnya: celah pada tiga periode pertama, dan empat jalan memutar akibat baris catatan kaki — barium menuju lantanum, dan iterbium kembali naik ke lutesium. Ujung baris sengaja tidak digambar, karena berpindah ke awal baris berikutnya hanyalah cara sebuah tabel dibaca. Cincin menandai tempat aturan membuka kulit yang lebih rendah: skandium, itrium, lantanum, aktinium.',
   'rule.heading': 'Aturannya, selengkapnya',
   'rule.statement':
     'Elektron mengisi subkulit menurut urutan n + ℓ, terkecil lebih dahulu; bila dua subkulit bernilai sama, yang ber-n lebih kecil mengisi lebih dahulu. n adalah nomor kulit dan ℓ bernilai 0 untuk s, 1 untuk p, 2 untuk d, 3 untuk f. Itulah keseluruhan aturannya — setiap penjumlahan di bawah dihitung darinya, dan urutan tabel mengikutinya.',
@@ -353,6 +354,7 @@ const id: Dictionary = {
   'build.replay': 'Ulangi',
   'build.step': 'Langkah',
   'build.exceptions': 'Tampilkan tempat aturan ini gagal',
+  'build.showPath': 'Tampilkan urutannya',
   'build.keyException': 'konfigurasi terbitan tidak sesuai aturan',
   'build.keyFollows': 'aturan dan konfigurasi terbitan sesuai',
   'build.filling': 'Mengisi',

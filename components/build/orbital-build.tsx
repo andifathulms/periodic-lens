@@ -32,6 +32,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
   const [placed, setPlaced] = useState(TOTAL_STEPS)
   const [playing, setPlaying] = useState(false)
   const [exceptions, setExceptions] = useState(false)
+  const [showPath, setShowPath] = useState(true)
   const [reduced, setReduced] = useState(false)
   const frame = useRef<number | undefined>(undefined)
   const started = useRef<number | undefined>(undefined)
@@ -170,7 +171,7 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
            * where the line runs, and the two are answering different
            * questions anyway. One at a time, as everywhere else here.
            */}
-          {!exceptions ? <FillingPath placed={placed} locale={locale} /> : null}
+          {showPath && !exceptions ? <FillingPath locale={locale} /> : null}
         </div>
       </div>
 
@@ -209,6 +210,18 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
             onChange={(event) => setExceptions(event.target.checked)}
           />
           {t(locale, 'build.exceptions')}
+        </label>
+        {/* The path is an annotation over the table, so it comes off. */}
+        <label className="flex items-center gap-8 text-body">
+          <input
+            type="checkbox"
+            checked={showPath}
+            disabled={exceptions}
+            onChange={(event) => setShowPath(event.target.checked)}
+          />
+          <span className={exceptions ? 'text-muted' : undefined}>
+            {t(locale, 'build.showPath')}
+          </span>
         </label>
       </div>
 
@@ -256,7 +269,9 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
         />
       </label>
 
-      <p className="max-w-[70ch] text-micro text-muted">{t(locale, 'path.note')}</p>
+      {showPath && !exceptions ? (
+        <p className="max-w-[70ch] text-micro text-muted">{t(locale, 'path.note')}</p>
+      ) : null}
 
       <p className="font-mono text-body tabular">
         {t(locale, 'build.filling')}{' '}
