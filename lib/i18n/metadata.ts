@@ -32,6 +32,9 @@ const DESCRIPTION_KEYS = {
 
 export type Route = keyof typeof DESCRIPTION_KEYS
 
+/** The route list, shared with the sitemap so the two cannot disagree. */
+export const ROUTES = Object.keys(DESCRIPTION_KEYS) as readonly Route[]
+
 export function routeMetadata(locale: Locale, route: Route): Metadata {
   const path = `${BASE}/${locale}/${route}/`
   /* The table is the landing page, so it takes the bare site name. */
