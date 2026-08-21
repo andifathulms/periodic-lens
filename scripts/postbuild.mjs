@@ -13,7 +13,7 @@
  * A static page with a meta refresh and a real link is crawlable, needs no
  * JavaScript, and lands the reader in the same place just as fast.
  */
-import { writeFileSync, existsSync, renameSync } from 'node:fs'
+import { writeFileSync, readFileSync, readdirSync, statSync, existsSync, renameSync } from 'node:fs'
 import { join } from 'node:path'
 import { LOCALES, DEFAULT_LOCALE, t } from '../lib/i18n/index.ts'
 
@@ -64,6 +64,31 @@ for (const locale of LOCALES) {
   if (existsSync(from)) renameSync(from, join(out, locale, 'opengraph-image.png'))
 }
 
+/*
+ * app/manifest.ts is a Next file convention, and under output: export it emits
+ * <link rel="manifest" href="/manifest.webmanifest"> with no basePath — which
+ * 404s wherever the site is not at the domain root. The metadata API cannot
+ * override it, so it is corrected here, in the same pass that fixes the other
+ * two things the exporter gets wrong about basePath.
+ */
+function walkHtml(dir) {
+  return readdirSync(dir).flatMap((entry) => {
+    const path = join(dir, entry)
+    if (statSync(path).isDirectory()) return walkHtml(path)
+    return entry.endsWith('.html') ? [path] : []
+  })
+}
+
+let repaired = 0
+for (const file of walkHtml(out)) {
+  const html = readFileSync(file, 'utf8')
+  const fixed = html.replaceAll('href="/manifest.webmanifest"', `href="${base}/manifest.webmanifest"`)
+  if (fixed !== html) {
+    writeFileSync(file, fixed)
+    repaired += 1
+  }
+}
+
 const stubs = [
   ['index.html', DEFAULT_LOCALE, `${DEFAULT_LOCALE}/table`],
   ...LOCALES.map((l) => [`${l}/index.html`, l, `${l}/table`]),
@@ -73,5 +98,5 @@ for (const [file, locale, target] of stubs) {
 }
 
 console.log(
-  `postbuild — .nojekyll, ${stubs.length} crawlable redirect stubs, ${LOCALES.length} og images named`,
+  `postbuild — .nojekyll, ${stubs.length} redirect stubs, ${LOCALES.length} og images named, ${repaired} manifest links repaired`,
 )
