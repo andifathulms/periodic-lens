@@ -43,7 +43,7 @@ export function FillingPath({
   return (
     <svg
       aria-hidden
-      className="pointer-events-none absolute left-0 top-0"
+      className="pointer-events-none absolute left-0 top-0 z-10"
       style={{
         width: `calc(${box.width} * var(--cell))`,
         height: `calc(${box.height} * var(--cell))`,
@@ -51,12 +51,17 @@ export function FillingPath({
       viewBox={`0 0 ${box.width} ${box.height}`}
       preserveAspectRatio="none"
     >
-      {/* The casing, so the line survives whatever tint is under it. */}
+      {/*
+       * The casing is deliberately tight — 0.10 against a 0.055 core leaves
+       * about a pixel of paper each side at the default cell size. Wider, and
+       * it stops reading as a line with an edge and starts reading as a pale
+       * channel cut through every cell it crosses.
+       */}
       <polyline
         points={d}
         fill="none"
         stroke="var(--paper)"
-        strokeWidth={0.13}
+        strokeWidth={0.1}
         strokeLinejoin="round"
         strokeLinecap="round"
       />
@@ -64,7 +69,7 @@ export function FillingPath({
         points={d}
         fill="none"
         stroke="var(--trace)"
-        strokeWidth={0.06}
+        strokeWidth={0.055}
         strokeLinejoin="round"
         strokeLinecap="round"
       />

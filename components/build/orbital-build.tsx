@@ -89,14 +89,6 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
             height: `calc(${box.height} * var(--cell))`,
           }}
         >
-          {/*
-           * Over the cells, under nothing. The path is drawn in the same
-           * `placed` units the animation already runs on, so it needs no
-           * control of its own and adds no state — scrubbing the existing
-           * slider draws it, and reduced motion gets it whole because
-           * `placed` starts at TOTAL_STEPS.
-           */}
-          <FillingPath placed={placed} locale={locale} />
           {ELEMENTS.map((element) => {
             const point = position('standard', element.z)
             const revealed = element.z <= placed
@@ -167,6 +159,18 @@ export function OrbitalBuild({ locale }: { locale: Locale }) {
               </div>
             )
           })}
+          {/*
+           * After the cells, not before. The cells are absolutely positioned
+           * siblings, so a path rendered first is painted over by all 118 of
+           * them — it showed only in the gaps of periods 1 to 3 and vanished
+           * entirely from periods 4 to 7, where every position is occupied.
+           *
+           * Hidden while the exception toggle is on: that view puts a
+           * configuration string along the bottom of twenty cells, exactly
+           * where the line runs, and the two are answering different
+           * questions anyway. One at a time, as everywhere else here.
+           */}
+          {!exceptions ? <FillingPath placed={placed} locale={locale} /> : null}
         </div>
       </div>
 
